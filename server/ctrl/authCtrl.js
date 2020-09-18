@@ -34,13 +34,13 @@ module.exports = {
       last_name,
       profile_pic,
     } = req.body;
-    const existingUser = await db.Users.check_player(email);
+    const existingUser = await db.Users.check_user(email);
     if (existingUser[0]) {
       return res.status(409).send("User already exists");
     }
     const salt = bcrypt.genSaltSync(10);
     const hash = bcrypt.hashSync(password, salt);
-    const newUser = await db.Users.create_player([
+    const newUser = await db.Users.create_user([
       username,
       email,
       hash,
