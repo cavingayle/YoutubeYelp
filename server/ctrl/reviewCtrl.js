@@ -2,7 +2,7 @@ module.exports = {
   getReviews: async (req, res) => {
     const { id } = req.params;
     const db = req.app.get("db");
-    const reviews = await db.reviews.get_review(id);
+    const reviews = await db.Reviews.get_review(id);
     res.status(200).send(reviews);
   },
 
@@ -10,7 +10,7 @@ module.exports = {
     const { rating, title, review, user_id } = req.body;
     const { id } = req.params;
     const db = req.app.get("db");
-    db.reviews
+    db.Reviews
       .add_review([rating, title, review, user_id, id])
       .then((reviews) => res.status(200).send(reviews))
       .catch((err) => {
