@@ -26,5 +26,5 @@ CREATE TABLE reviews(
     review TEXT,
     channel_id INT REFERENCES channel(channel_id),
     rating INT NOT NULL,
-    user_id INT REFERENCES user(user_id)
+    user_id INT REFERENCES users(user_id)
 );
