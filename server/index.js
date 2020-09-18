@@ -3,10 +3,12 @@ const express = require("express");
 const session = require("express-session");
 const app = express();
 const massive = require("massive");
+const authCtrl = require("./ctrl/authCtrl")
+const genreCtrl = require('./ctrl/genreCtrl')
+
 
 const { SESSION_SECRET, CONNECTION_STRING, SERVER_PORT } = process.env;
 
-const app = express();
 
 app.use(express.json());
 
@@ -30,5 +32,15 @@ app.use(
     },
   })
 );
+
+//#AUTH ENDPOINTS
+app.get("/auth/user", authCtrl.getUser);
+app.post("/auth/register", authCtrl.register);
+app.post("/auth/login", authCtrl.login);
+app.delete("/auth/logout", authCtrl.logout);
+//# GENRE ENDPOINTS
+// app.get("/api/genres", genreCtrl.getGenres);
+
+
 
 app.listen(SERVER_PORT, () => console.log(`Listening on port ${SERVER_PORT}`));
