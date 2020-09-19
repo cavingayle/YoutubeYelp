@@ -3,7 +3,8 @@ const express = require("express");
 const session = require("express-session");
 const app = express();
 const massive = require("massive");
-const authCtrl = require("./ctrl/authCtrl")
+const authCtrl = require("./ctrl/authCtrl");
+const channelCtrl = require("./ctrl/channelCtrl");
 const genreCtrl = require('./ctrl/genreCtrl')
 
 
@@ -40,6 +41,11 @@ app.post("/auth/login", authCtrl.login);
 app.delete("/auth/logout", authCtrl.logout);
 //# GENRE ENDPOINTS
 // app.get("/api/genres", genreCtrl.getGenres);
+//# REVIEW ENDPOINTS
+app.get("/api/reviews/:id", reviewCtrl.getReviews);
+app.post("/api/review/:id/:userId", reviewCtrl.addReview);
+//# CHANNEL ENDPOINTS
+app.post("/api/channel", channelCtrl.addChannel);
 
 
 
