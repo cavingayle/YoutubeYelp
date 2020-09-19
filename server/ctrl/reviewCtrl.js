@@ -10,8 +10,7 @@ module.exports = {
     const { rating, title, review, user_id } = req.body;
     const { channel_id } = req.params;
     const db = req.app.get("db");
-    db.Reviews
-      .add_review([rating, title, review, channel_id, user_id])
+    db.Reviews.add_review([rating, title, review, channel_id, user_id])
       .then((reviews) => res.status(200).send(reviews))
       .catch((err) => {
         res.status(500).send({

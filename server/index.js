@@ -3,12 +3,12 @@ const express = require("express");
 const session = require("express-session");
 const app = express();
 const massive = require("massive");
-const authCtrl = require("./ctrl/authCtrl")
-const genreCtrl = require('./ctrl/genreCtrl')
-
+const authCtrl = require("./ctrl/authCtrl");
+const channelCtrl = require("./ctrl/channelCtrl");
+const reviewCtrl = require("./ctrl/reviewCtrl");
+const genreCtrl = require("./ctrl/genreCtrl");
 
 const { SESSION_SECRET, CONNECTION_STRING, SERVER_PORT } = process.env;
-
 
 app.use(express.json());
 
@@ -40,7 +40,10 @@ app.post("/auth/login", authCtrl.login);
 app.delete("/auth/logout", authCtrl.logout);
 //# GENRE ENDPOINTS
 // app.get("/api/genres", genreCtrl.getGenres);
-
-
+//# REVIEW ENDPOINTS
+app.get("/api/reviews/:id", reviewCtrl.getReviews);
+app.post("/api/review/:id", reviewCtrl.addReview);
+//# CHANNEL ENDPOINTS
+app.post("/api/channel", channelCtrl.addChannel);
 
 app.listen(SERVER_PORT, () => console.log(`Listening on port ${SERVER_PORT}`));
