@@ -6,7 +6,7 @@ module.exports = {
     res.status(200).send(reviews);
   },
 
-  addReviews: async (req, res) => {
+  addReview: async (req, res) => {
     const { rating, title, review, user_id } = req.body;
     const { channel_id } = req.params;
     const db = req.app.get("db");
