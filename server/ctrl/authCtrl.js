@@ -48,14 +48,7 @@ module.exports = {
       last_name,
       profile_pic,
     ]);
-    req.session.user = {
-      user_id: newUser[0].user_id,
-      username: newUser[0].username,
-      email: newUser[0].email,
-      first_name: newUser[0].first_name,
-      last_name: newUser[0].last_name,
-      profile_pic: newUser[0].profile_pic,
-    };
+    req.session.user = newUser[0];
     res.status(200).send(req.session.user);
   },
   logout: (req, res) => {
