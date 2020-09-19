@@ -43,7 +43,7 @@ app.delete("/auth/logout", authCtrl.logout);
 // app.get("/api/genres", genreCtrl.getGenres);
 //# REVIEW ENDPOINTS
 app.get("/api/reviews/:id", reviewCtrl.getReviews);
-app.post("/api/review/:id/:userId", reviewCtrl.addReview);
+app.post("/api/review/:id", reviewCtrl.addReview);
 //# CHANNEL ENDPOINTS
 app.post("/api/channel", channelCtrl.addChannel);
 
