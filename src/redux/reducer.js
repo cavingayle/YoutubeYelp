@@ -1,19 +1,15 @@
 import axios from "axios";
 
 const initialState = {
-
-    channels: [],
-    reviews: [],
-    userId: 0,
-    username: '',
-    email: '',
-    profile_pic:'',
-    first_name:'',
-    last_name:''
-}
-
-
-
+  channels: [],
+  reviews: [],
+  userId: 0,
+  username: "",
+  email: "",
+  profile_pic: "",
+  first_name: "",
+  last_name: "",
+};
 
 // ACTION STRINGS -- WILL NEED PROMISE MIDDLEWARE IN STORE
 const GET_CHANNELS = "GET_CHANNELS";
@@ -28,11 +24,10 @@ const LOGOUT = "LOGOUT";
 // Actions Builders
 
 export const getChannelsYT = (query) => {
-  let data = axios
-    .get(
-      `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=${query}&type=channel&key=AIzaSyCMLkcQ69lzKP55hhvIwPggxuODybcq6d4`
-    )
-    // .then((res) => console.log(res.data));
+  let data = axios.get(
+    `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=${query}&type=channel&key=AIzaSyCMLkcQ69lzKP55hhvIwPggxuODybcq6d4`
+  );
+  // .then((res) => console.log(res.data));
   return {
     type: GET_CHANNELS,
     payload: data,
@@ -89,7 +84,6 @@ export function logoutUser() {
 // Reducer
 
 export default function reducer(state = initialState, action) {
-
   const { type, payload } = action;
   console.log(type);
   switch (type) {
@@ -102,7 +96,15 @@ export default function reducer(state = initialState, action) {
     case GET_REVIEWS + "FULFILLED":
       return { ...state, reviews: payload };
     case SET_USER_ID:
-      return { ...state, userId: payload.user_id, username: payload.username, email: payload.email, profile_pic: payload.profile_pic, first_name: payload.first_name, last_name: payload.last_name  };
+      return {
+        ...state,
+        userId: payload.user_id,
+        username: payload.username,
+        email: payload.email,
+        profile_pic: payload.profile_pic,
+        first_name: payload.first_name,
+        last_name: payload.last_name,
+      };
     case POST_REVIEW + "FULFILLED":
       return { ...state, reviews: payload };
     case LOGOUT:
@@ -111,4 +113,3 @@ export default function reducer(state = initialState, action) {
       return state;
   }
 }
-
