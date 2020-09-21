@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { getChannelsYT } from "../../redux/reducer";
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 
 const Searchbar = (props) => {
   const [input, setInput] = useState("");
@@ -12,8 +13,7 @@ const Searchbar = (props) => {
 
   const searchChannels = () => {
     props.getChannelsYT(input);
-    console.log(input)
-    console.log(props)
+    props.history.push("/search")
   };
 
   return (
@@ -26,4 +26,4 @@ const Searchbar = (props) => {
 
 const mapStateToProps = (state) => state
 
-export default connect(mapStateToProps, {getChannelsYT})(Searchbar);
+export default connect(mapStateToProps, {getChannelsYT})(withRouter(Searchbar));
