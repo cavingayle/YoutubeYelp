@@ -55,4 +55,20 @@ module.exports = {
       res.status(404).send(`Get User`);
     }
   },
+  edit: async (req, res) => {
+    const { username, email, profile_pic, first_name, last_name } = req.body;
+    const { id } = req.params;
+    const db = req.app.get("db");
+
+    const [user] = await db.Users.edit_user({
+      username,
+      email,
+      profile_pic,
+      first_name,
+      last_name,
+      user_id: id,
+    });
+
+    res.status(200).send(user);
+  },
 };

@@ -5,8 +5,10 @@ const initialState = {
     reviews: [],
     userId: 0,
     username: '',
-    
-
+    email: '',
+    profile_pic:'',
+    first_name:'',
+    last_name:''
 }
 
 
@@ -99,7 +101,7 @@ export default function reducer(state = initialState, action) {
         case GET_REVIEWS + "FULFILLED":
             return { ...state, reviews: payload }
         case SET_USER_ID: 
-            return { ...state, userId: payload }
+            return { ...state, userId: payload.user_id, username: payload.username, email: payload.email, profile_pic: payload.profile_pic, first_name: payload.first_name, last_name: payload.last_name  }
         case POST_REVIEW + "FULFILLED":
 return {...state, reviews: payload}
             case LOGOUT:
