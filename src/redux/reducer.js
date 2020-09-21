@@ -3,7 +3,7 @@ import axios from 'axios'
 const initialState = {
     channels: [],
     reviews: [],
-    userId: '',
+    userId: 0,
     username: '',
     
 
@@ -90,7 +90,7 @@ export function logoutUser() {
 
 // Reducer
 
-export function reducer(state = initialState, action) {
+export default function reducer(state = initialState, action) {
     const { type, payload } = action;
 
     switch (type) {
