@@ -72,19 +72,17 @@ export const postReview = () => {
 
 //Auth Action Builder
 
-export function setUserId(user) {
+export function setUser(user) {
     return {
       type: SET_USER_ID,
       payload: user,
     };
   }
   
-export function logout() {
-    let data = axios.delete('/auth/logout').then(res => res.data)
+export function logoutUser() {
     
     return {
         type: LOGOUT,
-        payload: data
     };
   }
 
