@@ -3,7 +3,9 @@ import axios from 'axios'
 const initialState = {
     channels: [],
     reviews: [],
-    userId: ''
+    userId: '',
+    username: '',
+    
 
 }
 
