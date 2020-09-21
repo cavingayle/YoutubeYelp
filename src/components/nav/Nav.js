@@ -8,7 +8,11 @@ import { withRouter } from "react-router-dom";
 
 const Nav = (props) => {
   useEffect(() => {
-    props.setUser();
+    axios.get("/auth/user")
+    .then(res=> {
+      props.setUser(res.data);
+    })
+   
   });
 
   const logout = () => {
