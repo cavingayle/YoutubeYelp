@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { getUser, logoutUser } from "../redux/reducer";
+import { setUser, logoutUser } from "../redux/reducer";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 
 const Nav = (props) => {
   useEffect(() => {
-    props.getUser();
+    props.setUser();
   }, []);
 
   const logout = () => {
@@ -29,4 +29,4 @@ const Nav = (props) => {
 
 const mapStateToProps = (state) => state;
 
-export default connect(mapStateToProps, { logoutUser, getUser })(withRouter(Nav));
+export default connect(mapStateToProps, { logoutUser, setUser })(withRouter(Nav));
