@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { getChannelsYT } from "../../redux/reducer";
 import { connect } from "react-redux";
-import Axios from "axios";
 
 const Searchbar = (props) => {
   const [input, setInput] = useState("");
