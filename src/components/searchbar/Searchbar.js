@@ -10,12 +10,10 @@ const Searchbar = (props) => {
     setInput(value);
   };
 
-  const handleClearInput = () => {
-    setInput("");
-  };
-
   const searchChannels = () => {
-    getChannelsYT(input);
+    props.getChannelsYT(input);
+    console.log(input)
+    console.log(props)
   };
 
   return (
@@ -26,4 +24,6 @@ const Searchbar = (props) => {
   );
 };
 
-export default connect(null, {getChannelsYT})(Searchbar);
+const mapStateToProps = (state) => state
+
+export default connect(mapStateToProps, {getChannelsYT})(Searchbar);
