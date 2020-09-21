@@ -26,3 +26,5 @@ const Searchbar = (props) => {
     </div>
   );
 };
+
+export default connect(null, {getChannelsYT})(Searchbar);
