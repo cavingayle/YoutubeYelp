@@ -10,14 +10,7 @@ module.exports = {
     } else {
       const authenticated = bcrypt.compareSync(password, user[0].password);
       if (authenticated) {
-        req.session.user = {
-          user_id: user[0].user_id,
-          username: user[0].username,
-          email: user[0].email,
-          first_name: user[0].first_name,
-          last_name: user[0].last_name,
-          profile_pic: user[0].profile_pic,
-        };
+        req.session.user = user[0];
         res.status(200).send(req.session.user);
       } else {
         res.status(403).send("Username or Password wrong");
