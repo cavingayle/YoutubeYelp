@@ -1,11 +1,19 @@
 import axios from "axios";
 
 const initialState = {
-  channels: [],
-  reviews: [],
-  userId: 0,
-  username: "",
-};
+
+    channels: [],
+    reviews: [],
+    userId: 0,
+    username: '',
+    email: '',
+    profile_pic:'',
+    first_name:'',
+    last_name:''
+}
+
+
+
 
 // ACTION STRINGS -- WILL NEED PROMISE MIDDLEWARE IN STORE
 const GET_CHANNELS = "GET_CHANNELS";
@@ -81,6 +89,7 @@ export function logoutUser() {
 // Reducer
 
 export default function reducer(state = initialState, action) {
+
   const { type, payload } = action;
   console.log(type);
   switch (type) {
@@ -93,7 +102,7 @@ export default function reducer(state = initialState, action) {
     case GET_REVIEWS + "FULFILLED":
       return { ...state, reviews: payload };
     case SET_USER_ID:
-      return { ...state, userId: payload };
+      return { ...state, userId: payload.user_id, username: payload.username, email: payload.email, profile_pic: payload.profile_pic, first_name: payload.first_name, last_name: payload.last_name  };
     case POST_REVIEW + "FULFILLED":
       return { ...state, reviews: payload };
     case LOGOUT:
@@ -102,3 +111,4 @@ export default function reducer(state = initialState, action) {
       return state;
   }
 }
+

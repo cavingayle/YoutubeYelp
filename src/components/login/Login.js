@@ -38,7 +38,7 @@ const Login = (props) => {
         password: password,
       })
       .then((res) => {
-        props.setUser(res.data.user_id);
+        props.setUser(res.data);
         props.history.push("/");
       })
       .catch((err) => {
@@ -57,7 +57,7 @@ const Login = (props) => {
         profile_pic: profilePic,
       })
       .then((res) => {
-        props.setUser(res.data.user_id);
+        props.setUser(res.data);
         props.history.push("/");
       })
       .catch((err) => {
