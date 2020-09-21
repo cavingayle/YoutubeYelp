@@ -1,15 +1,15 @@
 import React, { useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import Searchbar from "../searchbar/Searchbar";
-import { setUser, logoutUser } from "../redux/reducer";
+import { setUser, logoutUser } from "../../redux/reducer";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 
 const Nav = (props) => {
   useEffect(() => {
     props.setUser();
-  }, []);
+  });
 
   const logout = () => {
     axios
@@ -26,6 +26,7 @@ const Nav = (props) => {
       <div>this is the logo</div>
       <Searchbar />
       <div>hamburger menu</div>
+      <button onClick={logout}>logout</button>
     </div>
   );
 };
