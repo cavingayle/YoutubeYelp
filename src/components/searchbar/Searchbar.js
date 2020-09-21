@@ -13,7 +13,7 @@ const Searchbar = (props) => {
 
   const searchChannels = () => {
     props.getChannelsYT(input);
-    props.history.push("/search")
+    props.history.push("/search");
   };
 
   return (
@@ -24,6 +24,8 @@ const Searchbar = (props) => {
   );
 };
 
-const mapStateToProps = (state) => state
+const mapStateToProps = (state) => state;
 
-export default connect(mapStateToProps, {getChannelsYT})(withRouter(Searchbar));
+export default connect(mapStateToProps, { getChannelsYT })(
+  withRouter(Searchbar)
+);

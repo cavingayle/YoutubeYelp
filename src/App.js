@@ -9,7 +9,7 @@ function App() {
   const {pathname} = useLocation();
   return (
     <div className="App">
-      {pathname !== "/" ? <Nav /> : null}
+      <Nav/>
      {routes}
     </div>
   );
