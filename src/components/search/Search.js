@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 const Search = (props) => {
   return (
-    <div>
+    <div className="search-main">
       {props.channels.map((channel) => (
         <div>
           <div>

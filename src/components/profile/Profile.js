@@ -73,7 +73,7 @@ function Profile(props) {
   };
 
   return (
-    <div>
+    <div className="profile-main">
       <div>
         {!editToggle ? (
           <div>

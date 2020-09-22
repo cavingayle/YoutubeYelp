@@ -25,7 +25,7 @@ const LOGOUT = "LOGOUT";
 
 export const getChannelsYT = (query) => {
   let data = axios.get(
-    `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=${query}&type=channel&key=AIzaSyCMLkcQ69lzKP55hhvIwPggxuODybcq6d4`
+    `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=${query}&type=channel&key=AIzaSyBSb7sSbZgPd653Ny9Dmfa9UxFCJy0wOdQ`
   );
   // .then((res) => console.log(res.data));
   return {
