@@ -11,4 +11,11 @@ module.exports = {
         console.log(err);
       });
   },
+
+  getChannels: async (req, res) => {
+    const { genre_id } = req.params;
+    const db = req.app.get("db");
+    const channels = await db.Channels.get_channels(genre_id);
+    res.status(200).send(channels);
+  },
 };
