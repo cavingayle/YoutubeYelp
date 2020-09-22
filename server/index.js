@@ -48,5 +48,6 @@ app.get("/api/recent", reviewCtrl.getRecentReviews);
 
 //# CHANNEL ENDPOINTS
 app.post("/api/channel", channelCtrl.addChannel);
+app.get("/api/channel/:id", channelCtrl.loadChannels);
 
 app.listen(SERVER_PORT, () => console.log(`Listening on port ${SERVER_PORT}`));
