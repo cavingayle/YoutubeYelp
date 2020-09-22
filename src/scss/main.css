@@ -103,9 +103,16 @@
 
 .nav-main .nav-nav .logo {
   color: white;
-  font-family: "Noto Sans", sans-serif;
-  font-weight: bolder;
-  font-size: 20px;
+  font-size: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.nav-main .nav-nav .yelp-logo {
+  position: absolute;
+  left: 25px;
+  padding-bottom: 10px;
+  font-size: 50px;
 }
 
 .nav-main .nav-nav .dropdown {
@@ -243,6 +250,14 @@
 .nav-main .nav-nav .search-btn:active {
   position: relative;
   top: 1px;
+}
+
+.profile-main {
+  min-height: calc(100vh - 261px);
+}
+
+.search-main {
+  padding-bottom: 30px;
 }
 
 * {
