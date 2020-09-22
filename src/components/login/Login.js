@@ -66,18 +66,20 @@ const Login = (props) => {
   };
 
   return (
-    <div>
+    <div className = 'main-login'>
       <div>
-        <h1>Welcome to YouTube Yelp</h1>
+        <h1 className = 'welcome-login'>Sign In</h1>
       </div>
-      <div>
+      <hr/>
+      <div className='login-info'>
         {toggle ? (
-          <div>
+          <div className='login-input'>
             <input
               name="email"
               placeholder="Email..."
               value={email}
               onChange={handleEmailInput}
+             
             />
             <input
               name="password"
@@ -88,7 +90,7 @@ const Login = (props) => {
             />
           </div>
         ) : (
-          <div>
+          <div className='login-input'>
             <input
               name="username"
               placeholder="Username..."
@@ -129,7 +131,7 @@ const Login = (props) => {
           </div>
         )}
         {toggle ? (
-          <div>
+          <div className='login-btn'>
             <button onClick={login}>Login</button>
             <button
               onClick={() => {
@@ -140,7 +142,7 @@ const Login = (props) => {
             </button>
           </div>
         ) : (
-          <div>
+          <div className='login-btn'>
             <button onClick={register}>Register</button>
             <button
               onClick={() => {
