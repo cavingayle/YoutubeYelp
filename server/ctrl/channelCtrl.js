@@ -12,8 +12,13 @@ module.exports = {
       });
   },
 
-
-  loadChannels: async (req, res) => {
+  getChannels: async (req, res) => {
+    const { genre_id } = req.params;
+    const db = req.app.get("db");
+    const channels = await db.Channels.get_channels(genre_id);
+    res.status(200).send(channels);
+  },
+ loadChannels: async (req, res) => {
     const db = req.app.get('db')
     const { id } = req.params
     let [channel] = await db.Channels.load_channel(id)
@@ -22,4 +27,3 @@ module.exports = {
     } 
     res.status(404).send('Error')
   }
-};

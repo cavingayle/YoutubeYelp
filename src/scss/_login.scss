@@ -1,0 +1,60 @@
+@import "./variables";
+
+.main-login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 375px;
+    height: 700px;
+    hr {
+        display: block;
+        height: 1px;
+        border: 0;
+        border-top: 1px solid $red-main;
+        margin: 1em 0;
+        padding: 0;
+        width: 300px;
+    }
+}
+.welcome-login{
+    display: flex;
+    font-size: 70px;
+    color: $red-main;
+    margin-bottom: 20px;
+}
+.login-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    height: 400px;
+}
+
+.login-input input{
+   background-color:$gray-main ;
+   margin-bottom: 10px;
+   border-width: 0px;
+   border-radius: 3px;
+   width: 300px;
+   text-align: center;
+   height: 30px;
+   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+   outline: none;
+}
+.login-btn{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    button{
+        margin-top: 10px;
+        width: 300px;
+        height: 30px;
+        border-width: 0;
+        background-color: $red-main;
+        font-weight: bolder;
+        border-radius: 3px;
+        box-shadow: 0px 2px 2px $gray-main;
+        outline: none;
+    }
+}

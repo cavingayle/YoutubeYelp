@@ -7,16 +7,10 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 
 const Nav = (props) => {
-  const [dropdown, setDropdown] = useState(false);
-
-  useEffect(() => {
-    axios.get("/auth/user").then((res) => {
-      props.setUser(res.data);
-    });
-  });
+  const [isDown, setDropdown] = useState(false);
 
   const handleDropdown = () => {
-    setDropdown(!dropdown);
+    setDropdown(!isDown);
   };
 
   const logout = () => {
@@ -32,19 +26,35 @@ const Nav = (props) => {
   return (
     <div className="nav-main">
       <nav className="nav-nav">
-        <div>YoutubeYelp</div>
+        <div className="logo">Yy</div>
         <Searchbar />
-        <i className="fas fa-bars hamburger" onClick={handleDropdown}>
-          {dropdown ? (
-            <>
-              <div className="dropdown-box">
-                <Link className="home" to={"/"}>Home</Link>
-                <Link className="profile" to={"/profile"}>Profile</Link>
-                <i onClick={logout}>Logout</i>
-              </div>
-            </>
+        <div className="dropdown">
+          <button className="fas fa-bars hamburger" onClick={handleDropdown}></button>
+          {isDown ? (
+            <ul className="dropdown-box">
+              <li onClick={handleDropdown}>
+                <Link className="home dropdown-btn" to={"/"}>
+                  Home
+                </Link>
+              </li>
+              <li onClick={handleDropdown}>
+                <Link className="profile dropdown-btn" to={"/profile"}>
+                  Profile
+                </Link>
+              </li>
+              <li onClick={handleDropdown}>
+                <Link className="login dropdown-btn" to={"/login"}>
+                  Login
+                </Link>
+              </li>
+              <li onClick={handleDropdown}>
+                <i className="logout dropdown-btn" onClick={logout}>
+                  Logout
+                </i>
+              </li>
+            </ul>
           ) : null}
-        </i>
+        </div>
       </nav>
     </div>
   );
