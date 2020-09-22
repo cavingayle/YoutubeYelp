@@ -68,7 +68,7 @@ module.exports = {
       last_name,
       user_id: id,
     });
-
+    req.session.user = user
     res.status(200).send(user);
   },
 };
