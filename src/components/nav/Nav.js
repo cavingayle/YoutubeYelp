@@ -1,14 +1,23 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { setUser, logoutUser } from "../redux/reducer";
+import Searchbar from "../searchbar/Searchbar";
+import { setUser, logoutUser } from "../../redux/reducer";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 
 const Nav = (props) => {
+  const [dropdown, setDropdown] = useState(false);
+
   useEffect(() => {
-    props.setUser();
-  }, []);
+    axios.get("/auth/user").then((res) => {
+      props.setUser(res.data);
+    });
+  });
+
+  const handleDropdown = () => {
+    setDropdown(!dropdown);
+  };
 
   const logout = () => {
     axios
@@ -22,11 +31,27 @@ const Nav = (props) => {
 
   return (
     <div className="nav-main">
-      This is the Nav Component
+      <nav className="nav-nav">
+        <div>YoutubeYelp</div>
+        <Searchbar />
+        <i className="fas fa-bars hamburger" onClick={handleDropdown}>
+          {dropdown ? (
+            <>
+              <div className="dropdown-box">
+                <Link className="home" to={"/"}>Home</Link>
+                <Link className="profile" to={"/profile"}>Profile</Link>
+                <i onClick={logout}>Logout</i>
+              </div>
+            </>
+          ) : null}
+        </i>
+      </nav>
     </div>
   );
 };
 
 const mapStateToProps = (state) => state;
 
-export default connect(mapStateToProps, { logoutUser, setUser })(withRouter(Nav));
+export default connect(mapStateToProps, { logoutUser, setUser })(
+  withRouter(Nav)
+);

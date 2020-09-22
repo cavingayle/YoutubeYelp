@@ -1,0 +1,14 @@
+@import "./button";
+@import "./channel";
+@import "./home";
+@import "./input";
+@import "./login";
+@import "./nav";
+@import "./review";
+@import "./search";
+@import "./variables";
+
+body {
+    background-color: white;
+    font-family: $main-font;
+  }
