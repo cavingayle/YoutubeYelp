@@ -43,6 +43,8 @@ app.delete("/auth/logout", authCtrl.logout);
 //# REVIEW ENDPOINTS
 app.get("/api/reviews/:id", reviewCtrl.getReviews);
 app.post("/api/review/:id", reviewCtrl.addReview);
+app.get("/api/recent/", reviewCtrl.getRecentReviews);
+
 //# CHANNEL ENDPOINTS
 app.post("/api/channel", channelCtrl.addChannel);
 
