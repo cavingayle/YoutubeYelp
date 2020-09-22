@@ -11,4 +11,15 @@ module.exports = {
         console.log(err);
       });
   },
+
+
+  loadChannels: async (req, res) => {
+    const db = req.app.get('db')
+    const { id } = req.params
+    let [channel] = await db.Channels.load_channel(id)
+    if (channel) {
+      res.status(200).send(channel)
+    } 
+    res.status(404).send('Error')
+  }
 };
