@@ -4,6 +4,7 @@ import "./reset.css";
 import routes from "./routes";
 import { useLocation } from "react-router-dom";
 import Nav from "./components/nav/Nav";
+import Footer from './components/footer/Footer'
 
 function App() {
   const {pathname} = useLocation();
@@ -11,6 +12,7 @@ function App() {
     <div className="App">
       <Nav/>
      {routes}
+     <Footer/>
     </div>
   );
 }
