@@ -38,7 +38,7 @@ app.get("/auth/user", authCtrl.getUser);
 app.post("/auth/register", authCtrl.register);
 app.post("/auth/login", authCtrl.login);
 app.delete("/auth/logout", authCtrl.logout);
-app.put("/auth/player/:id", authCtrl.edit);
+app.put("/auth/user/:id", authCtrl.edit);
 //# GENRE ENDPOINTS
 // app.get("/api/genres", genreCtrl.getGenres);
 //# REVIEW ENDPOINTS
