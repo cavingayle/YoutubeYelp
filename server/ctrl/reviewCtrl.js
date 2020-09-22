@@ -18,5 +18,14 @@ module.exports = {
         });
         console.log(err);
       });
-  },
+    },
+   
+    getRecentReviews: async (req, res) => {
+        const db = req.app.get('db')
+        const reviews = await db.Reviews.get_recent_reviews()
+        if (reviews) {
+            res.status(200).send(reviews)
+        }
+        res.status(404).send('Error')
+  }
 };
