@@ -23,7 +23,12 @@
     width: 90%;
     height: 100%;
 
-    div {
+    @media (max-width: 385px) {
+      width: 95%;
+      padding-left: 30px;
+    }
+
+    .logo {
       color: white;
       font-family: $main-font;
       font-weight: bolder;
@@ -43,6 +48,10 @@
         background-color: transparent;
         border: none;
         outline: none;
+
+        @media (max-width: 385px) {
+          font-size: 25px;
+        }
       }
 
       .dropdown-box {
@@ -59,6 +68,11 @@
         border-radius: 5px;
         transform: translateY(-10px);
         transition: all 0.4s ease;
+
+        @media (max-width: 385px) {
+          right: -19px;
+        }
+    
 
         li {
           width: 100%;
@@ -98,6 +112,24 @@
       display: inline-block;
       box-shadow: inset 0px 1px 0px 0px #ffffff;
       outline: none;
+
+      @media (max-width: 385px) {
+        width: 150px;
+      }
+    }
+
+    .phone-search {
+      display: none;
+
+      @media (max-width: 385px) {
+        padding: 6px 5px;
+        display: inline-block;
+        box-shadow: inset 0px 1px 0px 0px #f2f2f2;
+        background: linear-gradient(to bottom, #e0e0e0 5%, #c7c7c7 100%);
+        background-color: #e0e0e0;
+        border-radius: 0px 2px 2px 0px;
+        border: 1px solid darkgray;
+      }
     }
 
     .search-btn {
@@ -115,6 +147,10 @@
       padding: 4.5px 20px;
       text-decoration: none;
       outline: none;
+
+      @media (max-width: 385px) {
+        display: none;
+      }
     }
     .search-btn:hover {
       background: linear-gradient(to bottom, #c7c7c7 5%, #e0e0e0 100%);

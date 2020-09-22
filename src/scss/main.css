@@ -3,19 +3,10 @@
 }
 
 .main-login {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 375px;
   height: 700px;
 }
@@ -31,8 +22,6 @@
 }
 
 .welcome-login {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   font-size: 70px;
   color: #b70202;
@@ -40,16 +29,9 @@
 }
 
 .login-info {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
   width: 300px;
   height: 400px;
 }
@@ -62,19 +44,13 @@
   width: 300px;
   text-align: center;
   height: 30px;
-  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
-          box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
   outline: none;
 }
 
 .login-btn {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   margin-top: 10px;
 }
 
@@ -86,8 +62,7 @@
   background-color: #b70202;
   font-weight: bolder;
   border-radius: 3px;
-  -webkit-box-shadow: 0px 2px 2px #D0D0D0;
-          box-shadow: 0px 2px 2px #D0D0D0;
+  box-shadow: 0px 2px 2px #D0D0D0;
   outline: none;
 }
 
@@ -101,44 +76,32 @@
   height: 10vh;
   top: 0px;
   background: #b70202;
-  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   margin-bottom: 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .nav-main .nav-nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   padding-left: 50px;
   width: 90%;
   height: 100%;
 }
 
-.nav-main .nav-nav div {
+@media (max-width: 385px) {
+  .nav-main .nav-nav {
+    width: 95%;
+    padding-left: 30px;
+  }
+}
+
+.nav-main .nav-nav .logo {
   color: white;
   font-family: "Noto Sans", sans-serif;
   font-weight: bolder;
@@ -161,6 +124,12 @@
   outline: none;
 }
 
+@media (max-width: 385px) {
+  .nav-main .nav-nav .dropdown button {
+    font-size: 25px;
+  }
+}
+
 .nav-main .nav-nav .dropdown .dropdown-box {
   display: flex;
   flex-direction: column;
@@ -175,6 +144,12 @@
   border-radius: 5px;
   transform: translateY(-10px);
   transition: all 0.4s ease;
+}
+
+@media (max-width: 385px) {
+  .nav-main .nav-nav .dropdown .dropdown-box {
+    right: -19px;
+  }
 }
 
 .nav-main .nav-nav .dropdown .dropdown-box li {
@@ -215,10 +190,30 @@
   outline: none;
 }
 
+@media (max-width: 385px) {
+  .nav-main .nav-nav .search-input {
+    width: 150px;
+  }
+}
+
+.nav-main .nav-nav .phone-search {
+  display: none;
+}
+
+@media (max-width: 385px) {
+  .nav-main .nav-nav .phone-search {
+    padding: 6px 5px;
+    display: inline-block;
+    box-shadow: inset 0px 1px 0px 0px #f2f2f2;
+    background: linear-gradient(to bottom, #e0e0e0 5%, #c7c7c7 100%);
+    background-color: #e0e0e0;
+    border-radius: 0px 2px 2px 0px;
+    border: 1px solid darkgray;
+  }
+}
+
 .nav-main .nav-nav .search-btn {
-  -webkit-box-shadow: inset 0px 1px 0px 0px #f2f2f2;
-          box-shadow: inset 0px 1px 0px 0px #f2f2f2;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #e0e0e0), to(#c7c7c7));
+  box-shadow: inset 0px 1px 0px 0px #f2f2f2;
   background: linear-gradient(to bottom, #e0e0e0 5%, #c7c7c7 100%);
   background-color: #e0e0e0;
   border-radius: 0px 2px 2px 0px;
@@ -234,8 +229,13 @@
   outline: none;
 }
 
+@media (max-width: 385px) {
+  .nav-main .nav-nav .search-btn {
+    display: none;
+  }
+}
+
 .nav-main .nav-nav .search-btn:hover {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #c7c7c7), to(#e0e0e0));
   background: linear-gradient(to bottom, #c7c7c7 5%, #e0e0e0 100%);
   background-color: #e0e0e0;
 }
@@ -257,16 +257,9 @@
   width: 375px;
   height: 150px;
   background-color: #b70202;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .footer-body i {
@@ -282,16 +275,9 @@
 }
 
 .check-out {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 body {
