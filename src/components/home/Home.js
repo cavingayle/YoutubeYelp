@@ -11,7 +11,7 @@ function Home() {
 
   useEffect(() => {
     getRecentReviews();
-  });
+  },[]);
 
   const getRecentReviews = () => {
     axios.get("/api/recent/").then((res) => {
