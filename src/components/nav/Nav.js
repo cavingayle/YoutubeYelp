@@ -32,22 +32,22 @@ const Nav = (props) => {
           <button className="fas fa-bars hamburger" onClick={handleDropdown}></button>
           {isDown ? (
             <ul className="dropdown-box">
-              <li>
+              <li onClick={handleDropdown}>
                 <Link className="home dropdown-btn" to={"/"}>
                   Home
                 </Link>
               </li>
-              <li>
+              <li onClick={handleDropdown}>
                 <Link className="profile dropdown-btn" to={"/profile"}>
                   Profile
                 </Link>
               </li>
-              <li>
+              <li onClick={handleDropdown}>
                 <Link className="login dropdown-btn" to={"/login"}>
                   Login
                 </Link>
               </li>
-              <li>
+              <li onClick={handleDropdown}>
                 <i className="logout dropdown-btn" onClick={logout}>
                   Logout
                 </i>
