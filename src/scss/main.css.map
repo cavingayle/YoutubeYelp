@@ -1,0 +1,19 @@
+{
+    "version": 3,
+    "mappings": "AOEA,AAAA,CAAC,CAAA;EAAC,WAAW,EADD,WAAW,EAAE,UAAU;CACP;;ADA5B,AAAA,SAAS,CAAC;EACR,QAAQ,EAAE,QAAQ;EAClB,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,IAAI;EAEZ,GAAG,EAAE,GAAG;EACR,UAAU,EAAE,OAAO;EACnB,UAAU,EAAE,GAAG,CAAC,GAAG,CAAC,GAAG,CAAC,mBAAmB;EAC3C,aAAa,EAAE,IAAI;EACnB,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,GAAG;EACnB,eAAe,EAAE,YAAY;EAC7B,WAAW,EAAE,MAAM;CAcpB;;AA1BD,AAcE,SAdO,CAcP,QAAQ,CAAC;EACP,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,GAAG;EACnB,eAAe,EAAE,YAAY;EAC7B,WAAW,EAAE,MAAM;EACnB,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;CAKb;;AAzBH,AAsBI,SAtBK,CAcP,QAAQ,CAQN,GAAG,CAAA;EACC,UAAU,EAAE,KAAK;CACpB;;ACxBL,AAAA,CAAC,CAAA;EAAC,WAAW,EADD,WAAW,EAAE,UAAU;CACP;;APQ5B,AAAA,IAAI,CAAC;EACD,gBAAgB,EAAE,KAAK;EACvB,WAAW,EOXH,WAAW,EAAE,UAAU;CPYhC",
+    "sources": [
+        "main.scss",
+        "_button.scss",
+        "_channel.scss",
+        "_home.scss",
+        "_input.scss",
+        "_login.scss",
+        "_nav.scss",
+        "_variables.scss",
+        "_review.scss",
+        "_search.scss",
+        "_variables.scss"
+    ],
+    "names": [],
+    "file": "main.css"
+}
