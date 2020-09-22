@@ -7,16 +7,10 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 
 const Nav = (props) => {
-  const [dropdown, setDropdown] = useState(false);
-
-  useEffect(() => {
-    axios.get("/auth/user").then((res) => {
-      props.setUser(res.data);
-    });
-  });
+  const [isDown, setDropdown] = useState(false);
 
   const handleDropdown = () => {
-    setDropdown(!dropdown);
+    setDropdown(!isDown);
   };
 
   const logout = () => {
@@ -34,18 +28,33 @@ const Nav = (props) => {
       <nav className="nav-nav">
         <div>YoutubeYelp</div>
         <Searchbar />
-        <i className="fas fa-bars hamburger" onClick={handleDropdown}>
-          {dropdown ? (
-            <>
-              <div className="dropdown-box">
-                <Link className="home" to={"/"}>Home</Link>
-                <Link className="profile" to={"/profile"}>Profile</Link>
-                <Link className="login" to={"/login"}>Login</Link>
-                <i className="logout" onClick={logout}>Logout</i>
-              </div>
-            </>
+        <div className="dropdown">
+          <button className="fas fa-bars hamburger" onClick={handleDropdown}></button>
+          {isDown ? (
+            <ul className="dropdown-box">
+              <li>
+                <Link className="home dropdown-btn" to={"/"}>
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link className="profile dropdown-btn" to={"/profile"}>
+                  Profile
+                </Link>
+              </li>
+              <li>
+                <Link className="login dropdown-btn" to={"/login"}>
+                  Login
+                </Link>
+              </li>
+              <li>
+                <i className="logout dropdown-btn" onClick={logout}>
+                  Logout
+                </i>
+              </li>
+            </ul>
           ) : null}
-        </i>
+        </div>
       </nav>
     </div>
   );
