@@ -26,7 +26,7 @@ const Nav = (props) => {
   return (
     <div className="nav-main">
       <nav className="nav-nav">
-        <div>YoutubeYelp</div>
+        <div className="logo">Yy</div>
         <Searchbar />
         <div className="dropdown">
           <button className="fas fa-bars hamburger" onClick={handleDropdown}></button>
