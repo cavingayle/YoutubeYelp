@@ -14,7 +14,7 @@ function Home() {
   },[]);
 
   const getRecentReviews = () => {
-    axios.get("/api/recent/").then((res) => {
+    axios.get("/api/recent").then((res) => {
       setReviews(res.data);
     });
   };

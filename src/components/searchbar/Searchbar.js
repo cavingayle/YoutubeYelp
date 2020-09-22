@@ -17,9 +17,9 @@ const Searchbar = (props) => {
   };
 
   return (
-    <div>
-      <input onChange={handleInput} value={input} placeholder="Search" />
-      <button onClick={searchChannels}>Search</button>
+    <div className="search-bar">
+      <input onChange={handleInput} value={input} placeholder="Search" className="search-input"/>
+      <button onClick={searchChannels} className="search-btn">Search</button>
     </div>
   );
 };

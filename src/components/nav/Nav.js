@@ -40,7 +40,8 @@ const Nav = (props) => {
               <div className="dropdown-box">
                 <Link className="home" to={"/"}>Home</Link>
                 <Link className="profile" to={"/profile"}>Profile</Link>
-                <i onClick={logout}>Logout</i>
+                <Link className="login" to={"/login"}>Login</Link>
+                <i className="logout" onClick={logout}>Logout</i>
               </div>
             </>
           ) : null}
