@@ -1,8 +1,8 @@
 module.exports = {
   addChannel: async (req, res) => {
-    const { youtube_id, genre_id } = req.body;
+    const { youtube_id} = req.body;
     const db = req.app.get("db");
-    db.Channels.add_channel([youtube_id, genre_id])
+    db.Channels.add_channel([youtube_id])
       .then((channel) => res.status(200).send(channel))
       .catch((err) => {
         res.status(500).send({
@@ -13,14 +13,14 @@ module.exports = {
   },
 
   getChannels: async (req, res) => {
-    const { genre_id } = req.params;
+    const { genre } = req.body;
     const db = req.app.get("db");
-    const channels = await db.Channels.get_channels(genre_id);
+    const channels = await db.Channels.get_channels(genre);
     res.status(200).send(channels);
   },
   loadChannels: async (req, res) => {
     const db = req.app.get('db')
-    const { id } = req.params
+    const { id } = req.body
     let [channel] = await db.Channels.load_channel(id)
     if (channel) {
       res.status(200).send(channel)
