@@ -33,7 +33,7 @@ const Nav = (props) => {
     <div className="nav-main">
       <nav className="nav-nav">
         <i className="fab fa-youtube logo"></i>
-        <i class="fab fa-yelp yelp-logo"></i>
+        <i className="fab fa-yelp yelp-logo"></i>
         <Searchbar />
         <div className="dropdown">
           {isDown ? (
