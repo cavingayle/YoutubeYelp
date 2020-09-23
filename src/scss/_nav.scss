@@ -38,6 +38,10 @@
       left: 44px;
       padding-bottom: 10px;
       font-size: 50px;
+
+      @media (max-width: 385px){
+        left: 24px;
+      }
     }
 
     .dropdown {

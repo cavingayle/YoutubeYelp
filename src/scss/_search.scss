@@ -22,6 +22,11 @@
         height: 150px;
         width: 150px;
         border-radius: 6px;
+
+        @media (max-width: 385px){
+            height: 90px;
+            width: 90px;
+        }
       }
     }
   }
@@ -35,17 +40,36 @@
     width: 85%;
     padding-left: 40px;
 
+    @media (max-width: 385px){
+        padding-left: 20px;
+    }
+
     .search-title{
         font-size: 30px;
         font-weight: bolder;
+
+        @media (max-width: 385px){
+            font-size: 20px;
+        }
     }
 
     .react-stars{
         margin-top: -20px;
+        outline: none;
+        size: 20;
+
+        @media (max-width: 385px){
+            size: 15;
+            margin-top: -10px;
+        }
     }
 
     .search-description{
         text-align: left;
+
+        @media (max-width: 385px){
+            font-size: 14px;
+        }
     }
   }
 }

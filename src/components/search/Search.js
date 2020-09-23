@@ -5,7 +5,6 @@ import ReactStars from "react-rating-stars-component";
 const Search = (props) => {
   
   const secondExample = {
-    size: 20,
     count: 5,
     color: "gray",
     activeColor: "yellow",
@@ -26,7 +25,7 @@ const Search = (props) => {
         <div className="search-card">
           <div className="search-img-body">
             <img
-              src={channel.snippet.thumbnails.default.url}
+              src={channel.snippet.thumbnails.high.url}
               alt={channel.snippet.title}
               className="search-img"
             />
