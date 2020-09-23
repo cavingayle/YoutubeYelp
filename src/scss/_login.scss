@@ -6,7 +6,7 @@
     align-items: center;
     justify-content: center;
     width: 375px;
-    height: 700px;
+    min-height: calc(100vh - 261px);
     hr {
         display: block;
         height: 1px;
