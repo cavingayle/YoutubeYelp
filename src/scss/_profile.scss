@@ -1,8 +1,67 @@
+@import "./variables";
 .profile-main {
   min-height: calc(100vh - 261px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  h1 {
+    font-size: 50px;
+    margin: 0 5px 20px 5px;
+  }
 }
 .profile-pic {
   height: 100px;
   width: 100px;
-  border-radius: 50px;
+  border-radius: 3px;
+  box-shadow: 0px 2px 2px #00000040;
+  margin-left: 10px;
+}
+.profile-info {
+  height: 300px;
+  width: 325px;
+  border: 1px solid $gray-main;
+  border-radius: 5px;
+  box-shadow: 0px 2px 2px #00000040;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  input {
+    background-color: $gray-main;
+    margin-bottom: 10px;
+    border-width: 0px;
+    border-radius: 3px;
+    width: 150px;
+    text-align: center;
+    height: 30px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    outline: none;
+  }
+  button {
+    margin-top: 10px;
+    width: 150px;
+    height: 30px;
+    border-width: 0;
+    background-color: $red-main;
+    font-weight: bolder;
+    border-radius: 3px;
+    box-shadow: 0px 2px 2px $gray-main;
+    outline: none;
+    &:hover{
+      color:$gray-main ; 
+    }
+  }
+  h2 {
+    margin-bottom: 10px;
+    border-width: 0px;
+    border-radius: 3px;
+    width: 150px;
+    text-align: center;
+    height: 35px;
+    border: 1px solid $gray-main;
+    box-shadow: 0px 2px 2px #00000040;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+  }
 }
