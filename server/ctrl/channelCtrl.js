@@ -21,10 +21,8 @@ module.exports = {
   loadChannels: async (req, res) => {
     const db = req.app.get('db')
     const { id } = req.body
-    let [channel] = await db.Channels.load_channel(id)
-    if (channel) {
-      res.status(200).send(channel)
-    }
-    res.status(404).send('Error')
-  }
+    let channel = await db.Channels.load_channel(id)
+    res.status(200).send(channel)
+  },
+
 };
