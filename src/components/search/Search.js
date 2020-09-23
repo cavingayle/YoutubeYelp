@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import ReactStars from "react-rating-stars-component";
+import axios from 'axios'
 
 const Search = (props) => {
   
@@ -20,6 +21,13 @@ const Search = (props) => {
     }
   };
 
+  const reviewChannel = (id) => {
+    props.history.push(`/channel/${id}`)
+    axios.post('/api/channel', { id })
+      .then(res => res.data)
+    .catch(err => console.log(err));
+};
+
   return (
     <div className="search-main">
       {props.channels.map((channel) => (
@@ -38,6 +46,7 @@ const Search = (props) => {
               {channel.snippet.description}
             </div>
           </div>
+
         </div>
       ))}
     </div>
