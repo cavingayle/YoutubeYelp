@@ -138,7 +138,7 @@ const Login = (props) => {
                 setToggle(!toggle);
               }}
             >
-              Signup
+              Make an Account
             </button>
           </div>
         ) : (

@@ -71,4 +71,16 @@ module.exports = {
     req.session.user = user
     res.status(200).send(user);
   },
+  pic: async (req,res) => {
+    const {profile_pic}= req.body;
+    const {user_id} = req.session.user
+    const db = req.app.get("db");
+
+    await db.Users.edit_pic({
+      profile_pic,
+      user_id
+    })
+    req.session.user.profile_pic = profile_pic
+    res.sendStatus(200)
+  }
 };

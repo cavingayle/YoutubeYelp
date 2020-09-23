@@ -1,0 +1,47 @@
+@import "./variables";
+
+.Aws {
+  height: 300px;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.dropzone {
+  width: 75px;
+  height: 60px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-style: solid;
+  border-width: 2px;
+  border-color: $gray-main;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+.aws-text {
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+.aws-holder {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.dropImg {
+  height: 100px;
+  width: 100px;
+  margin-left: 1px;
+  border-radius: 3px;
+}
