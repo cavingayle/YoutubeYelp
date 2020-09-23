@@ -1,26 +1,33 @@
 @import "./variables";
-.footer-body{
-    width: 375px;
-    height: 125px;
-    background-color: $red-main;
-    display: flex;
-	flex-direction: column;
-    justify-content: flex-end;
-    font-family: $main-font;
-    i{
-        margin-right: 5px;
-        margin-left: 5px;
-        margin-bottom: 5px;
-        font-size: 20px;
-    }
-    h6{
-        margin-top: 1px;
-        margin-bottom: 15px;
-        font-weight: lighter;
-    }
+.footer-body {
+  width: 100vw;
+  height: 125px;
+  background-color: $red-main;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  font-family: $main-font;
+  padding-bottom: 3px;
+
+  .fa-github {
+    color: black;
+  }
+
+  i {
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    font-size: 20px;
+  }
+
+  h6 {
+    margin-top: 1px;
+    margin-bottom: 15px;
+    font-weight: lighter;
+  }
 }
-.check-out{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.check-out {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
