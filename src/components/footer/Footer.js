@@ -9,13 +9,13 @@ function Footer(props) {
       </div>
       <div>
         <h6>This website was built with:</h6>
-        <i class="fab fa-react fa-2x"></i>
-        <i class="fab fa-js fa-2x"></i>
-        <i class="fab fa-node-js fa-2x"></i>
-        <i class="fab fa-sass fa-2x"></i>
-        <i class="fab fa-css3 fa-2x"></i>
-        <i class="fab fa-html5 fa-2x"></i>
-        <i class="fab fa-aws fa-2x"></i>
+        <i className="fab fa-react fa-2x"></i>
+        <i className="fab fa-js fa-2x"></i>
+        <i className="fab fa-node-js fa-2x"></i>
+        <i className="fab fa-sass fa-2x"></i>
+        <i className="fab fa-css3 fa-2x"></i>
+        <i className="fab fa-html5 fa-2x"></i>
+        <i className="fab fa-aws fa-2x"></i>
       </div>
     </div>
   );

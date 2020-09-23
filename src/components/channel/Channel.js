@@ -14,17 +14,17 @@ function Channel(props) {
   // back end will send back the reviews and channel joined
   //
   useEffect(() => {
-    axios.get(`/api/channel/${props.location.pathname}`).then((res) => {
+    axios.get(`/api${props.location.pathname}`).then((res) => {
       setBackend(res.data);
       axios
         .get(
-          `https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${props.location.pathname}&key=AIzaSyCMLkcQ69lzKP55hhvIwPggxuODybcq6d4`
+          `https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${props.location.pathname.replace(/[/chanel]/gi, '')}&key=AIzaSyCMLkcQ69lzKP55hhvIwPggxuODybcq6d4`
         )
         .then((res) => {
           setYoutube(res.data.items);
           axios
             .get(
-              `https://www.googleapis.com/youtube/v3/search?key=AIzaSyBSb7sSbZgPd653Ny9Dmfa9UxFCJy0wOdQ&channelId=${props.location.pathname}&part=snippet,id&order=date&maxResults=10`
+              `https://www.googleapis.com/youtube/v3/search?key=AIzaSyBSb7sSbZgPd653Ny9Dmfa9UxFCJy0wOdQ&channelId=${props.location.pathname.replace(/[/chanel]/gi, '')}&part=snippet,id&order=date&maxResults=10`
             )
             .then((res) => {
               setChannelVids(res.data.items);
@@ -34,9 +34,12 @@ function Channel(props) {
   }, []);
 
 
+
+// conditionally set the reviews to render based on if we have any from the backend or show no reviews yet
+
   return (
     <div>
-      <div>{youtube.snippet.title}</div>
+      {/* <div>{youtube.snippet.title}</div>
       <div>{backend.rating}</div>
 
       <div>{youtube.snippet.description}</div>
@@ -51,7 +54,7 @@ function Channel(props) {
             </Link>
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }
