@@ -17,7 +17,7 @@ CREATE TABLE genres(
 CREATE TABLE channels(
     channel_id SERIAL PRIMARY KEY,
     youtube_id TEXT,
-    genre_id INT REFERENCES genre(genre_id)
+    genre VARCHAR(100)
 );
 
 CREATE TABLE reviews(
