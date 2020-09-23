@@ -90,10 +90,10 @@ function Profile(props) {
         {!editToggle ? (
           <div>
             <div>
-              <h2>Username: {username}</h2>
-              <h2>Email: {email}</h2>
-              <h2>First: {firstName}</h2>
-              <h2>Last: {lastName}</h2>
+              <h5>Username: {username}</h5>
+              <h5>Email: {email}</h5>
+              <h5>First: {firstName}</h5>
+              <h5>Last: {lastName}</h5>
               <button onClick={() => setEditToggle(!editToggle)}>
                 Edit Profile
               </button>
