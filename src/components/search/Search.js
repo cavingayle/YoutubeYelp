@@ -5,6 +5,7 @@ import axios from 'axios'
 
 const Search = (props) => {
   
+  
   const secondExample = {
     count: 5,
     color: "gray",
@@ -30,7 +31,7 @@ const Search = (props) => {
   return (
     <div className="search-main">
       {props.channels.map((channel) => (
-        <div className="search-card">
+        <div className="search-card" onClick={(id) => {reviewChannel(channel.snippet.channelId)}}>
           <div className="search-img-body">
             <img
               src={channel.snippet.thumbnails.high.url}
