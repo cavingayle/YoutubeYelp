@@ -49,8 +49,8 @@ function Profile(props) {
       .then((res) => {
         props.setUser(res.data);
         console.log("Hit");
-        setEditToggle(!editToggle);
         getUser();
+        setEditToggle(!editToggle);
       })
       .catch((err) => {
         console.log(err);
@@ -73,18 +73,22 @@ function Profile(props) {
 
   return (
     <div className="profile-main">
-      <div>
+        <h1> {firstName} {lastName}'s Profile</h1>
+      <div className="profile-info">
+        <div className = "pro-pic-holder">
+          <img alt="Profile Pic" className="profile-pic" src={profilePic} />
+        </div>
         {!editToggle ? (
           <div>
-            <h1>Profile page</h1>
-            <h1>Username: {username}</h1>
-            <h1>Email: {email}</h1>
-            <h1>First name: {firstName}</h1>
-            <h1>Last Name: {lastName}</h1>
-              <img alt="Profile Pic" className="profile-pic" src={profilePic} />
-            <button onClick={() => setEditToggle(!editToggle)}>
-              Edit Profile
-            </button>
+            <div>
+              <h2>Username: {username}</h2>
+              <h2>Email: {email}</h2>
+              <h2>First: {firstName}</h2>
+              <h2>Last: {lastName}</h2>
+              <button onClick={() => setEditToggle(!editToggle)}>
+                Edit Profile
+              </button>
+            </div>
           </div>
         ) : (
           <div>
