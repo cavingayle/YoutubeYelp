@@ -16,8 +16,8 @@ useEffect(() => {
 
     return (
       <div>
-            <div className='title'>{data.items.snippet.title}</div>
-        <div className='image'><img src={data.items.snippet.thumbnails.default.url} alt={data.items.snippet.title}/></div>
+            {/* <div className='title'>{data.items.snippet.title}</div>
+        <div className='image'><img src={data.items.snippet.thumbnails.default.url} alt={data.items.snippet.title}/></div> */}
         </div>
     )
 }

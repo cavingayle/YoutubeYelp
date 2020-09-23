@@ -19,7 +19,7 @@
     justify-content: space-between;
     align-items: center;
     padding-left: 50px;
-    width: 90%;
+    width: 95%;
     height: 100%;
 
     @media (max-width: 385px) {
@@ -35,7 +35,7 @@
     }
     .yelp-logo{
       position: absolute;
-      left: 25px;
+      left: 44px;
       padding-bottom: 10px;
       font-size: 50px;
     }
@@ -54,6 +54,14 @@
         border: none;
         outline: none;
 
+        &:hover{
+          color: rgb(209, 209, 209);
+        }
+
+        &:active{
+          top: 1px;
+        }
+
         @media (max-width: 385px) {
           font-size: 25px;
         }
@@ -63,19 +71,25 @@
         display: flex;
         flex-direction: column;
         background-color: white;
-        height: 142px;
-        width: 75px;
+        height: 150px;
+        width: 100px;
         position: absolute;
         align-items: center;
-        margin-top: 50px;
+        margin-top: 62px;
         list-style: none;
         border: 1px solid darkgray;
         border-radius: 5px;
         transform: translateY(-10px);
         transition: all 0.4s ease;
+        right: -15px;
+
+        &:active{
+          transform: translateY(0px);
+        }
 
         @media (max-width: 385px) {
           right: -19px;
+          width: 75px;
         }
     
 
@@ -84,6 +98,7 @@
           height: 100%;
           display: flex;
           justify-content: center;
+          font-family: $main-font;
           align-items: center;
 
           .logout {

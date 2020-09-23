@@ -13,14 +13,13 @@ function Profile(props) {
   const [infoToggle, setInfoToggle] = useState(false);
 
   useEffect(() => {
-      getUser()
+    getUser();
     // setUsername(props.username);
     // setEmail(props.email);
     // setFirstName(props.first_name);
     // setLastName(props.last_name);
     // setProfilePic(props.profile_pic);
   }, []);
-
 
   const handleUsernameInput = (e) => {
     setUsername(e.target.value);
@@ -49,7 +48,7 @@ function Profile(props) {
       })
       .then((res) => {
         props.setUser(res.data);
-        console.log("Hit")
+        console.log("Hit");
         setEditToggle(!editToggle);
         getUser();
       })
@@ -82,7 +81,7 @@ function Profile(props) {
             <h1>Email: {email}</h1>
             <h1>First name: {firstName}</h1>
             <h1>Last Name: {lastName}</h1>
-            <img alt="Profile Pic" src={profilePic} />
+              <img alt="Profile Pic" className="profile-pic" src={profilePic} />
             <button onClick={() => setEditToggle(!editToggle)}>
               Edit Profile
             </button>

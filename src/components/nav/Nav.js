@@ -11,6 +11,12 @@ const Nav = (props) => {
 
   const handleDropdown = () => {
     setDropdown(!isDown);
+    document.addEventListener("click", closeMenu);
+  };
+
+  const closeMenu = () => {
+    setDropdown(false);
+    document.removeEventListener("click", closeMenu);
   };
 
   const logout = () => {
@@ -26,11 +32,18 @@ const Nav = (props) => {
   return (
     <div className="nav-main">
       <nav className="nav-nav">
-      <i className="fab fa-youtube logo"></i>
-      <i class="fab fa-yelp yelp-logo"></i>
+        <i className="fab fa-youtube logo"></i>
+        <i class="fab fa-yelp yelp-logo"></i>
         <Searchbar />
         <div className="dropdown">
-          <button className="fas fa-bars hamburger" onClick={handleDropdown}></button>
+          {isDown ? (
+            <button className="fas fa-times" onClick={handleDropdown}></button>
+          ) : (
+            <button
+              className="fas fa-bars hamburger"
+              onClick={handleDropdown}
+            ></button>
+          )}
           {isDown ? (
             <ul className="dropdown-box">
               <li onClick={handleDropdown}>
