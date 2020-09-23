@@ -25,7 +25,9 @@ module.exports = {
         const reviews = await db.Reviews.get_recent_reviews()
         if (reviews) {
             res.status(200).send(reviews)
+        } else {
+          res.status(404).send('Error')
         }
-        res.status(404).send('Error')
+        
   }
 };
