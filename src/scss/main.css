@@ -279,6 +279,54 @@
 
 .search-main {
   padding-bottom: 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.search-main .search-card {
+  height: 200px;
+  width: 85vw;
+  border-bottom: solid lightgray;
+  margin-bottom: 20px;
+  font-family: "Noto Sans", sans-serif;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.search-main .search-card .search-img-body {
+  position: relative;
+}
+
+.search-main .search-card .search-img-body .search-img {
+  height: 150px;
+  width: 150px;
+  border-radius: 6px;
+}
+
+.search-main .search-info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  height: 100%;
+  width: 85%;
+  padding-left: 40px;
+}
+
+.search-main .search-info-container .search-title {
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+.search-main .search-info-container .react-stars {
+  margin-top: -20px;
+}
+
+.search-main .search-info-container .search-description {
+  text-align: left;
 }
 
 * {

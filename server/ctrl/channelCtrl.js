@@ -13,9 +13,9 @@ module.exports = {
   },
 
   getChannels: async (req, res) => {
-    const { genre_id } = req.params;
+    const { genre } = req.body;
     const db = req.app.get("db");
-    const channels = await db.Channels.get_channels(genre_id);
+    const channels = await db.Channels.get_channels(genre);
     res.status(200).send(channels);
   },
   loadChannels: async (req, res) => {
