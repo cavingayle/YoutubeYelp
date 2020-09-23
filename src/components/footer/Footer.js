@@ -4,7 +4,7 @@ function Footer(props) {
   return (
     <div className="footer-body">
       <div className='check-out'>
-        <h1>Check out our code here!</h1>
+        <h5>Check out our code here!</h5>
        <a href='https://github.com/cavingayle/youtubeyelp'> <i className="fab fa-github fa-2x"></i></a>
       </div>
       <div>
