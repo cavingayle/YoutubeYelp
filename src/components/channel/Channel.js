@@ -18,13 +18,13 @@ function Channel(props) {
       setBackend(res.data);
       axios
         .get(
-          `https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${props.location.pathname.replace(/[/chanel]/gi, '')}&key=AIzaSyCMLkcQ69lzKP55hhvIwPggxuODybcq6d4`
+          `https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${props.location.pathname.substring(9)}&key=AIzaSyCMLkcQ69lzKP55hhvIwPggxuODybcq6d4`
         )
         .then((res) => {
           setYoutube(res.data.items);
           axios
             .get(
-              `https://www.googleapis.com/youtube/v3/search?key=AIzaSyBSb7sSbZgPd653Ny9Dmfa9UxFCJy0wOdQ&channelId=${props.location.pathname.replace(/[/chanel]/gi, '')}&part=snippet,id&order=date&maxResults=10`
+              `https://www.googleapis.com/youtube/v3/search?key=AIzaSyBSb7sSbZgPd653Ny9Dmfa9UxFCJy0wOdQ&channelId=${props.location.pathname.substring(9)}&part=snippet,id&order=date&maxResults=10`
             )
             .then((res) => {
               setChannelVids(res.data.items);
