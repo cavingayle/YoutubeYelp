@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { connect } from "react-redux";
 import { setUser } from "../../redux/reducer";
+import Aws from "../aws/Aws";
 
 function Profile(props) {
   const [username, setUsername] = useState("");
@@ -73,11 +74,19 @@ function Profile(props) {
 
   return (
     <div className="profile-main">
-        <h1> {firstName} {lastName}'s Profile</h1>
+      <h1>
+        {firstName} {lastName}'s Profile
+      </h1>
       <div className="profile-info">
-        <div className = "pro-pic-holder">
-          <img alt="Profile Pic" className="profile-pic" src={profilePic} />
-        </div>
+        {!editToggle ? (
+          <div className="pro-pic-holder">
+            <img alt="Profile Pic" className="profile-pic" src={profilePic} />
+          </div>
+        ) : (
+          <div>
+            <Aws setPic={setProfilePic} profilePic={profilePic} />
+          </div>
+        )}
         {!editToggle ? (
           <div>
             <div>
