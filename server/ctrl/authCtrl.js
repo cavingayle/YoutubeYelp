@@ -19,6 +19,7 @@ module.exports = {
   },
   register: async (req, res) => {
     const db = req.app.get("db");
+    const transporter = req.app.get("transporter");
     const {
       username,
       email,
@@ -41,6 +42,22 @@ module.exports = {
       last_name,
       profile_pic,
     ]);
+
+    const mailOptions = {
+      from: "ryan.test245@gmail.com",
+      to: email,
+      subject: "Welcome to YouTube Yelp",
+      text: `Hi ${first_name}!, Thank you so much for making an account with us! Here is your information! First Name: ${first_name} Last Name: ${last_name} Username: ${username}`,
+      html: `<b>Hi ${first_name}! </b><br> Thank you so much for making an account with us! Here is your information! </b><br> First Name: ${first_name} </b><br> Last Name: ${last_name} </b><br> Username: ${username} </b>`,
+    };
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        return console.log(error);
+      }
+      console.log("Email sent successfully!");
+    });
+
+
     req.session.user = newUser[0];
     res.status(200).send(req.session.user);
   },

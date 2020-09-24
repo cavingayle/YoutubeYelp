@@ -3,15 +3,24 @@ const express = require("express");
 const session = require("express-session");
 const app = express();
 const massive = require("massive");
+const nodemailer = require('nodemailer')
 const authCtrl = require("./ctrl/authCtrl");
 const channelCtrl = require("./ctrl/channelCtrl");
 const reviewCtrl = require("./ctrl/reviewCtrl");
 const S3Ctrl = require('./ctrl/S3Ctrl')
-const genreCtrl = require("./ctrl/genreCtrl");
 
-const { SESSION_SECRET, CONNECTION_STRING, SERVER_PORT } = process.env;
+
+const { SESSION_SECRET, CONNECTION_STRING, SERVER_PORT, PASSWORD, EMAIL } = process.env;
 
 app.use(express.json());
+
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+         user: EMAIL,
+         pass: PASSWORD
+     }
+ });
 
 massive({
   connectionString: CONNECTION_STRING,
@@ -19,6 +28,7 @@ massive({
 })
   .then((db) => {
     app.set("db", db);
+    app.set("transporter", transporter)
     console.log("db connected");
   })
   .catch((err) => console.log(err));
