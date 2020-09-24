@@ -24,9 +24,9 @@
         width: 150px;
         border-radius: 6px;
 
-        @media (max-width: 385px){
-            height: 90px;
-            width: 90px;
+        @media (max-width: 385px) {
+          height: 90px;
+          width: 90px;
         }
       }
     }
@@ -41,39 +41,69 @@
     width: 85%;
     padding-left: 40px;
 
-    @media (max-width: 385px){
-        padding-left: 20px;
+    @media (max-width: 385px) {
+      padding-left: 20px;
     }
 
-    .search-title{
-        font-size: 30px;
-        font-weight: bolder;
-        cursor: pointer;
+    .search-title {
+      font-size: 30px;
+      font-weight: bolder;
+      cursor: pointer;
 
-        @media (max-width: 385px){
-            font-size: 20px;
-        }
+      @media (max-width: 385px) {
+        font-size: 20px;
+      }
     }
 
-    .react-stars{
-        margin-top: -20px;
-        outline: none;
-        size: 20;
-        cursor: pointer;
+    .react-stars {
+      margin-top: -20px;
+      outline: none;
+      size: 20;
+      cursor: pointer;
 
-        @media (max-width: 385px){
-            size: 15;
-            margin-top: -10px;
-        }
+      @media (max-width: 385px) {
+        size: 15;
+        margin-top: -10px;
+      }
     }
 
-    .search-description{
-        text-align: left;
-        cursor: pointer;
+    .search-description {
+      text-align: left;
+      cursor: pointer;
 
-        @media (max-width: 385px){
-            font-size: 14px;
-        }
+      @media (max-width: 385px) {
+        font-size: 14px;
+      }
     }
+  }
+}
+
+.page-link {
+  cursor: pointer;
+}
+
+.pagination > li > a:hover {
+  color: #5a5a5a;
+  background-color: #eee;
+  border-color: #ddd;
+}
+
+.pagination > .active > a:hover {
+  background-color: $red-main;
+  border: solid 1px $red-main;
+}
+
+.pagination > li > a {
+  color: black;
+}
+
+.pagination > .page-item.active > .page-link {
+  z-index: 1;
+  color: #fff;
+  background-color: $red-main; //your color
+  border-color: $red-main; //your color
+
+  &:hover{
+    filter: brightness(1.2);
   }
 }

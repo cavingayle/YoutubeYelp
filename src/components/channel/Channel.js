@@ -48,29 +48,37 @@ function Channel(props) {
   }
 
   return (
-    <div>
-      <div>
-        {" "}
-        <img src={youtube.snippet.thumbnails.high.url} alt="" />{" "}
+    <div className="channel-main">
+      <div className="channel-header">
+        <div className="channel-pic">
+          {" "}
+          <img src={youtube.snippet.thumbnails.high.url} alt="" />{" "}
+        </div>
+        <div className="channel-info">
+          <div className="channel-title">{youtube.snippet.title}</div>
+          <div className="channel-rating">
+            Rating {backend.rating}
+            <ReactStars {...secondExample} />
+          </div>
+          <div className="channel-description">
+            {youtube.snippet.description === ""
+              ? "No Description"
+              : youtube.snippet.description}
+          </div>
+        </div>
       </div>
-      <div>{youtube.snippet.title}</div>
-          <div>Rating {backend.rating}<ReactStars {...secondExample}/></div>
+      <div className="channel-reviews">{backend.review}</div>
       <div>
-        {youtube.snippet.description === ""
-          ? "No Description"
-          : youtube.snippet.description}
-      </div>
-      <div>{backend.review}</div>
-      <div>Videos</div>
-      <div>
-        <Link to={`/review/${id}`}>
+        <Link className="single-review" to={`/review/${id}`}>
           <button>reviews</button>
         </Link>
       </div>
-      <div>
+      <div className="channel-videos-title">Videos</div>
+      <div className="videos-main">
         {channelVids.map((vid) => (
-          <div>
+          <div className="video-card">
             <img
+              className="video-pic"
               src={vid.snippet.thumbnails.default.url}
               alt={vid.snippet.title}
             />
@@ -98,3 +106,4 @@ const secondExample = {
       console.log(`Example 2: new value is ${newValue}`);
     },
   };
+

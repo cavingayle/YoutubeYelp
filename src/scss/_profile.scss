@@ -1,10 +1,11 @@
 @import "./variables";
 .profile-main {
-  min-height: calc(100vh - 256px);
+  min-height: calc(100vh - 235px);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  
   h1 {
     font-size: 50px;
     margin: 0 5px 20px 5px;

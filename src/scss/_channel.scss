@@ -1,0 +1,41 @@
+@import "./variables";
+
+.channel-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+
+    .channel-header {
+        border-radius: 6px;
+        width: 100vw;
+        background-color: $gray-main;
+        height: 400px;
+        margin-bottom: 50px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-top: -30px;
+
+        .channel-info {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-direction: column;
+            font-family: $main-font;
+            position: relative;
+
+            .channel-title {
+                position: absolute;
+                top: 10px;
+                font-size: 30px;
+            }
+        }
+
+        img {
+            height: 400px;
+            width: auto;
+            position: relative;
+        }
+    }
+}
