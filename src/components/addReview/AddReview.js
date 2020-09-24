@@ -19,7 +19,8 @@ function AddReview(props) {
 
   const id = props.location.pathname.substring(9);
 
-  useEffect(() => {
+    useEffect(() => {
+      props.userId === 0 && props.history.push('/login')
     axios.get(`api/reviews/${id}`).then((res) => {
       setReviews(res.data);
       axios.get(`/api/ratings/${id}`).then((res) => {
@@ -64,6 +65,7 @@ function AddReview(props) {
   console.log("REVIEWS", reviews);
   console.log("RATING", rating);
   console.log("REVIEWDATA", reviewData);
+  console.log("UserId", props.userId);
 
   if (loading === true) {
     return (
