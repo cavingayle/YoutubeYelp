@@ -28,5 +28,12 @@ module.exports = {
           res.status(404).send('Error')
         }
         
-  }
+  },
+    
+  updateRatings: async (req, res) => {
+    const db = req.app.get('db')
+    
+    const ratings = await db.Reviews.update_rating([rating, channelId])
+
+    }
 };

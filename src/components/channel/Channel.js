@@ -87,7 +87,7 @@ const secondExample = {
     count: 5,
     color: "gray",
     activeColor: "yellow",
-    isSelectable: false,
+    edit: false,
     value: 0,
     a11y: true,
     isHalf: true,
