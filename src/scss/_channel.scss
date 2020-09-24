@@ -1,41 +1,100 @@
 @import "./variables";
 
 .channel-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+
+  .channel-header {
+    border-radius: 6px;
+    width: 100vw;
+    background-color: $gray-main;
+    height: 400px;
+    margin-bottom: 50px;
     display: flex;
+    flex-direction: row;
+    justify-content: baseline;
+    margin-top: -30px;
+    align-items: center;
+
+    .channel-info {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      font-family: $main-font;
+      position: relative;
+      height: 90%;
+      border: solid slategrey;
+      background-color: white;
+      width: 400px;
+      border-radius: 6px;
+      box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+        0 12.3px 7.9px rgba(0, 0, 0, 0.072), 0 8.8px 10.4px rgba(0, 0, 0, 0.086);
+      border: 1px solid darkgray;
+
+      .channel-title {
+        position: relative;
+        font-size: 30px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-weight: bolder;
+      }
+
+      .channel-rating {
+        margin-bottom: 20px;
+      }
+
+      .channel-description {
+        padding: 5px 40px 0px 40px;
+        height: 50%;
+      }
+    }
+
+    img {
+      height: 400px;
+      width: auto;
+      margin-right: 20px;
+    }
+  }
+
+  .video-card {
+    height: 280px;
+    width: 85vw;
+    border-bottom: solid lightgray;
+    margin-bottom: 50px;
+    font-family: $main-font;
+    display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    flex-direction: column;
+    position: relative;
 
-    .channel-header {
-        border-radius: 6px;
-        width: 100vw;
-        background-color: $gray-main;
-        height: 400px;
-        margin-bottom: 50px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        margin-top: -30px;
-
-        .channel-info {
-            display: flex;
-            align-items: center;
-            justify-content: space-evenly;
-            flex-direction: column;
-            font-family: $main-font;
-            position: relative;
-
-            .channel-title {
-                position: absolute;
-                top: 10px;
-                font-size: 30px;
-            }
-        }
-
-        img {
-            height: 400px;
-            width: auto;
-            position: relative;
-        }
+    img {
+      border-radius: 6px;
+      height: 250px;
+      width: auto;
     }
+
+    .video-info {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-evenly;
+      height: 100%;
+      width: 85%;
+      padding-left: 40px;
+
+      h2 {
+        margin: 0 auto;
+        font-weight: bolder;
+      }
+
+      h4 {
+          align-content: left;
+      }
+    }
+  }
 }
