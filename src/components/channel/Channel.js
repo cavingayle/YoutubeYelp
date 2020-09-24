@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import ReactStars from "react-rating-stars-component";
 import Spinner from "./Spinner";
 
 function Channel(props) {
@@ -53,7 +54,7 @@ function Channel(props) {
         <img src={youtube.snippet.thumbnails.high.url} alt="" />{" "}
       </div>
       <div>{youtube.snippet.title}</div>
-      <div>Rating {backend.rating}</div>
+          <div>Rating {backend.rating}<ReactStars {...secondExample}/></div>
       <div>
         {youtube.snippet.description === ""
           ? "No Description"
@@ -81,3 +82,19 @@ function Channel(props) {
 }
 
 export default Channel;
+
+const secondExample = {
+    count: 5,
+    color: "gray",
+    activeColor: "yellow",
+    isSelectable: false,
+    value: 0,
+    a11y: true,
+    isHalf: true,
+    emptyIcon: <i className="far fa-star" />,
+    halfIcon: <i className="fa fa-star-half-alt" />,
+    filledIcon: <i className="fa fa-star" />,
+    onChange: (newValue) => {
+      console.log(`Example 2: new value is ${newValue}`);
+    },
+  };
