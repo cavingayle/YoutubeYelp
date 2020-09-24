@@ -32,12 +32,14 @@ const Nav = (props) => {
   return (
     <div className="nav-main">
       <nav className="nav-nav">
-        <i className="fab fa-youtube logo"></i>
-        <i className="fab fa-yelp yelp-logo"></i>
+        <Link to="/">
+          <i className="fab fa-youtube logo"></i>
+          <i className="fab fa-yelp yelp-logo"></i>
+        </Link>
         <Searchbar />
         <div className="dropdown">
           {isDown ? (
-            <button className="fas fa-times" onClick={handleDropdown}></button>
+            <button className="fas fa-times" onClick={closeMenu}></button>
           ) : (
             <button
               className="fas fa-bars hamburger"
