@@ -60,6 +60,8 @@ app.get("/api/recent", reviewCtrl.getRecentReviews);
 //# CHANNEL ENDPOINTS
 app.post("/api/channel/:id", channelCtrl.addChannel);
 app.get("/api/channel/:id", channelCtrl.loadChannels);
+app.get("/api/recent", reviewCtrl.getRecentReviews);
+app.get("/api/ratings/:id", reviewCtrl.getAvgRating);
 
 //# AWS S3 ENDPOINTS
 app.get('/api/signs3', S3Ctrl.sign_s3);
