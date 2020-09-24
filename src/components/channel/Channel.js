@@ -5,6 +5,7 @@ import ReactStars from "react-rating-stars-component";
 import Spinner from "./Spinner";
 import Video from "./Video";
 
+
 function Channel(props) {
   const [backend, setBackend] = useState([]);
   const [channelVids, setChannelVids] = useState();
