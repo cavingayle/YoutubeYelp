@@ -2,6 +2,50 @@
   font-family: "Noto Sans", sans-serif;
 }
 
+.channel-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.channel-main .channel-header {
+  border-radius: 6px;
+  width: 100vw;
+  background-color: #D0D0D0;
+  height: 400px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: -30px;
+}
+
+.channel-main .channel-header .channel-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  font-family: "Noto Sans", sans-serif;
+  position: relative;
+}
+
+.channel-main .channel-header .channel-info .channel-title {
+  position: absolute;
+  top: 10px;
+  font-size: 30px;
+}
+
+.channel-main .channel-header img {
+  height: 400px;
+  width: auto;
+  position: relative;
+}
+
+* {
+  font-family: "Noto Sans", sans-serif;
+}
+
 .main-login {
   display: flex;
   flex-direction: column;
