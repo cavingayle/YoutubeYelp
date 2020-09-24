@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import ReactStars from "react-rating-stars-component";
+
 
 function AddReview(props) {
 
@@ -20,13 +22,13 @@ function AddReview(props) {
     },[])
 
     const submitReview = () => {
-        axios.post()
+        axios.post('')
     }
 
     return (
         <div>
         <div>Review Title</div>
-        <div>Rating</div>
+            <div><ReactStars {...secondExample}/></div>
             <div>
                 <textarea name="" id="" cols="30" rows="10"></textarea>
             </div>
@@ -51,6 +53,7 @@ const secondExample = {
     halfIcon: <i className="fa fa-star-half-alt" />,
     filledIcon: <i className="fa fa-star" />,
     onChange: (newValue) => {
+        axios.put()
       console.log(`Example 2: new value is ${newValue}`);
     },
   };

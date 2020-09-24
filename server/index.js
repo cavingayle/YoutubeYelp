@@ -48,7 +48,7 @@ app.post("/api/review/:id", reviewCtrl.addReview);
 app.get("/api/recent", reviewCtrl.getRecentReviews);
 
 //# CHANNEL ENDPOINTS
-app.post("/api/channel", channelCtrl.addChannel);
+app.post("/api/channel/:id", channelCtrl.addChannel);
 app.get("/api/channel/:id", channelCtrl.loadChannels);
 
 //# AWS S3 ENDPOINTS

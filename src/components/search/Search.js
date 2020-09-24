@@ -41,7 +41,7 @@ const Search = (props) => {
   const reviewChannel = (id) => {
     props.history.push(`/channel/${id}`);
     axios
-      .post("/api/channel", { id })
+      .post(`/api/channel/${ id }`)
       .then((res) => res.data)
       .catch((err) => console.log(err));
   };
