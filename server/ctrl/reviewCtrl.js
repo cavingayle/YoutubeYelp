@@ -1,8 +1,8 @@
 module.exports = {
   getReviews: async (req, res) => {
-    const { channel_id } = req.params;
+    const { id } = req.params;
     const db = req.app.get("db");
-    const reviews = await db.Reviews.get_review(channel_id);
+    const reviews = await db.Reviews.get_review(id);
     res.status(200).send(reviews);
   },
 
@@ -10,14 +10,13 @@ module.exports = {
     const { rating, title, review, user_id } = req.body;
     const { channel_id } = req.params;
     const db = req.app.get("db");
-    db.Reviews.add_review([rating, title, review, channel_id, user_id])
-      .then((reviews) => res.status(200).send(reviews))
-      .catch((err) => {
-        res.status(500).send({
-          errorMessage: "Oops! Something Went Wrong.",
-        });
-        console.log(err);
-      });
+    const reviews = await db.Reviews.add_review([rating, title, review, channel_id, user_id])
+    if (reviews) {
+      res.status(200).send(reviews)
+    } else {
+      res.status(500).send('Oops')
+    }
+    
     },
    
     getRecentReviews: async (req, res) => {
