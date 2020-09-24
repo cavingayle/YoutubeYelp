@@ -446,6 +446,36 @@
   }
 }
 
+.page-link {
+  cursor: pointer;
+}
+
+.pagination > li > a:hover {
+  color: #5a5a5a;
+  background-color: #eee;
+  border-color: #ddd;
+}
+
+.pagination > .active > a:hover {
+  background-color: #b70202;
+  border: solid 1px #b70202;
+}
+
+.pagination > li > a {
+  color: black;
+}
+
+.pagination > .page-item.active > .page-link {
+  z-index: 1;
+  color: #fff;
+  background-color: #b70202;
+  border-color: #b70202;
+}
+
+.pagination > .page-item.active > .page-link:hover {
+  filter: brightness(1.2);
+}
+
 * {
   font-family: "Noto Sans", sans-serif;
 }
