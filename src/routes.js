@@ -14,7 +14,7 @@ export default (
     <Route path="/login" component={Login} />
     <Route path="/profile" component={Profile} />
     <Route path="/search" component={Search} />
-    <Route path="/addReview" component={AddReview} />
+    <Route path="/review/:id" component={AddReview} />
     <Route path="/channel/:id" component={Channel} />
   </Switch>
 );
