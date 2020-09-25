@@ -114,10 +114,10 @@ function Channel(props) {
               : youtube.snippet.description}
           </div>
         </div>
-        <div>
+        <div className="review-cards">
           {backend.map((review) => (
             <div className="review-card" key={review.review_id}>
-              <h4 className="review-title">{review.title}</h4>
+              <div className="review-title">{review.review_title}</div>
               <ReactStars
                 count={5}
                 color={"gray"}
@@ -130,7 +130,7 @@ function Channel(props) {
                 halfIcon={<i className="fa fa-star-half-alt" />}
                 filledIcon={<i className="fa fa-star" />}
               />
-              <h6 className="review-description">{review.review}</h6>
+              <div className="review-description">{review.review}</div>
             </div>
           ))}
         </div>

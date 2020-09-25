@@ -4,18 +4,9 @@
 
 .channel-main {
   display: flex;
-
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
   position: relative;
 }
 
@@ -30,11 +21,7 @@
   flex-direction: row;
   justify-content: baseline;
   margin-top: -30px;
-
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-
+  align-items: center;
   z-index: 1;
 }
 
@@ -48,10 +35,12 @@
   height: 90%;
   border: solid slategrey;
   background-color: white;
-  width: 400px;
+  width: 650px;
   border-radius: 6px;
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 12.3px 7.9px rgba(0, 0, 0, 0.072), 0 8.8px 10.4px rgba(0, 0, 0, 0.086);
-  border: 1px solid darkgray;
+  border: 1px solid #cecece;
+  margin-right: 20px;
+  padding: 2px;
 }
 
 .channel-main .channel-header .channel-info .channel-title {
@@ -152,15 +141,9 @@
 .ui {
   position: relative;
   z-index: 5;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .ui iframe {
@@ -168,9 +151,37 @@
   margin-top: 250px;
   height: 70%;
   width: 70%;
-  -webkit-transform: translateX(-50%, -50%);
-          transform: translateX(-50%, -50%);
+  transform: translateX(-50%, -50%);
+  box-shadow: 0px 0px 80px 500px rgba(31, 31, 31, 0.8);
+}
 
+.review-cards {
+  display: flex;
+  align-items: baseline;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-family: "Noto Sans", sans-serif;
+  position: relative;
+}
+
+.review-cards .review-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  background-color: white;
+  height: 150px;
+  width: 350px;
+  margin: 5px;
+  border-radius: 6px;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 12.3px 7.9px rgba(0, 0, 0, 0.072), 0 8.8px 10.4px rgba(0, 0, 0, 0.086);
+  border: 1px solid #cecece;
+  padding: 2px;
+}
+
+.review-cards .review-card .review-title {
+  font-weight: bolder;
+  font-size: 15px;
 }
 
 * {
@@ -588,19 +599,10 @@
 
 .mappedReviews {
   width: 375px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 25px;
 }
 
@@ -612,8 +614,7 @@
   width: 325px;
   margin: 5px 0px;
   border-radius: 3px;
-  -webkit-box-shadow: 1px 1px 1px 1px #00000040;
-          box-shadow: 1px 1px 1px 1px #00000040;
+  box-shadow: 1px 1px 1px 1px #00000040;
 }
 
 .mappedReviews .pro-review-holder .pro-review {
