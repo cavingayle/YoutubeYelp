@@ -77,23 +77,30 @@ function Profile(props) {
       <h1>
         {firstName} {lastName}'s Profile
       </h1>
+      <hr />
       <div className="profile-info">
-        {!editToggle ? (
-          <div className="pro-pic-holder">
-            <img alt="Profile Pic" className="profile-pic" src={profilePic} />
-          </div>
-        ) : (
-          <div>
-            <Aws setPic={setProfilePic} profilePic={profilePic} />
-          </div>
-        )}
+        <div className="pro-pic-holder">
+          {!editToggle ? (
+            <div>
+              <img alt="Profile Pic" className="profile-pic" src={profilePic} />
+            </div>
+          ) : (
+            <div className="aws-holder">
+              <Aws setPic={setProfilePic} profilePic={profilePic} />
+            </div>
+          )}
+        </div>
         {!editToggle ? (
           <div>
             <div>
-              <h5>Username: {username}</h5>
-              <h5>Email: {email}</h5>
-              <h5>First: {firstName}</h5>
-              <h5>Last: {lastName}</h5>
+              <div className="pro-name-holder">
+                <h5 className="profile-name">First: {firstName}</h5>
+                <h5 className="profile-name">Last: {lastName}</h5>
+              </div>
+              <div className="pro-info-holder">
+                <h5>Username: {username}</h5>
+                <h5>Email: {email}</h5>
+              </div>
               <button onClick={() => setEditToggle(!editToggle)}>
                 Edit Profile
               </button>
@@ -101,35 +108,42 @@ function Profile(props) {
           </div>
         ) : (
           <div>
-            <input
-              name="username"
-              placeholder="Username..."
-              value={username}
-              onChange={handleUsernameInput}
-            />
-            <input
-              name="email"
-              placeholder="Email..."
-              value={email}
-              onChange={handleEmailInput}
-            />
-            <input
-              name="firstName"
-              placeholder="First Name..."
-              value={firstName}
-              onChange={handleFirstNameInput}
-            />
-            <input
-              name="lastName"
-              placeholder="Last Name..."
-              value={lastName}
-              onChange={handleLastNameInput}
-            />
+            <div className="pro-name-input-holder">
+              <input
+                name="firstName"
+                placeholder="First Name..."
+                value={firstName}
+                onChange={handleFirstNameInput}
+                className="pro-name-input"
+              />
+              <input
+                name="lastName"
+                placeholder="Last Name..."
+                value={lastName}
+                onChange={handleLastNameInput}
+                className="pro-name-input"
+              />
+            </div>
+            <div>
+              <input
+                name="username"
+                placeholder="Username..."
+                value={username}
+                onChange={handleUsernameInput}
+              />
+              <input
+                name="email"
+                placeholder="Email..."
+                value={email}
+                onChange={handleEmailInput}
+              />
+            </div>
             <input
               name="profilePic"
               placeholder="Profile Pic URL..."
               value={profilePic}
               onChange={handleProfilePicInput}
+              className="profile-pic-input"
             />
             <div>
               <button
@@ -153,6 +167,7 @@ function Profile(props) {
           </div>
         )}
       </div>
+      <hr />
     </div>
   );
 }

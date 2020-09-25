@@ -1,8 +1,8 @@
 @import "./variables";
 
 .Aws {
-  height: 300px;
-  width: 150px;
+  height: 115px;
+  width: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,16 +32,9 @@
   margin-bottom: 5px;
   margin-top: 5px;
 }
-.aws-holder {
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
+
 .dropImg {
-  height: 100px;
-  width: 100px;
-  margin-left: 1px;
+  height: 75px;
+  width: 75px;
   border-radius: 3px;
 }
