@@ -5,9 +5,7 @@ import { connect } from "react-redux";
 import Spinner from "../spinner/Spinner";
 
 function AddReview(props) {
-  // I need the reviews and I need the corresponding channel
-  // maybe I can use the same endpoint for the channel page and do the same thing where I pull it off the pathname
-  // once I get the reviews I will need to map over them
+ 
 
   const [reviews, setReviews] = useState([]);
   const [rating, setRating] = useState();
@@ -56,12 +54,17 @@ function AddReview(props) {
   const submitReview = () => {
     const { title, review } = reviewData;
     axios.post(`/api/review/`, {
-      rating,
+      rating: +rating.toFixed(2),
       title,
         review,
         user_id: props.userId,
       channel_id:channel.channel_id
     });
+      setReviewData({
+        title: "",
+        review: "", 
+      })
+      props.history.push(`/channel/${id}`)
   };
 
   const inputChange = (e) => {
@@ -73,7 +76,7 @@ function AddReview(props) {
   console.log("REVIEWS", reviews);
   console.log("RATING", rating);
   console.log("REVIEWDATA", reviewData);
-    console.log("UserId", props.userId);
+console.log("UserId", props.userId);
     console.log("channel", channel);
     
 
@@ -112,7 +115,16 @@ function AddReview(props) {
       <div>
         <button onClick={submitReview}>AddReview</button>
       </div>
-      {/* <div>{reviews.map(rev => )}</div> */}
+          <div>{reviews.map(rev => (
+              <div>
+                  <div>
+                      {rev.title}
+                  </div>
+                  <div>
+                      {rev.review}
+                  </div>
+          </div>
+      ) )}</div>
     </div>
   );
 }
