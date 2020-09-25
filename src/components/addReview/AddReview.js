@@ -11,21 +11,28 @@ function AddReview(props) {
 
   const [reviews, setReviews] = useState([]);
   const [rating, setRating] = useState();
-  const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(true);
+    const [channel, setChannel] = useState()
   const [reviewData, setReviewData] = useState({
     title: "",
     review: "",
   });
 
-  const id = props.location.pathname.substring(9);
+  const id = props.location.pathname.substring(8);
 
     useEffect(() => {
       props.userId === 0 && props.history.push('/login')
-    axios.get(`api/reviews/${id}`).then((res) => {
+    axios.get(`/api/reviews/${id}`).then((res) => {
       setReviews(res.data);
-      axios.get(`/api/ratings/${id}`).then((res) => {
-        setTimeout(() => setRating(res.data[0].avg), 500);
-        setLoading(false);
+        axios.get(`/api/ratings/${id}`)
+        .then((res) => {
+          setRating(res.data[0].avg);
+            axios.get(`/api/chan/${id}`)
+                .then(res => {
+                    setChannel(res.data)
+                    setLoading(false);
+            })
+        
       });
     });
   }, []);
@@ -48,16 +55,17 @@ function AddReview(props) {
 
   const submitReview = () => {
     const { title, review } = reviewData;
-    axios.post(`/api/review/${id}`, {
+    axios.post(`/api/review/`, {
       rating,
       title,
-      review,
-      user_id: props.userId,
+        review,
+        user_id: props.userId,
+      channel_id:channel.channel_id
     });
   };
 
   const inputChange = (e) => {
-    setReviewData({
+    setReviewData({...reviewData,
       [e.target.name]: e.target.value,
     });
   };
@@ -65,7 +73,9 @@ function AddReview(props) {
   console.log("REVIEWS", reviews);
   console.log("RATING", rating);
   console.log("REVIEWDATA", reviewData);
-  console.log("UserId", props.userId);
+    console.log("UserId", props.userId);
+    console.log("channel", channel);
+    
 
   if (loading === true) {
     return (
