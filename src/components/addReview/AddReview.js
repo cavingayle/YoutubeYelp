@@ -54,7 +54,7 @@ function AddReview(props) {
   const submitReview = () => {
     const { title, review } = reviewData;
     axios.post(`/api/review/`, {
-      rating,
+      rating: +rating.toFixed(2),
       title,
         review,
         user_id: props.userId,
@@ -63,7 +63,8 @@ function AddReview(props) {
       setReviewData({
         title: "",
         review: "", 
-    })
+      })
+      props.history.push(`/channel/${id}`)
   };
 
   const inputChange = (e) => {
