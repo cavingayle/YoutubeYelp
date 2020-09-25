@@ -5,19 +5,19 @@ import ReactStars from "react-rating-stars-component";
 import Spinner from "../spinner/Spinner";
 import Video from "./Video";
 
-
 function Channel(props) {
   const [backend, setBackend] = useState([]);
   const [channelVids, setChannelVids] = useState();
   const [youtube, setYoutube] = useState({});
   const [loading, setLoading] = useState(true);
   const [selectedVideo, setSelectedVideo] = useState("");
+  const [reviewAverage, setAverage] = useState(0);
 
   const id = props.location.pathname.substring(9);
   const api_key = process.env.REACT_APP_API_KEY;
 
   useEffect(() => {
-    axios.get(`/api${props.location.pathname}`).then((res) => {
+    axios.get(`/api/reviews/${id}`).then((res) => {
       setBackend(res.data);
       axios
         .get(
@@ -31,14 +31,17 @@ function Channel(props) {
             )
             .then((res) => {
               setChannelVids(res.data.items);
-              console.log(res.data.items);
               setLoading(false);
             });
         });
     });
+    axios.get(`/api/ratings/${id}`).then((res) => {
+      const integer = parseInt(res.data[0].avg, 10);
+      setAverage(integer);
+    });
   }, []);
 
-  console.log(backend);
+  console.log("backend", backend);
   console.log(channelVids);
   console.log(youtube);
 
@@ -51,14 +54,45 @@ function Channel(props) {
     );
   }
 
+  const secondExample = {
+    count: 5,
+    color: "gray",
+    activeColor: "yellow",
+    edit: false,
+    value: reviewAverage,
+    a11y: true,
+    isHalf: true,
+    emptyIcon: <i className="far fa-star" />,
+    halfIcon: <i className="fa fa-star-half-alt" />,
+    filledIcon: <i className="fa fa-star" />,
+    onChange: (newValue) => {
+      console.log(`Example 2: new value is ${newValue}`);
+    },
+  };
+
+  const reviewStars = {
+    count: 5,
+    color: "gray",
+    activeColor: "yellow",
+    edit: false,
+    value: 0,
+    a11y: true,
+    isHalf: true,
+    emptyIcon: <i className="far fa-star" />,
+    halfIcon: <i className="fa fa-star-half-alt" />,
+    filledIcon: <i className="fa fa-star" />,
+    onChange: (newValue) => {
+      console.log(`Example 2: new value is ${newValue}`);
+    },
+  };
+
   return (
     <div className="channel-main">
       {selectedVideo ? (
         <div>
-          <div
-            className="video-close"
-            onClick={() => setSelectedVideo("")}
-          >Close</div>
+          <div className="video-close" onClick={() => setSelectedVideo("")}>
+            Close
+          </div>
           <Video selectedVideo={selectedVideo} />
         </div>
       ) : null}
@@ -80,6 +114,26 @@ function Channel(props) {
               : youtube.snippet.description}
           </div>
         </div>
+        <div>
+          {backend.map((review) => (
+            <div className="review-card" key={review.review_id}>
+              <h4 className="review-title">{review.title}</h4>
+              <ReactStars
+                count={5}
+                color={"gray"}
+                activeColor={"yellow"}
+                edit={false}
+                value={review.rating}
+                a11y={true}
+                isHalf={true}
+                emptyIcon={<i className="far fa-star" />}
+                halfIcon={<i className="fa fa-star-half-alt" />}
+                filledIcon={<i className="fa fa-star" />}
+              />
+              <h6 className="review-description">{review.review}</h6>
+            </div>
+          ))}
+        </div>
       </div>
       <div className="channel-reviews">{backend.review}</div>
       <div>
@@ -90,12 +144,17 @@ function Channel(props) {
       <div className="videos-main">
         {channelVids.map((vid) => (
           <div className="video-card" key={vid.id.videoId}>
-            <img
-              className="video-pic"
-              src={vid.snippet.thumbnails.high.url}
-              alt={vid.snippet.title}
+            <div
+              className="video-play"
               onClick={() => setSelectedVideo(vid.id.videoId)}
-            />
+            >
+              <img
+                className="video-pic"
+                src={vid.snippet.thumbnails.high.url}
+                alt={vid.snippet.title}
+              />
+              <i className="fab fa-youtube logo"></i>
+            </div>
             <div className="video-info">
               <h2>{vid.snippet.title}</h2>
               {vid.snippet.description.length > 1000 ? (
@@ -112,19 +171,3 @@ function Channel(props) {
 }
 
 export default Channel;
-
-const secondExample = {
-  count: 5,
-  color: "gray",
-  activeColor: "yellow",
-  edit: false,
-  value: 0,
-  a11y: true,
-  isHalf: true,
-  emptyIcon: <i className="far fa-star" />,
-  halfIcon: <i className="fa fa-star-half-alt" />,
-  filledIcon: <i className="fa fa-star" />,
-  onChange: (newValue) => {
-    console.log(`Example 2: new value is ${newValue}`);
-  },
-};

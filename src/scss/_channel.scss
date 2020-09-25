@@ -75,10 +75,29 @@
     justify-content: space-evenly;
     position: relative;
 
-    img {
-      border-radius: 6px;
-      height: 250px;
-      width: auto;
+    .video-play {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .fa-youtube {
+        position: absolute;
+        font-size: 50px;
+        color: red;
+        cursor: pointer;
+
+        &:hover {
+          color: lighten($red-main, $amount: 6);
+        }
+      }
+
+      img {
+        border-radius: 6px;
+        height: 250px;
+        width: auto;
+        cursor: pointer;
+      }
     }
 
     .video-info {
@@ -103,21 +122,22 @@
 }
 
 .video-close {
-    position: fixed;
-    right: 30px;
-    color: $red-main;
-    font-size: 25px;
-    font-family: $main-font;
-    z-index: 4;
-    margin-top: 40px;
-    cursor: pointer;
-    font-weight: bolder;
+  position: fixed;
+  right: 90px;
+  color: $red-main;
+  font-size: 25px;
+  font-family: $main-font;
+  z-index: 40;
+  cursor: pointer;
+  font-weight: bolder;
+
+  &:hover {
+    color: lighten($red-main, $amount: 4);
+  }
 }
 
 .ui {
   position: relative;
-//   height: 70vh;
-//   width: 70vw;
   z-index: 5;
   display: flex;
   justify-content: center;
@@ -129,5 +149,6 @@
     height: 70%;
     width: 70%;
     transform: translateX(-50%, -50%);
+    box-shadow: 0px 0px 80px 500px rgba(31, 31, 31, 0.8);
   }
 }
