@@ -57,7 +57,6 @@ module.exports = {
       console.log("Email sent successfully!");
     });
 
-
     req.session.user = newUser[0];
     res.status(200).send(req.session.user);
   },
@@ -85,19 +84,25 @@ module.exports = {
       last_name,
       user_id: id,
     });
-    req.session.user = user
+    req.session.user = user;
     res.status(200).send(user);
   },
-  pic: async (req,res) => {
-    const {profile_pic}= req.body;
-    const {user_id} = req.session.user
+  pic: async (req, res) => {
+    const { profile_pic } = req.body;
+    const { user_id } = req.session.user;
     const db = req.app.get("db");
 
     await db.Users.edit_pic({
       profile_pic,
-      user_id
-    })
-    req.session.user.profile_pic = profile_pic
-    res.sendStatus(200)
-  }
+      user_id,
+    });
+    req.session.user.profile_pic = profile_pic;
+    res.sendStatus(200);
+  },
+  getUserReviews: async (req, res) => {
+    const db = req.app.get("db");
+    const { id } = req.params;
+    const userReviews = await db.Reviews.get_users_reviews(id);
+    res.status(200).send(userReviews);
+  },
 };
