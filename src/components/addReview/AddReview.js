@@ -54,7 +54,7 @@ function AddReview(props) {
   const submitReview = () => {
     const { title, review } = reviewData;
     axios.post(`/api/review/`, {
-      rating: +rating.toFixed(2),
+      rating: rating === null ? 0 : +rating.toFixed(2),
       title,
         review,
         user_id: props.userId,
