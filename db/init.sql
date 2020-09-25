@@ -16,7 +16,7 @@ CREATE TABLE genres(
 
 CREATE TABLE channels(
     channel_id SERIAL PRIMARY KEY,
-    youtube_id TEXT,
+    youtube_id VARCHAR(200),
     genre VARCHAR(100)
 );
 

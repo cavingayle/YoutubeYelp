@@ -57,7 +57,7 @@ function AddReview(props) {
   };
 
   const inputChange = (e) => {
-    setReviewData({
+    setReviewData({...reviewData,
       [e.target.name]: e.target.value,
     });
   };
