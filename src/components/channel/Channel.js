@@ -27,7 +27,7 @@ function Channel(props) {
           setYoutube(res.data.items[0]);
           axios
             .get(
-              `https://www.googleapis.com/youtube/v3/search?key=${api_key}&channelId=${id}&part=snippet,id&order=date&maxResults=50`
+              `https://www.googleapis.com/youtube/v3/search?key=${api_key}&channelId=${id}&part=snippet,id&order=date&maxResults=3`
             )
             .then((res) => {
               setChannelVids(res.data.items);
