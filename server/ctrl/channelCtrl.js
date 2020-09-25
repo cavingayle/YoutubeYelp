@@ -1,22 +1,32 @@
 module.exports = {
   addChannel: async (req, res) => {
     const db = req.app.get("db");
-    const {id} = req.params;
-    db.Channels.add_channel(id)
-      .then((channel) => res.status(200).send(channel))
-      .catch((err) => {
-        res.status(500).send({
-          errorMessage: "Oops! Something Went Wrong.",
-        });
-        console.log(err);
-      });
+    const { id } = req.params;
+    const [check] = await db.Channels.check_for_channel(id)
+    console.log('Check Value', check)
+    if (!check) {
+      const channel = await db.Channels.add_channel(id)
+      console.log('Adding CHannel', id)
+      res.status(200).send(channel)
+    } else {
+      res.status(304).send('Already Exists')
+    }
+    
+
   },
 
-  getChannels: async (req, res) => {
-    const { genre } = req.body;
+  getChannel: async (req, res) => {
     const db = req.app.get("db");
-    const channels = await db.Channels.get_channels(genre);
-    res.status(200).send(channels);
+    const { id } = req.params;
+    console.log('GETTING CHANNEL FOR',id)
+    const [channel] = await db.Channels.get_channel(id);
+    if (channel) {
+      console.log()
+      res.status(200).send(channel);
+
+    } else {
+      res.status(209).send('Error')
+    }
   },
   loadChannels: async (req, res) => {
     const db = req.app.get('db')

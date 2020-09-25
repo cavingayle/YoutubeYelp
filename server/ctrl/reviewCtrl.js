@@ -8,8 +8,7 @@ module.exports = {
   },
 
   addReview: async (req, res) => {
-    const { rating, title, review, user_id } = req.body;
-    const { channel_id } = req.params;
+    const { rating, title, review, user_id, channel_id  } = req.body;
     console.log(req.params,req.body)
     const db = req.app.get("db");
     const reviews = await db.Reviews.add_review([
