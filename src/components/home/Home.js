@@ -28,9 +28,9 @@ function Home() {
       <div>
         <div className="genre">Possible Categories</div>
         <div className="recentactivity">
-          {reviews.map((rev) => {
+          {reviews.map((rev,i) => {
             return (
-              <div>
+              <div key={i}>
                 <Link to={`/channel/${rev.channel_id}`}>
                   <RecentReviewCard {...rev} />
                 </Link>

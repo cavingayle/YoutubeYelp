@@ -7,12 +7,12 @@ function RecentReviewCard(props) {
 const [data, setData] = useState([])
 
 
-useEffect(() => {
-  axios.get(`https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${props.channel_id}&key=AIzaSyCMLkcQ69lzKP55hhvIwPggxuODybcq6d4`)
-      .then(res => {
-        setData(res.data)
-    })
-  }, [])
+// useEffect(() => {
+//   axios.get(`https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${props.channel_id}&key=AIzaSyCMLkcQ69lzKP55hhvIwPggxuODybcq6d4`)
+//       .then(res => {
+//         setData(res.data)
+//     })
+//   }, [])
 
     return (
       <div>
