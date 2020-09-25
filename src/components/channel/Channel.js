@@ -2,9 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
-import Spinner from "./Spinner";
+import Spinner from "../spinner/Spinner";
 import Video from "./Video";
-
 
 function Channel(props) {
   const [backend, setBackend] = useState([]);
@@ -55,10 +54,9 @@ function Channel(props) {
     <div className="channel-main">
       {selectedVideo ? (
         <div>
-          <div
-            className="video-close"
-            onClick={() => setSelectedVideo("")}
-          >Close</div>
+          <div className="video-close" onClick={() => setSelectedVideo("")}>
+            Close
+          </div>
           <Video selectedVideo={selectedVideo} />
         </div>
       ) : null}
@@ -90,12 +88,17 @@ function Channel(props) {
       <div className="videos-main">
         {channelVids.map((vid) => (
           <div className="video-card" key={vid.id.videoId}>
-            <img
-              className="video-pic"
-              src={vid.snippet.thumbnails.high.url}
-              alt={vid.snippet.title}
+            <div
+              className="video-play"
               onClick={() => setSelectedVideo(vid.id.videoId)}
-            />
+            >
+              <img
+                className="video-pic"
+                src={vid.snippet.thumbnails.high.url}
+                alt={vid.snippet.title}
+              />
+              <i className="fab fa-youtube logo"></i>
+            </div>
             <div className="video-info">
               <h2>{vid.snippet.title}</h2>
               {vid.snippet.description.length > 1000 ? (
