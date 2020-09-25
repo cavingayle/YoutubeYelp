@@ -1,4 +1,4 @@
 INSERT INTO channels
-(youtube_id, title)
+(youtube_id, channel_title)
 VALUES
 ($1, $2);
