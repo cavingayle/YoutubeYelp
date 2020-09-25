@@ -118,7 +118,7 @@ console.log("UserId", props.userId);
           <div>{reviews.map(rev => (
               <div>
                   <div>
-                      {rev.title}
+                      {rev.review_title}
                   </div>
                   <div>
                       {rev.review}

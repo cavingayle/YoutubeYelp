@@ -2,7 +2,7 @@ module.exports = {
   addChannel: async (req, res) => {
     const db = req.app.get("db");
     const { id } = req.params;
-    const {title } = req.body
+    const {title} = req.body
     const [check] = await db.Channels.check_for_channel(id)
     console.log('Check Value', check)
     if (!check) {
