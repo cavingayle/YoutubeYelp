@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
-import Spinner from "./Spinner";
+import Spinner from "../spinner/Spinner";
 import Video from "./Video";
 
 
