@@ -54,12 +54,14 @@ app.put("/auth/user/:id", authCtrl.edit);
 // app.get("/api/genres", genreCtrl.getGenres);
 //# REVIEW ENDPOINTS
 app.get("/api/reviews/:id", reviewCtrl.getReviews);
-app.post("/api/review/:id", reviewCtrl.addReview);
+app.post("/api/review/", reviewCtrl.addReview);
 app.get("/api/recent", reviewCtrl.getRecentReviews);
+app.get("/api/ratings/:id", reviewCtrl.getAvgRating);
 
 //# CHANNEL ENDPOINTS
 app.post("/api/channel/:id", channelCtrl.addChannel);
 app.get("/api/channel/:id", channelCtrl.loadChannels);
+app.get('/api/chan/:id', channelCtrl.getChannel)
 
 //# AWS S3 ENDPOINTS
 app.get('/api/signs3', S3Ctrl.sign_s3);

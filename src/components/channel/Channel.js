@@ -3,12 +3,15 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
 import Spinner from "./Spinner";
+import Video from "./Video";
+
 
 function Channel(props) {
   const [backend, setBackend] = useState([]);
   const [channelVids, setChannelVids] = useState();
   const [youtube, setYoutube] = useState({});
   const [loading, setLoading] = useState(true);
+  const [selectedVideo, setSelectedVideo] = useState("");
 
   const id = props.location.pathname.substring(9);
   const api_key = process.env.REACT_APP_API_KEY;
@@ -50,6 +53,16 @@ function Channel(props) {
 
   return (
     <div className="channel-main">
+      {selectedVideo ? (
+        <div>
+          <div
+            className="video-close"
+            onClick={() => setSelectedVideo("")}
+          >Close</div>
+          <Video selectedVideo={selectedVideo} />
+        </div>
+      ) : null}
+      <div></div>
       <div className="channel-header">
         <div className="channel-pic">
           {" "}
@@ -62,8 +75,8 @@ function Channel(props) {
             <ReactStars {...secondExample} />
           </div>
           <div className="channel-description">
-            {youtube.snippet.description.length > 270
-              ? youtube.snippet.description.substring(0, 270) + "..."
+            {youtube.snippet.description.length > 250
+              ? youtube.snippet.description.substring(0, 250) + "..."
               : youtube.snippet.description}
           </div>
         </div>
@@ -76,11 +89,12 @@ function Channel(props) {
       </div>
       <div className="videos-main">
         {channelVids.map((vid) => (
-          <div className="video-card" key={vid.snippet.title}>
+          <div className="video-card" key={vid.id.videoId}>
             <img
               className="video-pic"
               src={vid.snippet.thumbnails.high.url}
               alt={vid.snippet.title}
+              onClick={() => setSelectedVideo(vid.id.videoId)}
             />
             <div className="video-info">
               <h2>{vid.snippet.title}</h2>

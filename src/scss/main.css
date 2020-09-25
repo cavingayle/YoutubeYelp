@@ -6,6 +6,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -16,10 +17,12 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+
 }
 
 .channel-main .channel-header {
   border-radius: 6px;
+  position: relative;
   width: 100vw;
   background-color: #D0D0D0;
   height: 400px;
@@ -35,9 +38,11 @@
       -ms-flex-pack: baseline;
           justify-content: baseline;
   margin-top: -30px;
+
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+
 }
 
 .channel-main .channel-header .channel-info {
@@ -69,7 +74,6 @@
 .channel-main .channel-header .channel-info .channel-title {
   position: relative;
   font-size: 30px;
-  margin-top: 10px;
   margin-bottom: 10px;
   font-weight: bolder;
 }
@@ -81,6 +85,7 @@
 .channel-main .channel-header .channel-info .channel-description {
   padding: 5px 40px 0px 40px;
   height: 50%;
+  margin-bottom: 25px;
 }
 
 .channel-main .channel-header img {
@@ -144,6 +149,34 @@
 .channel-main .video-card .video-info h4 {
   -ms-flex-line-pack: left;
       align-content: left;
+}
+
+.video-close {
+  position: fixed;
+  right: 30px;
+  color: #b70202;
+  font-size: 25px;
+  font-family: "Noto Sans", sans-serif;
+  z-index: 4;
+  margin-top: 40px;
+  cursor: pointer;
+  font-weight: bolder;
+}
+
+.ui {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ui iframe {
+  position: fixed;
+  margin-top: 250px;
+  height: 70%;
+  width: 70%;
+  transform: translateX(-50%, -50%);
 }
 
 * {
