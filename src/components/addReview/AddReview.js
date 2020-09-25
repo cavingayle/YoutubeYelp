@@ -51,20 +51,32 @@ function AddReview(props) {
     },
   };
 
+    
   const submitReview = () => {
-    const { title, review } = reviewData;
-    axios.post(`/api/review/`, {
-      rating: rating === null ? 0 : +rating.toFixed(2),
-      title,
-        review,
-        user_id: props.userId,
-      channel_id:channel.channel_id
-    });
-      setReviewData({
-        title: "",
-        review: "", 
-      })
-      props.history.push(`/channel/${id}`)
+      const { title, review } = reviewData;
+      if (rating === null) {
+        alert('Please leave a star rating')
+      } else if (review === '') {
+          alert('Please leave a review')
+      } else if( title === '') {
+        alert('Please give your review a title')
+      } else {
+        axios.post(`/api/review/`, {
+            rating: rating,
+            title,
+              review,
+              user_id: props.userId,
+            channel_id:channel.channel_id
+          });
+            setReviewData({
+              title: "",
+              review: "", 
+            })
+            props.history.push(`/channel/${id}`)  
+      }
+        
+      
+    
   };
 
   const inputChange = (e) => {
@@ -126,7 +138,7 @@ console.log("UserId", props.userId);
           </div>
       ) )}</div>
     </div>
-  );
+  )
 }
 
 const mapStateToProps = (state) => state;
