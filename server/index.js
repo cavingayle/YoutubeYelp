@@ -50,6 +50,7 @@ app.post("/auth/register", authCtrl.register);
 app.post("/auth/login", authCtrl.login);
 app.delete("/auth/logout", authCtrl.logout);
 app.put("/auth/user/:id", authCtrl.edit);
+app.get("/auth/getReviews/:id", authCtrl.getUserReviews)
 //# GENRE ENDPOINTS
 // app.get("/api/genres", genreCtrl.getGenres);
 //# REVIEW ENDPOINTS

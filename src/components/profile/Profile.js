@@ -3,8 +3,10 @@ import axios from "axios";
 import { connect } from "react-redux";
 import { setUser } from "../../redux/reducer";
 import Aws from "../aws/Aws";
+import ProfileReviews from "./ProfileReviews";
 
 function Profile(props) {
+  const [userReviews, setUserReviews] = useState([]);
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
@@ -15,6 +17,7 @@ function Profile(props) {
 
   useEffect(() => {
     getUser();
+    getUserReview();
     // setUsername(props.username);
     // setEmail(props.email);
     // setFirstName(props.first_name);
@@ -71,6 +74,20 @@ function Profile(props) {
         console.log(err);
       });
   };
+  const getUserReview = () => {
+    axios
+      .get(`/auth/getReviews/${props.userId}`)
+      .then((res) => {
+        setUserReviews(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const mappedUserReviews = userReviews.map((el, i) => {
+    return <ProfileReviews data={el} key={i} />;
+  });
 
   return (
     <div className="profile-main">
@@ -168,6 +185,11 @@ function Profile(props) {
         )}
       </div>
       <hr />
+      <div className='mappedReviews'>
+        <h1>{firstName}'s Reviews</h1>
+        <hr/>
+        {mappedUserReviews}
+      </div>
     </div>
   );
 }
