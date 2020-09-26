@@ -38,10 +38,10 @@ const Search = (props) => {
     },
   };
 
-  const reviewChannel = (id, title) => {
+  const reviewChannel = (id, title, image) => {
     props.history.push(`/channel/${id}`);
     axios
-      .post(`/api/channel/${id}`, {title})
+      .post(`/api/channel/${id}`, {title, image})
       .then((res) => res.data)
       .catch((err) => console.log(err));
   };
@@ -55,7 +55,7 @@ const Search = (props) => {
           key={channel.snippet.channelId}
           className="search-card"
           onClick={(id) => {
-            reviewChannel(channel.snippet.channelId, channel.snippet.title);
+            reviewChannel(channel.snippet.channelId, channel.snippet.title, channel.snippet.thumbnails.high.url);
           }}
         >
           <div className="search-img-body">
