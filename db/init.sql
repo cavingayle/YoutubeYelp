@@ -8,21 +8,17 @@ CREATE TABLE users(
     profile_pic TEXT
 );
 
-CREATE TABLE genres(
-    genre_id SERIAL PRIMARY KEY,
-    topic_id TEXT,
-    name VARCHAR(50) NOT NULL
-);
-
 CREATE TABLE channels(
     channel_id SERIAL PRIMARY KEY,
     youtube_id VARCHAR(200),
-    genre VARCHAR(100)
+    genre VARCHAR(100),
+    channel_title VARCHAR(200),
+    image VARCHAR(250)
 );
 
 CREATE TABLE reviews(
     review_id SERIAL PRIMARY KEY,
-    title VARCHAR(100),
+    review_title VARCHAR(100),
     review TEXT,
     channel_id INT REFERENCES channel(channel_id),
     rating INT NOT NULL,
