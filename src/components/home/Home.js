@@ -18,6 +18,8 @@ function Home() {
       setReviews(res.data);
     });
   };
+    
+  console.log(reviews)
 
   return (
     <div>

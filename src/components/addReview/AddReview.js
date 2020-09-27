@@ -11,6 +11,7 @@ function AddReview(props) {
   const [rating, setRating] = useState();
     const [loading, setLoading] = useState(true);
     const [channel, setChannel] = useState()
+    const [selectVal, setSelectVal] = useState()
   const [reviewData, setReviewData] = useState({
     title: "",
     review: "",
@@ -46,7 +47,7 @@ function AddReview(props) {
     halfIcon: <i className="fa fa-star-half-alt" />,
     filledIcon: <i className="fa fa-star" />,
     onChange: (newValue) => {
-      setRating(newValue);
+      setRating(+newValue.toFixed(1));
       console.log(`Example 2: new value is ${newValue}`);
     },
   };
@@ -66,7 +67,8 @@ function AddReview(props) {
             title,
               review,
               user_id: props.userId,
-            channel_id:channel.channel_id
+            channel_id:channel.channel_id,
+            genre: selectVal
           });
             setReviewData({
               title: "",
@@ -85,11 +87,16 @@ function AddReview(props) {
     });
   };
 
+  const selectChange = (e) => {
+  setSelectVal(e.target.value)
+}
+
   console.log("REVIEWS", reviews);
   console.log("RATING", rating);
   console.log("REVIEWDATA", reviewData);
 console.log("UserId", props.userId);
     console.log("channel", channel);
+    console.log("SELECT VAL", selectVal);
     
 
   if (loading === true) {
@@ -113,6 +120,19 @@ console.log("UserId", props.userId);
           value={reviewData.title}
         />
       </div>
+
+      {channel.genre === null && <div>
+        Please select a genre for this channel
+        <select onChange={selectChange}>
+            <option value="grapefruit">Grapefruit</option>
+            <option value="lime">Lime</option>
+            <option value="coconut">Coconut</option>
+            <option value="mango">Mango</option>
+          </select>
+</div>}
+      
+
+
 
       <div>
         <textarea
