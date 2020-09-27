@@ -8,7 +8,7 @@ module.exports = {
   },
 
   addReview: async (req, res) => {
-    const { rating, title, review, user_id, channel_id  } = req.body;
+    const { rating, title, review, user_id, channel_id, genre  } = req.body;
     console.log(req.params,req.body)
     const db = req.app.get("db");
     const reviews = await db.Reviews.add_review([
@@ -16,8 +16,9 @@ module.exports = {
       title,
       review,
       channel_id,
-      user_id,
+      user_id
     ]);
+    const genreT = await db.Reviews.add_genre([genre, channel_id])
     if (reviews) {
       res.status(200).send(reviews);
     } else {
