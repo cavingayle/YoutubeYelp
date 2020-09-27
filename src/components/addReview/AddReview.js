@@ -11,7 +11,7 @@ function AddReview(props) {
   const [rating, setRating] = useState();
     const [loading, setLoading] = useState(true);
     const [channel, setChannel] = useState()
-    const [selectVal, setSelectVal] = useState()
+  const [selectVal, setSelectVal] = useState('Pick a genre')
   const [reviewData, setReviewData] = useState({
     title: "",
     review: "",
@@ -25,7 +25,7 @@ function AddReview(props) {
       setReviews(res.data);
         axios.get(`/api/ratings/${id}`)
         .then((res) => {
-          setRating(res.data[0].avg);
+          setRating(+res.data[0].avg);
             axios.get(`/api/chan/${id}`)
                 .then(res => {
                     setChannel(res.data)
@@ -55,31 +55,35 @@ function AddReview(props) {
     
   const submitReview = () => {
       const { title, review } = reviewData;
-      if (rating === null) {
-        alert('Please leave a star rating')
-      } else if (review === '') {
-          alert('Please leave a review')
-      } else if( title === '') {
-        alert('Please give your review a title')
-      } else {
-        axios.post(`/api/review/`, {
-            rating: rating,
-            title,
-              review,
-              user_id: props.userId,
-            channel_id:channel.channel_id,
-            genre: selectVal
-          });
-            setReviewData({
-              title: "",
-              review: "", 
-            })
-            props.history.push(`/channel/${id}`)  
+    if (rating === null) {
+      alert('Please leave a star rating')
+    } else if (review === '') {
+      alert('Please leave a review')
+    } else if (title === '') {
+      alert('Please give your review a title')
+    } else if (selectVal === 'Pick a genre') { 
+      alert('Give this channel a genre')
+    } else {
+      axios.post(`/api/review/`, {
+        rating: rating,
+        title,
+          review,
+          user_id: props.userId,
+        channel_id:channel.channel_id,
+        genre: selectVal
+      });
+        setReviewData({
+          title: "",
+          review: "", 
+        })
+        props.history.push(`/channel/${id}`)  
+    }
+        
       }
         
       
     
-  };
+  
 
   const inputChange = (e) => {
     setReviewData({...reviewData,
@@ -124,10 +128,27 @@ console.log("UserId", props.userId);
       {channel.genre === null && <div>
         Please select a genre for this channel
         <select onChange={selectChange}>
-            <option value="grapefruit">Grapefruit</option>
-            <option value="lime">Lime</option>
-            <option value="coconut">Coconut</option>
-            <option value="mango">Mango</option>
+          
+            <option value="Pick">Pick a genre </option>
+            <option value="animation">Animation</option>
+            <option value="conspiracy">Conspiracy</option>
+            <option value="comedy">Comedy</option>
+            <option value="beauty">Beauty/Fashion</option>
+            <option value="vloggers">Vloggers</option>
+            <option value="diy">DIY</option>
+            <option value="family">Family</option>
+            <option value="gaming">Gaming</option>
+            <option value="health">Health/Fitness</option>
+            <option value="learning">Learning</option>
+            <option value="lifestyle">Lifestyle</option>
+            <option value="music">Music</option>
+            <option value="sports">Sports</option>
+            <option value="travel">Travel</option>
+            <option value="tech">Tech</option>
+            <option value="movies">Movies</option>
+            <option value="kids">Kids</option>
+            <option value="food">Food</option>
+            <option value="political">Political</option>
           </select>
 </div>}
       
@@ -148,7 +169,8 @@ console.log("UserId", props.userId);
         <button onClick={submitReview}>AddReview</button>
       </div>
           <div>{reviews.map(rev => (
-              <div>
+            <div>
+              <div>User: {rev.username}</div>
                   <div>
                       {rev.review_title}
                   </div>
