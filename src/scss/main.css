@@ -315,7 +315,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  min-height: calc(100vh - 261px);
+  min-height: calc(100vh - 247px);
 }
 
 .main-login hr {
@@ -653,6 +653,86 @@
 .nav-main .nav-nav .search-btn:active {
   position: relative;
   top: 1px;
+}
+
+* {
+  font-family: "Noto Sans", sans-serif;
+}
+
+.addReview-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  position: relative;
+  min-height: calc(100vh - 247px);
+}
+
+.addReview-main .AR-stars {
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 20px;
+}
+
+.addReview-main input {
+  width: 300px;
+  height: 45px;
+  margin-bottom: 25px;
+  font-size: 30px;
+  border-radius: 2px 0px 0px 2px;
+  border: 1px solid darkgray;
+  padding: 3px 50px 4px 5px;
+  display: inline-block;
+  -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
+          box-shadow: inset 0px 1px 0px 0px #ffffff;
+  outline: none;
+}
+
+.addReview-main .AR-genre-holder h1 {
+  font-size: 20px;
+}
+
+.addReview-main .AR-genre-holder select {
+  font-size: 16px;
+  background-color: #D0D0D0;
+  margin-left: 10px;
+}
+
+.addReview-main .AR-genre-holder select option {
+  font-size: 12px;
+  background-color: #D0D0D0;
+}
+
+.addReview-main .textarea-holders textarea {
+  height: 250px;
+  width: 355px;
+}
+
+.addReview-main .AR-submit-btn-holder button {
+  margin-top: 10px;
+  width: 300px;
+  height: 30px;
+  border-width: 0;
+  background-color: #b70202;
+  font-weight: bolder;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 2px 2px #D0D0D0;
+          box-shadow: 0px 2px 2px #D0D0D0;
+  outline: none;
+}
+
+.addReview-main .AR-submit-btn-holder button:hover {
+  color: #D0D0D0;
 }
 
 * {
