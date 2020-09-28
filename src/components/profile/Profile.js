@@ -16,6 +16,7 @@ function Profile(props) {
   const [infoToggle, setInfoToggle] = useState(false);
 
   useEffect(() => {
+    props.userId === 0 && props.history.push('/login')
     getUser();
     getUserReview();
     // setUsername(props.username);

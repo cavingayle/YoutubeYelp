@@ -1,0 +1,62 @@
+@import "./variables";
+.addReview-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: relative;
+  min-height: calc(100vh - 247px);
+  .AR-stars {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  input {
+    width: 300px;
+    height: 45px;
+    margin-bottom: 25px;
+    font-size: 30px;
+    border-radius: 2px 0px 0px 2px;
+    border: 1px solid darkgray;
+    padding: 3px 50px 4px 5px;
+    display: inline-block;
+    box-shadow: inset 0px 1px 0px 0px #ffffff;
+    outline: none;
+  }
+  .AR-genre-holder {
+      h1{
+          font-size: 20px;
+      }
+    select {
+      font-size: 16px;
+      background-color: $gray-main;
+      margin-left: 10px;
+      option {
+        font-size: 12px;
+        background-color:$gray-main;
+      }
+    }
+  }
+  .textarea-holders {
+    textarea {
+      height: 250px;
+      width: 355px;
+    }
+  }
+  .AR-submit-btn-holder {
+    button {
+      margin-top: 10px;
+      width: 300px;
+      height: 30px;
+      border-width: 0;
+      background-color: $red-main;
+      font-weight: bolder;
+      border-radius: 3px;
+      box-shadow: 0px 2px 2px $gray-main;
+      outline: none;
+      &:hover {
+        color: $gray-main;
+      }
+    }
+  }
+}

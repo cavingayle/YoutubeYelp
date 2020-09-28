@@ -5,13 +5,11 @@ import { connect } from "react-redux";
 import Spinner from "../spinner/Spinner";
 
 function AddReview(props) {
- 
-
   const [reviews, setReviews] = useState([]);
   const [rating, setRating] = useState();
-    const [loading, setLoading] = useState(true);
-    const [channel, setChannel] = useState()
-  const [selectVal, setSelectVal] = useState('Pick a genre')
+  const [loading, setLoading] = useState(true);
+  const [channel, setChannel] = useState();
+  const [selectVal, setSelectVal] = useState("Pick a genre");
   const [reviewData, setReviewData] = useState({
     title: "",
     review: "",
@@ -19,19 +17,16 @@ function AddReview(props) {
 
   const id = props.location.pathname.substring(8);
 
-    useEffect(() => {
-      props.userId === 0 && props.history.push('/login')
+  useEffect(() => {
+    props.userId === 0 && props.history.push("/login");
     axios.get(`/api/reviews/${id}`).then((res) => {
       setReviews(res.data);
-        axios.get(`/api/ratings/${id}`)
-        .then((res) => {
-          setRating(+res.data[0].avg);
-            axios.get(`/api/chan/${id}`)
-                .then(res => {
-                    setChannel(res.data)
-                    setLoading(false);
-            })
-        
+      axios.get(`/api/ratings/${id}`).then((res) => {
+        setRating(+res.data[0].avg);
+        axios.get(`/api/chan/${id}`).then((res) => {
+          setChannel(res.data);
+          setLoading(false);
+        });
       });
     });
   }, []);
@@ -42,8 +37,9 @@ function AddReview(props) {
     activeColor: "yellow",
     value: rating === null ? 0 : rating,
     a11y: true,
+    size:24,
     isHalf: true,
-    emptyIcon: <i className="far fa-star" />,
+    emptyIcon: <i className="far fa-star"  />,
     halfIcon: <i className="fa fa-star-half-alt" />,
     filledIcon: <i className="fa fa-star" />,
     onChange: (newValue) => {
@@ -52,56 +48,47 @@ function AddReview(props) {
     },
   };
 
-    
   const submitReview = () => {
-      const { title, review } = reviewData;
+    const { title, review } = reviewData;
     if (rating === null) {
-      alert('Please leave a star rating')
-    } else if (review === '') {
-      alert('Please leave a review')
-    } else if (title === '') {
-      alert('Please give your review a title')
-    } else if (channel.genre === null && selectVal === 'Pick a genre') { 
-      alert('Give this channel a genre')
+      alert("Please leave a star rating");
+    } else if (review === "") {
+      alert("Please leave a review");
+    } else if (title === "") {
+      alert("Please give your review a title");
+    } else if (channel.genre === null && selectVal === "Pick a genre") {
+      alert("Give this channel a genre");
     } else {
       axios.post(`/api/review/`, {
         rating: rating,
         title,
-          review,
-          user_id: props.userId,
-        channel_id:channel.channel_id,
-        genre: selectVal
+        review,
+        user_id: props.userId,
+        channel_id: channel.channel_id,
+        genre: selectVal,
       });
-        setReviewData({
-          title: "",
-          review: "", 
-        })
-        props.history.push(`/channel/${id}`)  
+      setReviewData({
+        title: "",
+        review: "",
+      });
+      props.history.push(`/channel/${id}`);
     }
-        
-      }
-        
-      
-    
-  
+  };
 
   const inputChange = (e) => {
-    setReviewData({...reviewData,
-      [e.target.name]: e.target.value,
-    });
+    setReviewData({ ...reviewData, [e.target.name]: e.target.value });
   };
 
   const selectChange = (e) => {
-  setSelectVal(e.target.value)
-}
+    setSelectVal(e.target.value);
+  };
 
   console.log("REVIEWS", reviews);
   console.log("RATING", rating);
   console.log("REVIEWDATA", reviewData);
-console.log("UserId", props.userId);
-    console.log("channel", channel);
-    console.log("SELECT VAL", selectVal);
-    
+  console.log("UserId", props.userId);
+  console.log("channel", channel);
+  console.log("SELECT VAL", selectVal);
 
   if (loading === true) {
     return (
@@ -111,10 +98,7 @@ console.log("UserId", props.userId);
     );
   }
   return (
-    <div>
-      <div>
-        <ReactStars {...secondExample} />
-      </div>
+    <div className="addReview-main">
       <div>
         <input
           onChange={inputChange}
@@ -125,10 +109,10 @@ console.log("UserId", props.userId);
         />
       </div>
 
-      {channel.genre === null && <div>
-        Please select a genre for this channel
-        <select onChange={selectChange}>
-          
+      {channel.genre === null && (
+        <div className="AR-genre-holder">
+          <h1> Please select a genre for {channel.channel_title}</h1>
+          <select onChange={selectChange}>
             <option value="Pick">Pick a genre </option>
             <option value="animation">Animation</option>
             <option value="conspiracy">Conspiracy</option>
@@ -150,12 +134,10 @@ console.log("UserId", props.userId);
             <option value="food">Food</option>
             <option value="political">Political</option>
           </select>
-</div>}
-      
+        </div>
+      )}
 
-
-
-      <div>
+      <div className="textarea-holders">
         <textarea
           onChange={inputChange}
           name="review"
@@ -165,22 +147,23 @@ console.log("UserId", props.userId);
           value={reviewData.review}
         ></textarea>
       </div>
-      <div>
+      <div className="AR-stars">
+        <ReactStars {...secondExample} />
+      </div>
+      <div className="AR-submit-btn-holder">
         <button onClick={submitReview}>AddReview</button>
       </div>
-          <div>{reviews.map(rev => (
-            <div>
-              <div>User: {rev.username}</div>
-                  <div>
-                      {rev.review_title}
-                  </div>
-                  <div>
-                      {rev.review}
-                  </div>
+      <div>
+        {reviews.map((rev) => (
+          <div>
+            <div>User: {rev.username}</div>
+            <div>{rev.review_title}</div>
+            <div>{rev.review}</div>
           </div>
-      ) )}</div>
+        ))}
+      </div>
     </div>
-  )
+  );
 }
 
 const mapStateToProps = (state) => state;
