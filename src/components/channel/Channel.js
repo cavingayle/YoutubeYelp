@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
 import Spinner from "../spinner/Spinner";
 import Video from "./Video";
+import Pagination from "../search/Pagination";
+import _ from "lodash";
 
 function Channel(props) {
   const [backend, setBackend] = useState([]);
@@ -12,6 +14,9 @@ function Channel(props) {
   const [loading, setLoading] = useState(true);
   const [selectedVideo, setSelectedVideo] = useState("");
   const [reviewAverage, setAverage] = useState(0);
+  const [count, setCount] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [pageSize] = useState(4);
 
   const id = props.location.pathname.substring(9);
   const api_key = process.env.REACT_APP_API_KEY;
@@ -39,7 +44,8 @@ function Channel(props) {
       const integer = parseInt(res.data[0].avg, 10);
       setAverage(integer);
     });
-  }, []);
+    setCount(backend.length);
+  }, [backend.length]);
 
   console.log("backend", backend);
   console.log(channelVids);
@@ -70,21 +76,16 @@ function Channel(props) {
     },
   };
 
-  const reviewStars = {
-    count: 5,
-    color: "gray",
-    activeColor: "yellow",
-    edit: false,
-    value: 0,
-    a11y: true,
-    isHalf: true,
-    emptyIcon: <i className="far fa-star" />,
-    halfIcon: <i className="fa fa-star-half-alt" />,
-    filledIcon: <i className="fa fa-star" />,
-    onChange: (newValue) => {
-      console.log(`Example 2: new value is ${newValue}`);
-    },
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
   };
+
+  const paginate = (items, pageNumber, pageSize) => {
+    const startIndex = (pageNumber - 1) * pageSize;
+    return _(items).slice(startIndex).take(pageSize).value();
+  };
+
+  const cards = paginate(backend, currentPage, pageSize);
 
   return (
     <div className="channel-main">
@@ -115,7 +116,7 @@ function Channel(props) {
           </div>
         </div>
         <div className="review-cards">
-          {backend.map((review) => (
+          {cards.map((review) => (
             <div className="review-card" key={review.review_id}>
               <div className="review-title">{review.review_title}</div>
               <ReactStars
@@ -133,12 +134,20 @@ function Channel(props) {
               <div className="review-description">{review.review}</div>
             </div>
           ))}
+          <div className="paginate-reviews">
+            <Pagination
+              currentPage={currentPage}
+              count={count}
+              pageSize={pageSize}
+              onPageChange={handlePageChange}
+            />
+          </div>
         </div>
       </div>
       <div className="channel-reviews">{backend.review}</div>
       <div>
         <Link className="single-review" to={`/review/${id}`}>
-          <button>reviews</button>
+          <button>Add Review</button>
         </Link>
       </div>
       <div className="videos-main">
