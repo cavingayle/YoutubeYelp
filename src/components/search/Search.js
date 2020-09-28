@@ -24,10 +24,10 @@ const Search = (props) => {
     return _(items).slice(startIndex).take(pageSize).value();
   };
 
-  const reviewChannel = (id, title) => {
+  const reviewChannel = (id, title, image) => {
     props.history.push(`/channel/${id}`);
     axios
-      .post(`/api/channel/${id}`, { title })
+      .post(`/api/channel/${id}`, { title, image })
       .then((res) => res.data)
       .catch((err) => console.log(err));
   };
