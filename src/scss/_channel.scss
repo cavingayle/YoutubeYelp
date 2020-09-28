@@ -31,14 +31,13 @@
       height: 90%;
       border: solid slategrey;
       background-color: white;
-      width: 650px;
+      width: 25%;
       border-radius: 6px;
       box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
         0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
         0 12.3px 7.9px rgba(0, 0, 0, 0.072), 0 8.8px 10.4px rgba(0, 0, 0, 0.086);
       border: 1px solid rgb(206, 206, 206);
-      margin-right: 20px;
-      padding: 2px;
+      margin-right: 40px;
 
       .channel-title {
         position: relative;
@@ -159,10 +158,13 @@
   display: flex;
   align-items: baseline;
   // justify-content: space-evenly;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   font-family: $main-font;
-  position: relative;
+  position: absolute;
+  height: 400px;
+  right: 50px;
+  width: 650px;
 
   .review-card {
     display: flex;
@@ -171,7 +173,7 @@
     flex-direction: column;
     background-color: white;
     height: 150px;
-    width: 350px;
+    width: 320px;
     margin: 5px;
     border-radius: 6px;
     box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
@@ -179,10 +181,48 @@
       0 12.3px 7.9px rgba(0, 0, 0, 0.072), 0 8.8px 10.4px rgba(0, 0, 0, 0.086);
     border: 1px solid rgb(206, 206, 206);
     padding: 2px;
+    margin-top: 20px;
 
     .review-title {
       font-weight: bolder;
       font-size: 15px;
+    }
+  }
+
+  .paginate-reviews {
+    position: absolute;
+    z-index: 4;
+    bottom: 0;
+    right: 355px;
+
+    .pagination {
+      bottom: 0;
+      position: absolute;
+      width: 650px;
+      margin: 0 auto;
+      margin-bottom: 7px;
+      // display: flex;
+      // align-items: center;
+      // justify-content: baseline;
+      // padding-right: 400px;
+    }
+  }
+}
+
+.single-review {
+  button {
+    font-family: $main-font;
+    font-size: 30px;
+    border: none;
+    border-bottom: 2px solid lightgray;
+    border-top: 2px solid lightgray;
+    background-color: transparent;
+    height: 50px;
+    width: 400px;  
+    margin-bottom: 30px;
+
+    &:hover {
+      background-color: rgb(243, 243, 243);
     }
   }
 }
