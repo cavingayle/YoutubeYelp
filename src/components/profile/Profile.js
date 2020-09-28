@@ -141,7 +141,7 @@ function Profile(props) {
                 className="pro-name-input"
               />
             </div>
-            <div>
+            <div className='pro-info-input-holder'>
               <input
                 name="username"
                 placeholder="Username..."
@@ -162,7 +162,7 @@ function Profile(props) {
               onChange={handleProfilePicInput}
               className="profile-pic-input"
             />
-            <div>
+            <div className='save-btn-holder'>
               <button
                 onClick={() =>
                   saveEdit(
@@ -185,8 +185,8 @@ function Profile(props) {
         )}
       </div>
       <hr />
-      <div className='mappedReviews'>
         <h1>{firstName}'s Reviews</h1>
+      <div className='mappedReviews'>
         <hr/>
         {mappedUserReviews}
       </div>
