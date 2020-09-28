@@ -13,13 +13,22 @@
     width: 100vw;
     background-color: $gray-main;
     height: 400px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     display: flex;
     flex-direction: row;
     justify-content: baseline;
     margin-top: -30px;
     align-items: center;
     z-index: 1;
+
+    @media (max-width: 385px) {
+      font-size: 18px;
+      height: auto;
+      flex-direction: column;
+      justify-content: none;
+      border-radius: 0px;
+      width: 375px;
+    }
 
     .channel-info {
       display: flex;
@@ -31,7 +40,7 @@
       height: 90%;
       border: solid slategrey;
       background-color: white;
-      width: 25%;
+      width: 28%;
       border-radius: 6px;
       box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
         0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
@@ -39,21 +48,41 @@
       border: 1px solid rgb(206, 206, 206);
       margin-right: 40px;
 
+      @media (max-width: 385px) {
+        width: 85%;
+        height: 240px;
+        margin-right: 0;
+        margin-top: 10px;
+      }
+
       .channel-title {
         position: relative;
         font-size: 30px;
         margin-bottom: 10px;
         font-weight: bolder;
+
+        @media (max-width: 385px) {
+          font-size: 18px;
+          margin-bottom: 2px;
+        }
       }
 
       .channel-rating {
         margin-bottom: 20px;
+
+        @media (max-width: 385px) {
+          margin-bottom: 2px;
+        }
       }
 
       .channel-description {
         padding: 5px 40px 0px 40px;
         height: 50%;
         margin-bottom: 25px;
+
+        @media (max-width: 385px) {
+          font-size: 12px;
+        }
       }
     }
 
@@ -61,6 +90,12 @@
       height: 400px;
       width: auto;
       margin-right: 20px;
+
+      @media (max-width: 385px) {
+        margin-right: 0px;
+        height: auto;
+        width: 375px;
+      }
     }
   }
 
@@ -75,6 +110,12 @@
     align-items: center;
     justify-content: space-evenly;
     position: relative;
+
+    @media (max-width: 385px) {
+      width: 95vw;
+      height: 400px;
+      flex-direction: column;
+    }
 
     .video-play {
       position: relative;
@@ -98,6 +139,10 @@
         height: 250px;
         width: auto;
         cursor: pointer;
+
+        @media (max-width: 385px) {
+          height: 200px;
+        }
       }
     }
 
@@ -110,13 +155,26 @@
       width: 85%;
       padding-left: 40px;
 
+      @media (max-width: 385px) {
+        padding-left: 0;
+        margin-top: 5px;
+      }
+
       h2 {
         margin: 0 auto;
         font-weight: bolder;
+
+        @media (max-width: 385px) {
+          font-size: 19px;
+        }
       }
 
       h4 {
         align-content: left;
+
+        @media (max-width: 385px) {
+          font-size: 18px;
+        }
       }
     }
   }
@@ -131,6 +189,12 @@
   z-index: 40;
   cursor: pointer;
   font-weight: bolder;
+
+  @media (max-width: 385px) {
+    font-size: 18px;
+    left: -370px;
+    top: 220px;
+  }
 
   &:hover {
     color: lighten($red-main, $amount: 4);
@@ -151,20 +215,30 @@
     width: 70%;
     transform: translateX(-50%, -50%);
     box-shadow: 0px 0px 80px 500px rgba(31, 31, 31, 0.8);
+
+    @media (max-width: 385px) {
+      height: 200px;
+      width: auto;
+      box-shadow: 0px 0px 80px 2000px rgba(31, 31, 31, 0.8);
+    }
   }
 }
 
 .review-cards {
   display: flex;
-  align-items: baseline;
-  // justify-content: space-evenly;
+  align-items: center;
   flex-direction: column;
-  flex-wrap: wrap;
   font-family: $main-font;
   position: absolute;
   height: 400px;
-  right: 50px;
-  width: 650px;
+  right: 2%;
+  width: 35%;
+
+  @media (max-width: 385px) {
+    position: relative;
+    width: 95vw;
+    right: initial;
+  }
 
   .review-card {
     display: flex;
@@ -173,38 +247,53 @@
     flex-direction: column;
     background-color: white;
     height: 150px;
-    width: 320px;
+    width: 90%;
     margin: 5px;
     border-radius: 6px;
     box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
       0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
       0 12.3px 7.9px rgba(0, 0, 0, 0.072), 0 8.8px 10.4px rgba(0, 0, 0, 0.086);
     border: 1px solid rgb(206, 206, 206);
-    padding: 2px;
+    padding: 6px;
     margin-top: 20px;
 
     .review-title {
       font-weight: bolder;
-      font-size: 15px;
+      font-size: 20px;
+
+      @media (max-width: 385px) {
+        font-size: 15px;
+      }
+    }
+
+    .review-description {
+
+      @media (max-width: 385px) {
+        font-size: 10px;
+      }
     }
   }
 
   .paginate-reviews {
-    position: absolute;
+    position: relative;
     z-index: 4;
-    bottom: 0;
-    right: 355px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+
+
+    @media (max-width: 385px) {
+      right: initial;
+      width: auto;
+    }
 
     .pagination {
-      bottom: 0;
-      position: absolute;
-      width: 650px;
-      margin: 0 auto;
-      margin-bottom: 7px;
-      // display: flex;
-      // align-items: center;
-      // justify-content: baseline;
-      // padding-right: 400px;
+      position: relative;
+
+      @media (max-width: 385px) {
+        position: relative;
+        width: auto;
+      }
     }
   }
 }
@@ -220,6 +309,13 @@
     height: 50px;
     width: 400px;  
     margin-bottom: 30px;
+
+    @media (max-width: 385px) {
+      font-size: 25px;
+      width: 200px;
+      border: solid 2px lightgray;
+      border-radius: 10px;
+    }
 
     &:hover {
       background-color: rgb(243, 243, 243);
