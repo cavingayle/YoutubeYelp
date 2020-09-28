@@ -18,6 +18,16 @@ function Home() {
       setReviews(res.data);
     });
   };
+    
+  console.log(reviews)
+
+  const reviewsFilt = reviews.filter( (rev, ind, self) => 
+  ind === self.findIndex(t =>(
+  t.channel_id === rev.channel_id
+  ))
+  )
+
+  console.log('FILTERED REVIEWS',reviewsFilt)
 
   return (
     <div>
@@ -28,13 +38,18 @@ function Home() {
       <div>
         <div className="genre">Possible Categories</div>
         <div className="recentactivity">
-          {reviews.map((rev,i) => {
+          {reviewsFilt.map((rev,i) => {
             return (
-              <div key={i}>
-                <Link to={`/channel/${rev.channel_id}`}>
-                  <RecentReviewCard {...rev} />
-                </Link>
-              </div>
+              <Link to={`/channel/${rev.youtube_id}`}> <div key={i}>
+                <div>
+                {rev.channel_title}
+
+                </div>
+                <div><img src={rev.image} alt={rev.channel_title} width='300'/></div>
+
+              
+                
+              </div></Link>
             );
           })}
         </div>
