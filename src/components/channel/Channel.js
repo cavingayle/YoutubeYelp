@@ -16,7 +16,7 @@ function Channel(props) {
   const [reviewAverage, setAverage] = useState(0);
   const [count, setCount] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
-  const [pageSize] = useState(4);
+  const [pageSize] = useState(2);
 
   const id = props.location.pathname.substring(9);
   const api_key = process.env.REACT_APP_API_KEY;
@@ -106,7 +106,7 @@ function Channel(props) {
         <div className="channel-info">
           <div className="channel-title">{youtube.snippet.title}</div>
           <div className="channel-rating">
-            Rating {backend.rating}
+            {backend.rating}
             <ReactStars {...secondExample} />
           </div>
           <div className="channel-description">
@@ -131,17 +131,21 @@ function Channel(props) {
                 halfIcon={<i className="fa fa-star-half-alt" />}
                 filledIcon={<i className="fa fa-star" />}
               />
-              <div className="review-description">{review.review}</div>
+              <div className="review-description">
+                {review.review.length > 150
+                  ? review.review.substring(0, 150) + "..."
+                  : review.review}
+              </div>
             </div>
           ))}
-          <div className="paginate-reviews">
-            <Pagination
-              currentPage={currentPage}
-              count={count}
-              pageSize={pageSize}
-              onPageChange={handlePageChange}
-            />
-          </div>
+          {/* <div className="paginate-reviews"> */}
+          <Pagination
+            currentPage={currentPage}
+            count={count}
+            pageSize={pageSize}
+            onPageChange={handlePageChange}
+          />
+          {/* </div> */}
         </div>
       </div>
       <div className="channel-reviews">{backend.review}</div>
