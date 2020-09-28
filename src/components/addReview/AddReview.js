@@ -61,7 +61,7 @@ function AddReview(props) {
       alert('Please leave a review')
     } else if (title === '') {
       alert('Please give your review a title')
-    } else if (selectVal === 'Pick a genre') { 
+    } else if (channel.genre === null && selectVal === 'Pick a genre') { 
       alert('Give this channel a genre')
     } else {
       axios.post(`/api/review/`, {
