@@ -37,6 +37,7 @@ function Home() {
       </header>
       <div>
         <div className="genre">Possible Categories</div>
+
         <div className="recentactivity">
           {reviewsFilt.map((rev,i) => {
             return (
@@ -59,3 +60,93 @@ function Home() {
 }
 
 export default Home;
+
+
+const categories = [
+  {
+  image: 'https://live.staticflickr.com/5170/5312401831_636e1e53ae_b.jpg',
+  query: 'animation',
+  title: 'Animation'
+  },
+  {
+  image: 'https://ichef.bbci.co.uk/images/ic/640x360/p08m7l9v.jpg',
+  query: 'conspiracy',
+  title: 'Conspiracy'
+  },
+  {
+  image: 'https://live.staticflickr.com/5170/5312401831_636e1e53ae_b.jpg',
+  query: 'comedy',
+  title: 'Comedy'
+  },
+  {
+  image: 'https://live.staticflickr.com/5170/5312401831_636e1e53ae_b.jpg',
+  query: 'beauty',
+  title: 'Beauty / Fashion'
+  },
+  {
+  image: 'https://live.staticflickr.com/5170/5312401831_636e1e53ae_b.jpg',
+  query: 'animation',
+  title: 'Animation'
+  },
+  {
+  image: 'https://live.staticflickr.com/5170/5312401831_636e1e53ae_b.jpg',
+  query: 'animation',
+  title: 'Animation'
+  },
+  {
+  image: 'https://live.staticflickr.com/5170/5312401831_636e1e53ae_b.jpg',
+  query: 'animation',
+  title: 'Animation'
+  },
+  {
+  image: 'https://live.staticflickr.com/5170/5312401831_636e1e53ae_b.jpg',
+  query: 'animation',
+  title: 'Animation'
+  },
+  {
+  image: 'https://live.staticflickr.com/5170/5312401831_636e1e53ae_b.jpg',
+  query: 'animation',
+  title: 'Animation'
+  },
+  {
+  image: 'https://live.staticflickr.com/5170/5312401831_636e1e53ae_b.jpg',
+  query: 'animation',
+  title: 'Animation'
+  },
+  {
+  image: 'https://live.staticflickr.com/5170/5312401831_636e1e53ae_b.jpg',
+  query: 'animation',
+  title: 'Animation'
+  },
+  {
+  image: 'https://live.staticflickr.com/5170/5312401831_636e1e53ae_b.jpg',
+  query: 'animation',
+  title: 'Animation'
+  },
+  {
+  image: 'https://live.staticflickr.com/5170/5312401831_636e1e53ae_b.jpg',
+  query: 'animation',
+  title: 'Animation'
+  },
+  {
+  image: 'https://live.staticflickr.com/5170/5312401831_636e1e53ae_b.jpg',
+  query: 'animation',
+  title: 'Animation'
+  },
+  {
+  image: 'https://live.staticflickr.com/5170/5312401831_636e1e53ae_b.jpg',
+  query: 'animation',
+  title: 'Animation'
+  },
+  {
+  image: 'https://live.staticflickr.com/5170/5312401831_636e1e53ae_b.jpg',
+  query: 'animation',
+  title: 'Animation'
+  },
+  {
+  image: 'https://live.staticflickr.com/5170/5312401831_636e1e53ae_b.jpg',
+  query: 'animation',
+  title: 'Animation'
+  },
+
+  ]
