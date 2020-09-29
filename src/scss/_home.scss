@@ -1,3 +1,72 @@
-.spinner {
-    min-height: calc(100vh - 110px);
+@import "./variables";
+.main-home {
+  header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100vw;
+    height: 250px;
+    background-color: $red-main;
+    h1 {
+      font-size: 40px;
+      margin-top: 25px;
+    }
+    .home-searchbar {
+      position: relative;
+      height: 200px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+      .search-input {
+        @include searchInput;
+        width: 70%;
+        height: 60px;
+        font-size: 30px;
+      }
+      .search-btn {
+        @include searchButton;
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        transform: translateX(-50%);
+      }
+      .phone-search {
+        display: none;
+      }
+    }
   }
+  .home-info {
+    margin-top: 20px;
+    h1 {
+      font-size: 40px;
+      margin-bottom: 60px;
+    }
+  }
+  .recentActivity {
+    h1 {
+      margin: 20px 0;
+      font-size: 40px;
+    }
+    h2{
+      color: black;
+    }
+  }
+  .random-channel-holder {
+    .random-channel-card {
+      h2{
+        color: black;
+      }
+      img{
+
+      }
+    }
+  }
+}
+
+.spinner {
+  min-height: calc(100vh - 110px);
+}
