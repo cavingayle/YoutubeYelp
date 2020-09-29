@@ -21,7 +21,7 @@
     align-items: center;
     z-index: 1;
 
-    @media (max-width: 400px) {
+    @media (max-width: 500px) {
       font-size: 18px;
       height: auto;
       flex-direction: column;
@@ -48,7 +48,7 @@
       border: 1px solid rgb(206, 206, 206);
       margin-right: 40px;
 
-      @media (max-width: 400px) {
+      @media (max-width: 500px) {
         width: 85%;
         height: 240px;
         margin-right: 0;
@@ -61,7 +61,7 @@
         margin-bottom: 10px;
         font-weight: bolder;
 
-        @media (max-width: 400px) {
+        @media (max-width: 500px) {
           font-size: 18px;
           margin-bottom: 2px;
         }
@@ -70,7 +70,7 @@
       .channel-rating {
         margin-bottom: 20px;
 
-        @media (max-width: 400px) {
+        @media (max-width: 500px) {
           margin-bottom: 2px;
         }
       }
@@ -80,7 +80,7 @@
         height: 50%;
         margin-bottom: 25px;
 
-        @media (max-width: 400px) {
+        @media (max-width: 500px) {
           font-size: 12px;
         }
       }
@@ -91,7 +91,7 @@
       width: auto;
       margin-right: 20px;
 
-      @media (max-width: 400px) {
+      @media (max-width: 500px) {
         margin-right: 0px;
         height: auto;
         width: 100%;
@@ -111,7 +111,7 @@
     justify-content: space-evenly;
     position: relative;
 
-    @media (max-width: 400px) {
+    @media (max-width: 500px) {
       width: 95vw;
       height: 400px;
       flex-direction: column;
@@ -140,7 +140,7 @@
         width: auto;
         cursor: pointer;
 
-        @media (max-width: 400px) {
+        @media (max-width: 500px) {
           height: 200px;
         }
       }
@@ -155,7 +155,7 @@
       width: 85%;
       padding-left: 40px;
 
-      @media (max-width: 400px) {
+      @media (max-width: 500px) {
         padding-left: 0;
         margin-top: 5px;
       }
@@ -164,7 +164,7 @@
         margin: 0 auto;
         font-weight: bolder;
 
-        @media (max-width: 400px) {
+        @media (max-width: 500px) {
           font-size: 19px;
         }
       }
@@ -172,7 +172,7 @@
       h4 {
         align-content: left;
 
-        @media (max-width: 400px) {
+        @media (max-width: 500px) {
           font-size: 18px;
         }
       }
@@ -190,7 +190,7 @@
   cursor: pointer;
   font-weight: bolder;
 
-  @media (max-width: 400px) {
+  @media (max-width: 500px) {
     font-size: 18px;
     left: -370px;
     top: 220px;
@@ -216,7 +216,7 @@
     transform: translateX(-50%, -50%);
     box-shadow: 0px 0px 80px 500px rgba(31, 31, 31, 0.8);
 
-    @media (max-width: 400px) {
+    @media (max-width: 500px) {
       height: 200px;
       width: auto;
       box-shadow: 0px 0px 80px 2000px rgba(31, 31, 31, 0.8);
@@ -234,7 +234,7 @@
   right: 2%;
   width: 35%;
 
-  @media (max-width: 400px) {
+  @media (max-width: 500px) {
     position: relative;
     width: 95vw;
     right: initial;
@@ -261,14 +261,14 @@
       font-weight: bolder;
       font-size: 20px;
 
-      @media (max-width: 400px) {
+      @media (max-width: 500px) {
         font-size: 15px;
       }
     }
 
     .review-description {
 
-      @media (max-width: 400px) {
+      @media (max-width: 500px) {
         font-size: 10px;
       }
     }
@@ -282,7 +282,7 @@
     align-items: center;
 
 
-    @media (max-width: 400px) {
+    @media (max-width: 500px) {
       right: initial;
       width: auto;
     }
@@ -290,7 +290,7 @@
     .pagination {
       position: relative;
 
-      @media (max-width: 400px) {
+      @media (max-width: 500px) {
         position: relative;
         width: auto;
       }
@@ -310,7 +310,7 @@
     width: 400px;  
     margin-bottom: 30px;
 
-    @media (max-width: 400px) {
+    @media (max-width: 500px) {
       font-size: 25px;
       width: 200px;
       border: solid 2px lightgray;
