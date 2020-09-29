@@ -3,6 +3,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  min-height: calc(100vh - 247px);
 
   .search-card {
     height: 200px;

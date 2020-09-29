@@ -54,7 +54,7 @@ function Channel(props) {
   // conditionally set the reviews to render based on if we have any from the backend or show no reviews yet
   if (loading === true) {
     return (
-      <div>
+      <div className="spinner">
         <Spinner />
       </div>
     );

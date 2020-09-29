@@ -42,7 +42,7 @@ getRandomChannels()
 
   if (loading === true) {
     return (
-      <div>
+      <div className="spinner">
         <Spinner/>
       </div>
     );
