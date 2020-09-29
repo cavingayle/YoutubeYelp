@@ -13,6 +13,7 @@ const S3Ctrl = require('./ctrl/S3Ctrl')
 const { SESSION_SECRET, CONNECTION_STRING, SERVER_PORT, PASSWORD, EMAIL } = process.env;
 
 app.use(express.json());
+app.use( express.static( `${__dirname}/../build` ) );
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',

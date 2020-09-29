@@ -39,7 +39,7 @@
   z-index: 1;
 }
 
-@media (max-width: 385px) {
+@media (max-width: 400px) {
   .channel-main .channel-header {
     font-size: 18px;
     height: auto;
@@ -51,7 +51,7 @@
         -ms-flex-pack: none;
             justify-content: none;
     border-radius: 0px;
-    width: 375px;
+    width: 100%;
   }
 }
 
@@ -82,7 +82,7 @@
   margin-right: 40px;
 }
 
-@media (max-width: 385px) {
+@media (max-width: 400px) {
   .channel-main .channel-header .channel-info {
     width: 85%;
     height: 240px;
@@ -98,7 +98,7 @@
   font-weight: bolder;
 }
 
-@media (max-width: 385px) {
+@media (max-width: 400px) {
   .channel-main .channel-header .channel-info .channel-title {
     font-size: 18px;
     margin-bottom: 2px;
@@ -109,7 +109,7 @@
   margin-bottom: 20px;
 }
 
-@media (max-width: 385px) {
+@media (max-width: 400px) {
   .channel-main .channel-header .channel-info .channel-rating {
     margin-bottom: 2px;
   }
@@ -121,7 +121,7 @@
   margin-bottom: 25px;
 }
 
-@media (max-width: 385px) {
+@media (max-width: 400px) {
   .channel-main .channel-header .channel-info .channel-description {
     font-size: 12px;
   }
@@ -133,11 +133,11 @@
   margin-right: 20px;
 }
 
-@media (max-width: 385px) {
+@media (max-width: 400px) {
   .channel-main .channel-header img {
     margin-right: 0px;
     height: auto;
-    width: 375px;
+    width: 100%;
   }
 }
 
@@ -163,7 +163,7 @@
   position: relative;
 }
 
-@media (max-width: 385px) {
+@media (max-width: 400px) {
   .channel-main .video-card {
     width: 95vw;
     height: 400px;
@@ -205,7 +205,7 @@
   cursor: pointer;
 }
 
-@media (max-width: 385px) {
+@media (max-width: 400px) {
   .channel-main .video-card .video-play img {
     height: 200px;
   }
@@ -230,7 +230,7 @@
   padding-left: 40px;
 }
 
-@media (max-width: 385px) {
+@media (max-width: 400px) {
   .channel-main .video-card .video-info {
     padding-left: 0;
     margin-top: 5px;
@@ -242,7 +242,7 @@
   font-weight: bolder;
 }
 
-@media (max-width: 385px) {
+@media (max-width: 400px) {
   .channel-main .video-card .video-info h2 {
     font-size: 19px;
   }
@@ -253,7 +253,7 @@
       align-content: left;
 }
 
-@media (max-width: 385px) {
+@media (max-width: 400px) {
   .channel-main .video-card .video-info h4 {
     font-size: 18px;
   }
@@ -270,7 +270,7 @@
   font-weight: bolder;
 }
 
-@media (max-width: 385px) {
+@media (max-width: 400px) {
   .video-close {
     font-size: 18px;
     left: -370px;
@@ -307,7 +307,7 @@
           box-shadow: 0px 0px 80px 500px rgba(31, 31, 31, 0.8);
 }
 
-@media (max-width: 385px) {
+@media (max-width: 400px) {
   .ui iframe {
     height: 200px;
     width: auto;
@@ -334,7 +334,7 @@
   width: 35%;
 }
 
-@media (max-width: 385px) {
+@media (max-width: 400px) {
   .review-cards {
     position: relative;
     width: 95vw;
@@ -373,13 +373,13 @@
   font-size: 20px;
 }
 
-@media (max-width: 385px) {
+@media (max-width: 400px) {
   .review-cards .review-card .review-title {
     font-size: 15px;
   }
 }
 
-@media (max-width: 385px) {
+@media (max-width: 400px) {
   .review-cards .review-card .review-description {
     font-size: 10px;
   }
@@ -397,7 +397,7 @@
           align-items: center;
 }
 
-@media (max-width: 385px) {
+@media (max-width: 400px) {
   .review-cards .paginate-reviews {
     right: initial;
     width: auto;
@@ -408,7 +408,7 @@
   position: relative;
 }
 
-@media (max-width: 385px) {
+@media (max-width: 400px) {
   .review-cards .paginate-reviews .pagination {
     position: relative;
     width: auto;
@@ -427,7 +427,7 @@
   margin-bottom: 30px;
 }
 
-@media (max-width: 385px) {
+@media (max-width: 400px) {
   .single-review button {
     font-size: 25px;
     width: 200px;
@@ -685,7 +685,7 @@
   height: 100%;
 }
 
-@media (max-width: 385px) {
+@media (max-width: 400px) {
   .nav-main .nav-nav {
     width: 95%;
     padding-left: 30px;
@@ -708,7 +708,7 @@
   top: 8px;
 }
 
-@media (max-width: 385px) {
+@media (max-width: 400px) {
   .nav-main .nav-nav .yelp-logo {
     left: 24px;
   }
@@ -743,7 +743,7 @@
   top: 1px;
 }
 
-@media (max-width: 385px) {
+@media (max-width: 400px) {
   .nav-main .nav-nav .dropdown button {
     font-size: 25px;
   }
@@ -780,7 +780,7 @@
           transform: translateY(0px);
 }
 
-@media (max-width: 385px) {
+@media (max-width: 400px) {
   .nav-main .nav-nav .dropdown .dropdown-box {
     right: -19px;
     width: 75px;
@@ -839,7 +839,7 @@
   outline: none;
 }
 
-@media (max-width: 385px) {
+@media (max-width: 400px) {
   .nav-main .nav-nav .search-input {
     width: 150px;
   }
@@ -849,7 +849,7 @@
   display: none;
 }
 
-@media (max-width: 385px) {
+@media (max-width: 400px) {
   .nav-main .nav-nav .phone-search {
     padding: 6px 5px;
     display: inline-block;
@@ -882,7 +882,7 @@
   outline: none;
 }
 
-@media (max-width: 385px) {
+@media (max-width: 400px) {
   .nav-main .nav-nav .search-btn {
     display: none;
   }
@@ -1358,7 +1358,7 @@
   border-radius: 6px;
 }
 
-@media (max-width: 385px) {
+@media (max-width: 400px) {
   .search-main .search-card .search-img-body .search-img {
     height: 90px;
     width: 90px;
@@ -1384,7 +1384,7 @@
   padding-left: 40px;
 }
 
-@media (max-width: 385px) {
+@media (max-width: 400px) {
   .search-main .search-info-container {
     padding-left: 20px;
   }
@@ -1396,7 +1396,7 @@
   cursor: pointer;
 }
 
-@media (max-width: 385px) {
+@media (max-width: 400px) {
   .search-main .search-info-container .search-title {
     font-size: 18px;
   }
@@ -1409,7 +1409,7 @@
   cursor: pointer;
 }
 
-@media (max-width: 385px) {
+@media (max-width: 400px) {
   .search-main .search-info-container .react-stars {
     size: 15;
     margin-top: -10px;
@@ -1421,7 +1421,7 @@
   cursor: pointer;
 }
 
-@media (max-width: 385px) {
+@media (max-width: 400px) {
   .search-main .search-info-container .search-description {
     font-size: 14px;
   }
