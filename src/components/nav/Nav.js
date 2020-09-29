@@ -33,8 +33,7 @@ const Nav = (props) => {
     <div className="nav-main">
       <nav className="nav-nav">
         <Link to="/">
-          <i className="fab fa-youtube logo"></i>
-          <i className="fab fa-yelp yelp-logo"></i>
+          <img src="yylogo.png" className="logo"/>
         </Link>
         <Searchbar />
         <div className="dropdown">
