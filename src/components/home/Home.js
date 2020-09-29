@@ -11,7 +11,7 @@ function Home(props) {
 
   useEffect(() => {
     axios.get("/api/recent").then((res) => {
-      setReviews(res.data.slice(0, 4));
+      setReviews(res.data.slice(0, 50));
       getRandomChannels();
     });
   }, []);
@@ -53,33 +53,35 @@ function Home(props) {
           <Searchbar />
         </div>
       </header>
-      <div className="home-info">
-        <h1>Random channels to checkout</h1>
-        <div className="random-channel-holder">
-          {randomChannels.map((chan, i) => {
-            return (
-              <Link to={`/channel/${chan.youtube_id}`}>
-                <div key={i} className="random-channel-card">
-                  <h2>{chan.channel_title}</h2>
-                  <img src={chan.image} alt="" width="300" />
-                </div>
-              </Link>
-            );
-          })}
-        </div>
-        <div className="recentActivity">
-          <h1>Recent Activity!</h1>
-          {reviewsFilt.map((rev, i) => {
-            return (
-              <Link to={`/channel/${rev.youtube_id}`}>
-                <div key={i} className="recent-activity-card">
-                  <h2>{rev.channel_title}</h2>
-                  <img src={rev.image} alt={rev.channel_title} width="300" />
-                </div>
-              </Link>
-            );
-          })}
-        </div>
+
+      <h1 className="home-text">Random channels to checkout!</h1>
+      <div className="random-channel-holder">
+        {randomChannels.map((chan, i) => {
+          return (
+            <Link to={`/channel/${chan.youtube_id}`}>
+              <div key={i} className="random-channel-card">
+                <h2>{chan.channel_title}</h2>
+                <img src={chan.image} alt={chan.channel_title} />
+              </div>
+            </Link>
+          );
+        })}
+      </div>
+      <h1 className="home-text RA-text">Recent Activity!</h1>
+      <div className="recentActivity">
+        {reviewsFilt.map((rev, i) => {
+          return (
+            <Link to={`/channel/${rev.youtube_id}`}>
+              <div key={i} className="recent-activity-card">
+                <img src={rev.image} alt={rev.channel_title} />
+                <h1>{rev.channel_title}</h1>
+                <h2>{rev.rating}/5</h2>
+                <h3>{rev.review_title}</h3>
+                <h2>{rev.review}</h2>
+              </div>
+            </Link>
+          );
+        })}
       </div>
     </div>
   );
