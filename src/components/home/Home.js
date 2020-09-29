@@ -3,23 +3,35 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-import Search from "../search/Search";
-import RecentReviewCard from "../recentReviewCard/RecentReviewCard";
 
-function Home() {
+import Search from "../search/Search";
+import Spinner from "../spinner/Spinner";
+import Searchbar from "../searchbar/Searchbar";
+
+
+function Home(props) {
   const [reviews, setReviews] = useState([]);
+  const [randomChannels, setRandomChannels] = useState([])
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    getRecentReviews();
+    axios.get("/api/recent").then((res) => {
+      setReviews(res.data.slice(0,4))
+getRandomChannels()
+    });
   },[]);
 
-  const getRecentReviews = () => {
-    axios.get("/api/recent").then((res) => {
-      setReviews(res.data);
-    });
-  };
-    
-  console.log(reviews)
+ 
+  const getRandomChannels = () => {
+    setLoading(true)
+    axios.get('/api/channels/').then(res => {
+      setRandomChannels(res.data.map((a) => ({sort: Math.random(), value: a}))
+      .sort((a, b) => a.sort - b.sort)
+        .map((a) => a.value).slice(0, 4))
+    setLoading(false)
+    })
+  }
+
 
 
   // filtering the reviews data to remove duplicates 
@@ -29,46 +41,43 @@ function Home() {
   ))
   )
 
-  // Shuffling the categories so different ones load each time
-  const shuffleCategories = categories.map((a) => ({sort: Math.random(), value: a}))
-  .sort((a, b) => a.sort - b.sort)
-    .map((a) => a.value)
-  
-  
-  // Cutting the categories to 5
-  const reducedCategories = shuffleCategories.slice(0, 5)
 
-  console.log('Genres Panels', reducedCategories)
 
-  console.log('FILTERED REVIEWS',reviewsFilt)
+
+  console.log('RANDOM CHANNELS',randomChannels)
+
+  if (loading === true) {
+    return (
+      <div>
+        <Spinner/>
+      </div>
+    );
+  }
 
   return (
     <div>
       <header>
         <div>Youtube Yelp</div>
-        <Search />
+        <Searchbar />
       </header>
       <div>
-        <div className="genre">Possible Categories</div>
-        {reducedCategories.map(cat => (
-          <div>
-            <div>{cat.title}</div>
-            <div><img src={cat.image} alt="" width='300'/></div>
-            </div>
+        <div className="genre">Channels To Checkout</div>
+        {randomChannels.map(chan => (
+          <Link to={`/channel/${chan.youtube_id}`}><div >
+            <h2>{chan.title}</h2>
+            <div><img src={chan.image} alt="" width='300'/></div>
+            </div></Link>
         ))}
         <span></span>
         <div className="recentactivity">
           {reviewsFilt.map((rev,i) => {
             return (
               <Link to={`/channel/${rev.youtube_id}`}> <div key={i}>
-                <div>
+                <h2>
                 {rev.channel_title}
 
-                </div>
+                </h2>
                 <div><img src={rev.image} alt={rev.channel_title} width='300'/></div>
-
-              
-                
               </div></Link>
             );
           })}
@@ -78,7 +87,8 @@ function Home() {
   );
 }
 
-export default Home;
+
+export default Home
 
 
 const categories = [
@@ -163,9 +173,19 @@ const categories = [
   title: 'Pranks/Challenges'
   },
   {
-  image: 'https://shsnews.org/wp-content/uploads/2018/05/movie.jpg',
-  query: 'movies',
-  title: 'Movies'
+  image: 'https://cdn.pixabay.com/photo/2015/12/19/12/40/kids-1099709__340.jpg',
+  query: 'kids',
+  title: 'Kids'
+  },
+  {
+  image: 'https://live.staticflickr.com/3284/2536005489_426b7d2a7c_b.jpg',
+  query: 'food',
+  title: 'Food'
+  },
+  {
+  image: 'https://api.ndla.no/image-api/raw/id/41749',
+  query: 'Political',
+  title: 'Political'
   },
 
   ]

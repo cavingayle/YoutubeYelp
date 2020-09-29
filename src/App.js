@@ -10,7 +10,7 @@ function App() {
   const {pathname} = useLocation();
   return (
     <div className="App">
-      <Nav/>
+      { pathname !== '/' &&  <Nav/>}
      {routes}
      <Footer/>
     </div>

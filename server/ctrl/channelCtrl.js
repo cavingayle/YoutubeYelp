@@ -36,10 +36,9 @@ module.exports = {
     res.status(200).send(channel)
   },
   
-  getChannelByGenre: async (req, res) => {
+  getAllChannels: async (req, res) => {
     const db = req.app.get('db')
-    const { genre } = req.body
-    const channels = await db.Channels.get_channels_by_genre(genre)
+    const channels = await db.Channels.get_all_channels()
     res.status(200).send(channels)
   }
 };
