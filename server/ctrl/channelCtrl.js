@@ -40,5 +40,16 @@ module.exports = {
     const db = req.app.get('db')
     const channels = await db.Channels.get_all_channels()
     res.status(200).send(channels)
+  },
+  getUserProfile: async (req, res) => {
+    const db = req.app.get('db')
+    const { id } = req.body
+    const profile = await db.Users.get_user_profile(id)
+    if (profile[0]) {
+      res.status(200).send(profile)
+    } else {
+      res.status(404).send('No profile Exists')
+    }
+    
   }
 };

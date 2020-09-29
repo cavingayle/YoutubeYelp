@@ -65,6 +65,7 @@ app.post("/api/channel/:id", channelCtrl.addChannel);
 app.get("/api/channel/:id", channelCtrl.loadChannels);
 app.get('/api/chan/:id', channelCtrl.getChannel)
 app.get('/api/channels/', channelCtrl.getAllChannels)
+app.get('api/profile/', channelCtrl.getUserProfile)
 
 //# AWS S3 ENDPOINTS
 app.get('/api/signs3', S3Ctrl.sign_s3);

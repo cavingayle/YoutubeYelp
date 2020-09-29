@@ -29,22 +29,7 @@
     }
 
     .logo {
-      color: white;
-      font-size: 24px;
-      position: relative;
-      z-index: 2;
-    }
-    .yelp-logo{
-      position: absolute;
-      left: 44px;
-      padding-bottom: 10px;
-      font-size: 50px;
-      color: black;
-      top: 8px;
-
-      @media (max-width: 500px){
-        left: 24px;
-      }
+      height: 60px;
     }
 
     .dropdown {
@@ -142,7 +127,7 @@
       display: none;
 
       @media (max-width: 500px) {
-        padding: 6px 5px;
+        padding: 7px 5px;
         display: inline-block;
         box-shadow: inset 0px 1px 0px 0px #f2f2f2;
         background: linear-gradient(to bottom, #e0e0e0 5%, #c7c7c7 100%);
