@@ -1,6 +1,7 @@
 import React from "react";
 
 function ProfileReviews(props) {
+  console.log(props.data)
   return (
     <div className='pro-review-holder'>
       <p className='pro-review'>Channel: {props.data.channel_title} </p>

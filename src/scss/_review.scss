@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
   position: relative;
   min-height: calc(100vh - 247px);
   .AR-stars {
@@ -56,6 +57,44 @@
       outline: none;
       &:hover {
         color: $gray-main;
+      }
+    }
+  }
+  .AR-reviews-holder{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: stretch;
+    position: relative;
+    width: 90vw;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    border-top: 1px solid $red-main;
+    .AR-review-card{
+      position: relative;
+      padding: 5px;
+      width: 325px;
+      margin: 5px 5px;
+      border-radius: 3px;
+      box-shadow: 0px 0px 1px 1px $gray-main;
+      .AR-review-user{
+        position: absolute;
+        top: 5px;
+        left: 10px;
+      }
+      .AR-review-rating{
+        position: absolute;
+        top: 5px;
+        right: 10px;
+      }
+      .AR-review-title{
+        margin-top: 25px;
+        font-weight: bolder;
+      }
+      .AR-review{
+        margin-top: 5px;
       }
     }
   }
