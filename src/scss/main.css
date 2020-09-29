@@ -26,6 +26,7 @@
     font-size: 18px;
     height: auto;
     flex-direction: column;
+    align-items: center;
     justify-content: none;
     border-radius: 0px;
     width: 100%;
@@ -53,7 +54,7 @@
   .channel-main .channel-header .channel-info {
     width: 85%;
     height: 240px;
-    margin-right: 0;
+    margin-right: 0px;
     margin-top: 10px;
   }
 }
@@ -212,8 +213,8 @@
 @media (max-width: 500px) {
   .video-close {
     font-size: 18px;
-    left: -370px;
     top: 220px;
+    right: 55px;
   }
 }
 
@@ -402,7 +403,7 @@
   font-family: "Noto Sans", sans-serif;
   font-size: 14px;
   font-weight: bold;
-  padding: 4.5px 20px;
+  padding: 4.6px 20px;
   text-decoration: none;
   outline: none;
   position: absolute;
@@ -671,7 +672,7 @@
 
 @media (max-width: 500px) {
   .nav-main .nav-nav .phone-search {
-    padding: 6px 5px;
+    padding: 7px 5px;
     display: inline-block;
     box-shadow: inset 0px 1px 0px 0px #f2f2f2;
     background: linear-gradient(to bottom, #e0e0e0 5%, #c7c7c7 100%);
@@ -693,7 +694,7 @@
   font-family: "Noto Sans", sans-serif;
   font-size: 14px;
   font-weight: bold;
-  padding: 4.5px 20px;
+  padding: 4.6px 20px;
   text-decoration: none;
   outline: none;
 }
