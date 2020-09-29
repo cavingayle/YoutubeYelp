@@ -9,7 +9,6 @@ const Search = (props) => {
   const [count, setCount] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize] = useState(10);
-  const [averageReview, setAverage] = useState(0);
 
   useEffect(() => {
     setCount(props.channels.length);

@@ -48,22 +48,22 @@ const Nav = (props) => {
           )}
           {isDown ? (
             <ul className="dropdown-box">
-              <li onClick={handleDropdown}>
+              <li onClick={() => setDropdown(false)}>
                 <Link className="home dropdown-btn" to={"/"}>
                   Home
                 </Link>
               </li>
-              <li onClick={handleDropdown}>
+              <li onClick={() => setDropdown(false)}>
                 <Link className="profile dropdown-btn" to={"/profile"}>
                   Profile
                 </Link>
               </li>
-              <li onClick={handleDropdown}>
+              <li onClick={() => setDropdown(false)}>
                 <Link className="login dropdown-btn" to={"/login"}>
                   Login
                 </Link>
               </li>
-              <li onClick={handleDropdown}>
+              <li onClick={() => setDropdown(false)}>
                 <i className="logout dropdown-btn" onClick={logout}>
                   Logout
                 </i>
