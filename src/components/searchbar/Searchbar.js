@@ -14,6 +14,7 @@ const Searchbar = (props) => {
   const searchChannels = () => {
     props.getChannelsYT(input);
     props.history.push("/search");
+    setInput("");
   };
 
   return (
