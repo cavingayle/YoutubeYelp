@@ -97,6 +97,7 @@ function AddReview(props) {
       </div>
     );
   }
+  
   return (
     <div className="addReview-main">
       <div>
@@ -111,7 +112,7 @@ function AddReview(props) {
 
       {channel.genre === null && (
         <div className="AR-genre-holder">
-          <h1> Please select a genre for {channel.channel_title}</h1>
+          <h1> Please select a genre for "{channel.channel_title}"</h1>
           <select onChange={selectChange}>
             <option value="Pick">Pick a genre </option>
             <option value="animation">Animation</option>
@@ -153,12 +154,14 @@ function AddReview(props) {
       <div className="AR-submit-btn-holder">
         <button onClick={submitReview}>AddReview</button>
       </div>
-      <div>
+      <div className='AR-reviews-holder'>
+        <h1>What others have said about "{channel.channel_title}"</h1>
         {reviews.map((rev) => (
-          <div>
-            <div>User: {rev.username}</div>
-            <div>{rev.review_title}</div>
-            <div>{rev.review}</div>
+          <div className='AR-review-card'>
+            <div className='AR-review-user'> {rev.username}</div>
+            <div className='AR-review-rating'>{rev.rating}/5</div>
+            <div className='AR-review-title'>{rev.review_title}</div>
+            <div className='AR-review'>{rev.review}</div>
           </div>
         ))}
       </div>

@@ -127,12 +127,10 @@ h1{
 }
   .pro-review-holder{
     width: 325px;
-    margin: 5px 0px;
+    margin: 5px 5px;
     border-radius: 3px;
     box-shadow: 1px 1px 1px 1px #00000040;
-    .pro-review{
-      color: $red-main;
-    }
+    // background-image:url(props.data.image) ;
   }
 }
 
@@ -200,18 +198,16 @@ h1{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch;
-    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+    align-content: stretch;
   margin-bottom: 25px;
     .pro-review-holder{
+      padding: 5px;
       width: 325px;
-      margin: 5px 0px;
+      margin: 5px 5px;
       border-radius: 3px;
-      box-shadow: 1px 1px 1px 1px #00000040;
-      .pro-review{
-        color: $red-main;
-      }
+      box-shadow: 0px 0px 1px 1px $gray-main;
     }
   }
 }
