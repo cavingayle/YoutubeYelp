@@ -14,6 +14,11 @@ const Nav = (props) => {
     document.addEventListener("click", closeMenu);
   };
 
+  const handleMouseDown = (e) => {
+    handleDropdown();
+    e.stopPropagation();
+  };
+
   const closeMenu = () => {
     setDropdown(false);
     document.removeEventListener("click", closeMenu);
@@ -29,26 +34,28 @@ const Nav = (props) => {
       .catch((err) => console.log(err));
   };
 
+  let visibility = "hide";
+  if (isDown === true) {
+    visibility = "show";
+  }
+
   return (
     <div className="nav-main">
+      {console.log("visibility", visibility)}
       <nav className="nav-nav">
         <Link to="/">
           <img src="yylogo.png" className="logo" />
         </Link>
         <Searchbar />
         <div className="dropdown">
-          {isDown ? (
-            <button className="fas fa-times" onClick={closeMenu}></button>
-          ) : (
-            <button
-              className="fas fa-bars hamburger"
-              onClick={handleDropdown}
-            ></button>
-          )}
-          {isDown ? (
+          <button
+            className="fas fa-bars hamburger"
+            onClick={handleMouseDown}
+          ></button>
+          <div id="flyoutMenu" className={visibility}>
             <ul className="dropdown-box">
               <li onClick={() => setDropdown(false)}>
-                <Link className="home dropdown-btn" to={"/"}>
+                <Link className="dropdown-btn" to={"/"}>
                   Home
                 </Link>
               </li>
@@ -71,7 +78,7 @@ const Nav = (props) => {
                 </li>
               )}
             </ul>
-          ) : null}
+          </div>
         </div>
       </nav>
     </div>
