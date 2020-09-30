@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import Spinner from "../spinner/Spinner";
 import Searchbar from "../searchbar/Searchbar";
+import Stars from "../stars/Stars";
 
 function Home(props) {
   const [reviews, setReviews] = useState([]);
@@ -75,7 +76,7 @@ function Home(props) {
               <div key={i} className="recent-activity-card">
                 <img src={rev.image} alt={rev.channel_title} />
                 <h1>{rev.channel_title}</h1>
-                <h2>{rev.rating}/5</h2>
+                <h2><Stars {...rev}/></h2>
                 <h3>{rev.review_title}</h3>
                 <h2>{rev.review}</h2>
               </div>
