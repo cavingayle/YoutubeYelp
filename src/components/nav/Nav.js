@@ -33,7 +33,7 @@ const Nav = (props) => {
     <div className="nav-main">
       <nav className="nav-nav">
         <Link to="/">
-          <img src="yylogo.png" className="logo"/>
+          <img src="yylogo.png" className="logo" />
         </Link>
         <Searchbar />
         <div className="dropdown">
@@ -57,16 +57,19 @@ const Nav = (props) => {
                   Profile
                 </Link>
               </li>
-              <li onClick={() => setDropdown(false)}>
-                <Link className="login dropdown-btn" to={"/login"}>
-                  Login
-                </Link>
-              </li>
-              <li onClick={() => setDropdown(false)}>
-                <i className="logout dropdown-btn" onClick={logout}>
-                  Logout
-                </i>
-              </li>
+              {props.userId === 0 ? (
+                <li onClick={() => setDropdown(false)}>
+                  <Link className="login dropdown-btn" to={"/login"}>
+                    Login
+                  </Link>
+                </li>
+              ) : (
+                <li onClick={() => setDropdown(false)}>
+                  <i className="logout dropdown-btn" onClick={logout}>
+                    Logout
+                  </i>
+                </li>
+              )}
             </ul>
           ) : null}
         </div>
