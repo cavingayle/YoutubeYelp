@@ -49,13 +49,18 @@ function Home(props) {
   return (
     <div className="main-home">
       <header>
+      <img src="yylogo.png" className="home-logo"/>
         <h1>YouTube Yelp</h1>
+        <ul className='home-links'>
+          <li><Link className='home-link' to={"/login"}>Login</Link></li>
+          <li><Link className='home-link' to={"/profile"}>Profile</Link></li>
+        </ul>
         <div className="home-searchbar">
           <Searchbar />
         </div>
       </header>
 
-      <h1 className="home-text">Random channels to checkout!</h1>
+      <h1 className="home-text">Random channels to checkout</h1>
       <div className="random-channel-holder">
         {randomChannels.map((chan, i) => {
           return (
@@ -68,7 +73,7 @@ function Home(props) {
           );
         })}
       </div>
-      <h1 className="home-text RA-text">Recent Activity!</h1>
+      <h1 className="home-text RA-text">Recent Activity</h1>
       <div className="recentActivity">
         {reviewsFilt.map((rev, i) => {
           return (
@@ -76,7 +81,7 @@ function Home(props) {
               <div key={i} className="recent-activity-card">
                 <img src={rev.image} alt={rev.channel_title} />
                 <h1>{rev.channel_title}</h1>
-                <h2><Stars {...rev}/></h2>
+                <div className='home-stars-holder'><Stars {...rev}/></div>
                 <h3>{rev.review_title}</h3>
                 <h2>{rev.review}</h2>
               </div>
