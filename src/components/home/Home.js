@@ -4,6 +4,8 @@ import axios from "axios";
 import Spinner from "../spinner/Spinner";
 import Searchbar from "../searchbar/Searchbar";
 import Stars from "../stars/Stars";
+import { connect } from 'react-redux'
+import {logoutUser} from '../../redux/reducer'
 
 function Home(props) {
   const [reviews, setReviews] = useState([]);
@@ -31,6 +33,17 @@ function Home(props) {
     });
   };
 
+  const logout = () => {
+    axios
+      .delete("/auth/logout")
+      .then((res) => {
+        props.logoutUser();
+        props.history.push("/");
+      })
+      .catch((err) => console.log(err));
+  };
+
+
   // filtering the reviews data to remove duplicates
   const reviewsFilt = reviews.filter(
     (rev, ind, self) =>
@@ -44,15 +57,19 @@ function Home(props) {
       </div>
     );
   }
-  console.log("RandomChan", randomChannels);
-  console.log("reviewFilt", reviewsFilt);
+
   return (
     <div className="main-home">
       <header>
       <img src="yylogo.png" className="home-logo"/>
         <h1>YouTube Yelp</h1>
         <ul className='home-links'>
-          <li><Link className='home-link' to={"/login"}>Login</Link></li>
+        {props.userId === 0 ? <li><Link className='home-link' to={"/login"}>Login</Link></li>
+            :
+            <li onClick={logout}><Link className='home-link' to={"/login"}>Logout</Link></li>
+ 
+          }
+
           <li><Link className='home-link' to={"/profile"}>Profile</Link></li>
         </ul>
         <div className="home-searchbar">
@@ -93,4 +110,7 @@ function Home(props) {
   );
 }
 
-export default Home;
+const mapStateToprops = state => state
+
+
+export default connect(mapStateToprops,{logoutUser})(Home);

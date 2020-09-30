@@ -1616,6 +1616,18 @@
           box-shadow: 1px 1px 1px 1px #00000040;
 }
 
+.mappedReviews .pro-review-holder .profile-stars {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 @media (min-width: 1000px) {
   .profile-main h1 {
     font-size: 75px;

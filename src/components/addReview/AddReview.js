@@ -3,6 +3,7 @@ import axios from "axios";
 import ReactStars from "react-rating-stars-component";
 import { connect } from "react-redux";
 import Spinner from "../spinner/Spinner";
+import Stars from '../stars/Stars'
 
 function AddReview(props) {
   const [reviews, setReviews] = useState([]);
@@ -159,7 +160,7 @@ function AddReview(props) {
         {reviews.map((rev) => (
           <div className='AR-review-card'>
             <div className='AR-review-user'> {rev.username}</div>
-            <div className='AR-review-rating'>{rev.rating}/5</div>
+            <div className='AR-review-rating'><Stars {...rev} size={10}/></div>
             <div className='AR-review-title'>{rev.review_title}</div>
             <div className='AR-review'>{rev.review}</div>
           </div>

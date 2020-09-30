@@ -13,7 +13,7 @@ function Stars(props) {
         value: props.rating,
         edit: false,
         a11y: true,
-        size:24,
+        size: props.size ? props.size : 24,
         isHalf: true,
         emptyIcon: <i className="far fa-star"  />,
         halfIcon: <i className="fa fa-star-half-alt" />,
@@ -30,4 +30,5 @@ function Stars(props) {
 }
 
 export default Stars
+
 
