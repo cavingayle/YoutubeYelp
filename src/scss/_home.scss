@@ -11,12 +11,13 @@
     flex-direction: column;
     justify-content: space-between;
     width: 100vw;
-    height: 250px;
+    height: 550px;
     background: url(simpleb.jpg) center center;
 
     @media (max-width: 500px) {
       background: url(simplec.jpg) center center;
       background-size: 375px 250px;
+      height: 250px;
     }
     .home-links{
       position: absolute;
@@ -72,7 +73,7 @@
 
     .home-searchbar {
       position: relative;
-      height: 200px;
+      height: 325px;
       width: 100%;
       display: flex;
       justify-content: center;
