@@ -26,8 +26,7 @@ const Searchbar = (props) => {
         className="search-input"
       />
       <i className="fas fa-search phone-search" onClick={searchChannels}></i>
-      <button onClick={searchChannels} className="search-btn">
-        Search
+      <button onClick={searchChannels} className="fas fa-search search-btn">
       </button>
     </div>
   );
