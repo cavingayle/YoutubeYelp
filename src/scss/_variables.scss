@@ -7,22 +7,20 @@ $main-font: "Noto Sans", sans-serif;
   font-size: 16px;
   border-radius: 2px 0px 0px 2px;
   border: 1px solid darkgray;
-  padding: 3px 50px 4px 5px;
+  padding: 3px 150px 4px 5px;
   display: inline-block;
-  box-shadow: inset 0px 1px 0px 0px #ffffff;
+  // box-shadow: inset 0px 1px 0px 0px #ffffff;
   outline: none;
 }
 @mixin searchButton {
-  box-shadow: inset 0px 1px 0px 0px #f2f2f2;
-  background: linear-gradient(to bottom, #e0e0e0 5%, #c7c7c7 100%);
-  background-color: #e0e0e0;
+  // box-shadow: inset 0px 1px 0px 0px #f2f2f2;
+  background-color: rgb(231, 231, 231);
   border-radius: 0px 2px 2px 0px;
   border: 1px solid darkgray;
   display: inline-block;
   cursor: pointer;
-  color: #666666;
-  font-family: $main-font;
-  font-size: 14px;
+  color: gray;
+  font-size: 20px;
   font-weight: bold;
   padding: 4.6px 20px;
   text-decoration: none;
