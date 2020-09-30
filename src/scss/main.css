@@ -25,9 +25,18 @@
   .channel-main .channel-header {
     font-size: 18px;
     height: auto;
-    flex-direction: column;
-    align-items: center;
-    justify-content: none;
+
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: none;
+        -ms-flex-pack: none;
+            justify-content: none;
+
     border-radius: 0px;
     width: 100%;
   }
@@ -329,12 +338,14 @@
   font-family: "Noto Sans", sans-serif;
   font-size: 30px;
   border: none;
-  border-bottom: 2px solid lightgray;
-  border-top: 2px solid lightgray;
-  background-color: transparent;
+  outline: none;
+  background-color: #b70202;
   height: 50px;
   width: 400px;
   margin-bottom: 30px;
+  -webkit-box-shadow: 0px 2px 2px #d0d0d0;
+          box-shadow: 0px 2px 2px #d0d0d0;
+  border-radius: 5px;
 }
 
 @media (max-width: 500px) {
@@ -372,9 +383,37 @@
   background-color: #b70202;
 }
 
+.main-home header .home-links {
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  -webkit-text-decoration: black;
+          text-decoration: black;
+  height: 100px;
+  width: 100px;
+}
+
+.main-home header .home-links li {
+  margin-bottom: 15px;
+}
+
+.main-home header .home-links .home-link {
+  color: black;
+  font-size: 20px;
+}
+
 .main-home header h1 {
-  font-size: 40px;
+  font-size: 50px;
   margin-top: 25px;
+  text-decoration: none;
+}
+
+.main-home header .home-logo {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  height: 100px;
+  width: 100px;
 }
 
 .main-home header .home-searchbar {
@@ -412,7 +451,7 @@
   text-decoration: none;
   outline: none;
   position: absolute;
-  bottom: 15px;
+  bottom: 9px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -424,12 +463,26 @@
 .main-home .recentActivity {
   width: 1100px;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  align-content: stretch;
+
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: stretch;
+      align-content: stretch;
+
   margin-bottom: 25px;
+}
+
+.main-home .recentActivity a {
+  color: transparent;
 }
 
 .main-home .recentActivity h1 {
@@ -469,15 +522,38 @@
   font-size: 30px;
 }
 
+.main-home .recentActivity .recent-activity-card .home-stars-holder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .main-home .random-channel-holder {
   border-top: 1px solid #d0d0d0;
   border-bottom: 1px solid #d0d0d0;
   display: flex;
-  flex-direction: row-reverse;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
+
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+
   width: 90vw;
   height: 175px;
 }
@@ -492,10 +568,10 @@
   height: 150px;
   width: 257px;
   margin: 0 5px 0 5px;
+  color: transparent;
 }
 
 .main-home .random-channel-holder .random-channel-card {
-  position: relative;
   background-color: #d0d0d0;
   display: flex;
   flex-direction: row-reverse;
@@ -520,6 +596,123 @@
   height: 100px;
   border-radius: 50%;
   box-shadow: inset 2px 2px 2px 2px #d0d0d0;
+}
+
+@media (max-width: 1000px) {
+  .main-home .recentActivity {
+    width: 400px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: stretch;
+        align-content: stretch;
+    margin-bottom: 25px;
+  }
+  .main-home .random-channel-holder {
+    border-top: 1px solid #d0d0d0;
+    border-bottom: 1px solid #d0d0d0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 90vw;
+    height: 225px;
+  }
+  .main-home .random-channel-holder a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 100px;
+    width: 150px;
+    margin: 5px 5px;
+  }
+  .main-home .random-channel-holder .random-channel-card {
+    background-color: #d0d0d0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    height: 100px;
+    -webkit-box-shadow: inset 1px 1px 1px 1px #d0d0d0;
+            box-shadow: inset 1px 1px 1px 1px #d0d0d0;
+    border-radius: 5px;
+  }
+  .main-home .random-channel-holder .random-channel-card h2 {
+    color: black;
+    font-size: 13px;
+    margin-left: 15px;
+    text-decoration: none;
+  }
+  .main-home .random-channel-holder .random-channel-card img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    -webkit-box-shadow: inset 2px 2px 2px 2px #d0d0d0;
+            box-shadow: inset 2px 2px 2px 2px #d0d0d0;
+  }
+  .main-home header .home-logo {
+    height: 70px;
+    width: 70px;
+  }
+  .main-home header h1 {
+    font-size: 25px;
+  }
+  .main-home header .home-links {
+    right: 0;
+  }
+  .main-home header .home-links .home-link {
+    font-size: 15px;
+  }
 }
 
 .RA-text {
@@ -863,9 +1056,7 @@
   align-content: stretch;
   position: relative;
   width: 90vw;
-  margin-top: 25px;
   margin-bottom: 10px;
-  border-top: 1px solid #b70202;
 }
 
 .addReview-main .AR-reviews-holder .AR-review-card {
@@ -898,6 +1089,12 @@
   margin-top: 5px;
 }
 
+.addReview-main .AR-others {
+  border-bottom: 1px solid #d0d0d0;
+  border-top: 1px solid #d0d0d0;
+  margin: 10px;
+}
+
 .profile-main {
   min-height: calc(100vh - 235px);
   display: flex;
@@ -927,6 +1124,10 @@
   height: 250px;
   width: 375px;
   font-family: "Noto Sans", sans-serif;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -1034,9 +1235,18 @@
 .mappedReviews {
   width: 375px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+
   font-family: "Noto Sans", sans-serif;
   font-weight: bold;
   margin-bottom: 25px;

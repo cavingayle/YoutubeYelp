@@ -154,8 +154,8 @@ function AddReview(props) {
       <div className="AR-submit-btn-holder">
         <button onClick={submitReview}>AddReview</button>
       </div>
+        <h1 className='AR-others'>What others have said about "{channel.channel_title}"</h1>
       <div className='AR-reviews-holder'>
-        <h1>What others have said about "{channel.channel_title}"</h1>
         {reviews.map((rev) => (
           <div className='AR-review-card'>
             <div className='AR-review-user'> {rev.username}</div>

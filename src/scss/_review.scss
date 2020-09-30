@@ -69,9 +69,7 @@
     align-content: stretch;
     position: relative;
     width: 90vw;
-    margin-top: 25px;
     margin-bottom: 10px;
-    border-top: 1px solid $red-main;
     .AR-review-card{
       position: relative;
       padding: 5px;
@@ -97,5 +95,10 @@
         margin-top: 5px;
       }
     }
+  }
+  .AR-others{
+    border-bottom: 1px solid $gray-main;
+    border-top: 1px solid $gray-main;
+    margin: 10px;
   }
 }
