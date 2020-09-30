@@ -110,7 +110,7 @@ export default function reducer(state = initialState, action) {
     case POST_REVIEW + "FULFILLED":
       return { ...state, reviews: payload };
     case LOGOUT:
-      return state;
+      return initialState;
     default:
       return state;
   }
