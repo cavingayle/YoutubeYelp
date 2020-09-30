@@ -25,4 +25,13 @@ $main-font: "Noto Sans", sans-serif;
   padding: 4.6px 20px;
   text-decoration: none;
   outline: none;
+
+  &:hover {
+    color: black;
+  }
+
+  &:active {
+    position: relative;
+    top: 1px;
+  }
 }
