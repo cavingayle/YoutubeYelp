@@ -24,7 +24,7 @@ function Channel(props) {
 
   useEffect(() => {
     axios.get(`/api/reviews/${id}`).then((res) => {
-      setBackend(res.data);
+      setBackend(res.data.reverse());
       axios
         .get(
           `https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${id}&key=${api_key}`
