@@ -77,7 +77,7 @@ class Aws extends Component {
           {isUploading ? (
             <GridLoader />
           ) : (
-            <p className="aws-text">Click Here To Upload Photo</p>
+            <p className="aws-text">Click To Upload Photo</p>
           )}
         </Dropzone>
       </div>

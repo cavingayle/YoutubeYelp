@@ -1,0 +1,36 @@
+@import "./variables";
+.main-about {
+  min-height: calc(100vh - 235px);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  .about-title {
+    font-size: 55px;
+  }
+  .about-body {
+    width: 80%;
+    font-size: 35px;
+  }
+  hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid $red-main;
+    margin: 2em 0;
+    padding: 0;
+    width: 300px;
+    @media (min-width: 1000px) {
+      width: 900px;
+    }
+  }
+  .about-img-holder {
+    img {
+      object-fit: cover;
+      margin: 5px;
+      height: 120px;
+      width: 100px;
+      border-radius: 5px;
+    }
+  }
+}
