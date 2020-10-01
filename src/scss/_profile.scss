@@ -20,6 +20,12 @@
     padding: 0;
     width: 300px;
   }
+  .save-btn-holder {
+    height: 100px;
+  }
+  .pro-info-input-holder{
+    margin-top: 15px;
+  }
 }
 
 .profile-info {
@@ -46,7 +52,6 @@
     outline: none;
   }
   button {
-    margin-top: 10px;
     width: 300px;
     height: 30px;
     border-width: 0;
@@ -55,7 +60,8 @@
     color: white;
     border-radius: 6px;
     background-color: $red-main;
-    margin-bottom: 30px;
+    margin-top: 7px;
+    margin-bottom: 5px;
     border-radius: 10px;
     outline: none;
     &:hover {
@@ -139,7 +145,7 @@
     margin: 5px 5px;
     border-radius: 3px;
     box-shadow: 1px 1px 1px 1px #00000040;
-    .profile-stars{
+    .profile-stars {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -193,7 +199,7 @@
   }
   .pro-info-input-holder {
     position: absolute;
-    top: 15px;
+    top: 1px;
     right: 0px;
     width: 300px;
     height: 100px;

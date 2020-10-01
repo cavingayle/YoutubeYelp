@@ -987,6 +987,7 @@
   display: -ms-flexbox;
   display: flex;
   font-size: 70px;
+  font-family: "Noto Sans", sans-serif;
   color: #b70202;
   margin-bottom: 20px;
 }
@@ -1013,6 +1014,7 @@
   border-radius: 6px;
   width: 300px;
   text-align: center;
+  font-family: "Noto Sans", sans-serif;
   height: 30px;
   -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
           box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
@@ -1036,6 +1038,7 @@
   height: 30px;
   border-width: 0;
   font-weight: bolder;
+  font-family: "Noto Sans", sans-serif;
   color: white;
   border-radius: 6px;
   background-color: #b70202;
@@ -1358,6 +1361,7 @@
   height: 45px;
   margin-bottom: 25px;
   font-size: 30px;
+  font-family: "Noto Sans", sans-serif;
   border-radius: 2px 0px 0px 2px;
   border: 1px solid darkgray;
   padding: 3px 50px 4px 5px;
@@ -1369,16 +1373,19 @@
 
 .addReview-main .AR-genre-holder h1 {
   font-size: 20px;
+  font-family: "Noto Sans", sans-serif;
 }
 
 .addReview-main .AR-genre-holder select {
   font-size: 16px;
+  font-family: "Noto Sans", sans-serif;
   background-color: #d0d0d0;
   margin-left: 10px;
 }
 
 .addReview-main .AR-genre-holder select option {
   font-size: 12px;
+  font-family: "Noto Sans", sans-serif;
   background-color: #d0d0d0;
 }
 
@@ -1393,6 +1400,7 @@
   height: 30px;
   border-width: 0;
   font-weight: bolder;
+  font-family: "Noto Sans", sans-serif;
   color: white;
   border-radius: 6px;
   background-color: #b70202;
@@ -1425,12 +1433,14 @@
   -ms-flex-line-pack: stretch;
       align-content: stretch;
   position: relative;
+  font-family: "Noto Sans", sans-serif;
   width: 90vw;
   margin-bottom: 10px;
 }
 
 .addReview-main .AR-reviews-holder .AR-review-card {
   position: relative;
+  font-family: "Noto Sans", sans-serif;
   padding: 5px;
   width: 325px;
   margin: 5px 5px;
@@ -1441,6 +1451,7 @@
 
 .addReview-main .AR-reviews-holder .AR-review-card .AR-review-user {
   position: absolute;
+  font-family: "Noto Sans", sans-serif;
   top: 5px;
   left: 10px;
 }
@@ -1454,10 +1465,12 @@
 .addReview-main .AR-reviews-holder .AR-review-card .AR-review-title {
   margin-top: 25px;
   font-weight: bolder;
+  font-family: "Noto Sans", sans-serif;
 }
 
 .addReview-main .AR-reviews-holder .AR-review-card .AR-review {
   margin-top: 5px;
+  font-family: "Noto Sans", sans-serif;
 }
 
 .addReview-main .AR-others {
@@ -1499,6 +1512,14 @@
   width: 300px;
 }
 
+.profile-main .save-btn-holder {
+  height: 100px;
+}
+
+.profile-main .pro-info-input-holder {
+  margin-top: 15px;
+}
+
 .profile-info {
   position: relative;
   height: 250px;
@@ -1538,7 +1559,6 @@
 }
 
 .profile-info button {
-  margin-top: 10px;
   width: 300px;
   height: 30px;
   border-width: 0;
@@ -1547,7 +1567,8 @@
   color: white;
   border-radius: 6px;
   background-color: #b70202;
-  margin-bottom: 30px;
+  margin-top: 7px;
+  margin-bottom: 5px;
   border-radius: 10px;
   outline: none;
 }
@@ -1718,7 +1739,7 @@
   }
   .pro-info-input-holder {
     position: absolute;
-    top: 15px;
+    top: 1px;
     right: 0px;
     width: 300px;
     height: 100px;
