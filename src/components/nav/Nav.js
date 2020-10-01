@@ -60,6 +60,9 @@ const Nav = (props) => {
                 </Link>
               </li>
               <li onClick={() => setDropdown(false)}>
+              <Link className="dropdown-btn" to='/about'>About</Link>
+              </li>
+              <li onClick={() => setDropdown(false)}>
                 <Link className="profile dropdown-btn" to={"/profile"}>
                   Profile
                 </Link>

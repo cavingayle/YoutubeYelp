@@ -11,9 +11,7 @@ function Footer(props) {
           <i className="fab fa-github fa-2x"></i>
         </a>
       </div>
-      <div className='footer-link'>
-        <Link to='/about'>About</Link>
-      </div>
+      <div className="footer-link"></div>
       <div>
         <h6>This website was built with:</h6>
         <i className="fab fa-react fa-2x"></i>
