@@ -1180,6 +1180,14 @@
   width: 300px;
 }
 
+.profile-main .save-btn-holder {
+  height: 100px;
+}
+
+.profile-main .pro-info-input-holder {
+  margin-top: 15px;
+}
+
 .profile-info {
   position: relative;
   height: 250px;
@@ -1207,7 +1215,6 @@
 }
 
 .profile-info button {
-  margin-top: 10px;
   width: 300px;
   height: 30px;
   border-width: 0;
@@ -1216,7 +1223,8 @@
   color: white;
   border-radius: 6px;
   background-color: #b70202;
-  margin-bottom: 30px;
+  margin-top: 7px;
+  margin-bottom: 5px;
   border-radius: 10px;
   outline: none;
 }
@@ -1365,7 +1373,7 @@
   }
   .pro-info-input-holder {
     position: absolute;
-    top: 15px;
+    top: 1px;
     right: 0px;
     width: 300px;
     height: 100px;
