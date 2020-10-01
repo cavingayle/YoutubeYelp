@@ -20,6 +20,7 @@ function Channel(props) {
 
   const id = props.location.pathname.substring(9);
   const api_key = process.env.REACT_APP_API_KEY;
+  const api_key2 = process.env.REACT_APP_API_KEY_TWO;
 
   useEffect(() => {
     axios.get(`/api/reviews/${id}`).then((res) => {
@@ -38,7 +39,24 @@ function Channel(props) {
               setChannelVids(res.data.items);
               setLoading(false);
             });
-        });
+        })
+        .catch((err) =>
+          axios
+            .get(
+              `https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${id}&key=${api_key2}`
+            )
+            .then((res) => {
+              setYoutube(res.data.items[0]);
+              axios
+                .get(
+                  `https://www.googleapis.com/youtube/v3/search?key=${api_key2}&channelId=${id}&part=snippet,id&order=date&maxResults=3`
+                )
+                .then((res) => {
+                  setChannelVids(res.data.items);
+                  setLoading(false);
+                });
+            })
+        );
     });
     axios.get(`/api/ratings/${id}`).then((res) => {
       const integer = parseInt(res.data[0].avg, 10);
