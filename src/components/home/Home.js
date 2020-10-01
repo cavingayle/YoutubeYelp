@@ -14,7 +14,7 @@ function Home(props) {
 
   useEffect(() => {
     axios.get("/api/recent").then((res) => {
-      setReviews(res.data.slice(0, 50));
+      setReviews(res.data.slice(0, 12));
       getRandomChannels();
     });
   }, []);
