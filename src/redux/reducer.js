@@ -28,7 +28,7 @@ export const getChannelsYT = (query) => {
     .get(
       `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=3&q=${query}&type=channel&key=${process.env.REACT_APP_API_KEY}`
     )
-    .then((res) => console.log(res))
+    .then((res) => res)
     .catch((err) =>
       axios.get(
         `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=3&q=${query}&type=channel&key=${process.env.REACT_APP_API_KEY_TWO}`
