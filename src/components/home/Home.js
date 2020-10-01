@@ -61,7 +61,7 @@ function Home(props) {
   return (
     <div className="main-home">
       <header>
-      <img src="yylogo.png" className="home-logo"/>
+      <img src="yyred.png" className="home-logo"/>
         <h1>YouTube Yelp</h1>
         <ul className='home-links'>
         {props.userId === 0 ? <li><Link className='home-link' to={"/login"}>Login</Link></li>

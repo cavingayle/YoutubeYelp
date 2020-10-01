@@ -25,16 +25,16 @@
     outline: none;
   }
   .AR-genre-holder {
-      h1{
-          font-size: 20px;
-      }
+    h1 {
+      font-size: 20px;
+    }
     select {
       font-size: 16px;
       background-color: $gray-main;
       margin-left: 10px;
       option {
         font-size: 12px;
-        background-color:$gray-main;
+        background-color: $gray-main;
       }
     }
   }
@@ -50,17 +50,21 @@
       width: 300px;
       height: 30px;
       border-width: 0;
-      background-color: $red-main;
       font-weight: bolder;
-      border-radius: 3px;
-      box-shadow: 0px 2px 2px $gray-main;
+      color: white;
+      border-radius: 6px;
+      background-color: $red-main;
+      margin-bottom: 30px;
+      border-radius: 10px;
       outline: none;
       &:hover {
-        color: $gray-main;
+        color: slategray;
+        border: lightgray solid 1px;
+        background-color: rgb(243, 243, 243);
       }
     }
   }
-  .AR-reviews-holder{
+  .AR-reviews-holder {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -70,33 +74,33 @@
     position: relative;
     width: 90vw;
     margin-bottom: 10px;
-    .AR-review-card{
+    .AR-review-card {
       position: relative;
       padding: 5px;
       width: 325px;
       margin: 5px 5px;
       border-radius: 3px;
       box-shadow: 0px 0px 1px 1px $gray-main;
-      .AR-review-user{
+      .AR-review-user {
         position: absolute;
         top: 5px;
         left: 10px;
       }
-      .AR-review-rating{
+      .AR-review-rating {
         position: absolute;
         top: 5px;
         right: 10px;
       }
-      .AR-review-title{
+      .AR-review-title {
         margin-top: 25px;
         font-weight: bolder;
       }
-      .AR-review{
+      .AR-review {
         margin-top: 5px;
       }
     }
   }
-  .AR-others{
+  .AR-others {
     border-bottom: 1px solid $gray-main;
     border-top: 1px solid $gray-main;
     margin: 10px;

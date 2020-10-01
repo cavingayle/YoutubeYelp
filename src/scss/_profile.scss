@@ -54,13 +54,17 @@
     height: 30px;
     border-width: 0;
     font-family: $main-font;
-    background-color: $red-main;
     font-weight: bolder;
-    border-radius: 3px;
-    box-shadow: 0px 2px 2px $gray-main;
+    color: white;
+    border-radius: 6px;
+    background-color: $red-main;
+    margin-bottom: 30px;
+    border-radius: 10px;
     outline: none;
     &:hover {
-      color: $gray-main;
+      color: slategray;
+      border: lightgray solid 1px;
+      background-color: rgb(243, 243, 243);
     }
   }
   h5 {

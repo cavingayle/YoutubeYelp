@@ -328,14 +328,14 @@
 .single-review button {
   font-family: "Noto Sans", sans-serif;
   font-size: 30px;
+  color: white;
   border: none;
   outline: none;
-  background-color: #b70202;
   height: 50px;
   width: 400px;
+  background-color: #b70202;
   margin-bottom: 30px;
-  box-shadow: 0px 2px 2px #d0d0d0;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 @media (max-width: 500px) {
@@ -344,11 +344,14 @@
     width: 200px;
     border: solid 2px lightgray;
     border-radius: 10px;
+    margin-bottom: 30px;
   }
 }
 
 .single-review button:hover {
   background-color: #f3f3f3;
+  color: slategray;
+  border: lightgray solid 1px;
 }
 
 .spinner {
@@ -370,7 +373,7 @@
   justify-content: space-between;
   width: 100vw;
   height: 550px;
-  background: url(comppic.jpg) center;
+  background: url(comppic.jpg) center top;
 }
 
 @media (max-width: 500px) {
@@ -431,6 +434,7 @@
 .main-home header .home-logo {
   position: absolute;
   top: 10px;
+  left: 10px;
   margin: 0 auto;
   height: 100px;
   width: 100px;
@@ -444,7 +448,7 @@
 
 .main-home header .home-searchbar {
   position: relative;
-  height: 325px;
+  height: 425px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -469,7 +473,7 @@
   height: 60px;
   font-size: 30px;
   border-radius: 10px 0px 0px 10px;
-  border: lightgray solid 1px;
+  border: #b9b9b9 solid 1px;
 }
 
 @media (max-width: 500px) {
@@ -530,6 +534,7 @@
 .main-home .recentActivity h1 {
   margin: 20px 0;
   font-size: 40px;
+  font-family: "Noto Sans", sans-serif;
 }
 
 @media (max-width: 500px) {
@@ -557,17 +562,20 @@
   color: black;
   border-bottom: 1px solid #d0d0d0;
   padding-bottom: 5px;
+  font-family: "Noto Sans", sans-serif;
 }
 
 .main-home .recentActivity .recent-activity-card h2 {
   color: black;
   font-size: 25px;
+  font-family: "Noto Sans", sans-serif;
 }
 
 .main-home .recentActivity .recent-activity-card h3 {
   color: black;
   font-weight: bold;
   font-size: 30px;
+  font-family: "Noto Sans", sans-serif;
 }
 
 .main-home .recentActivity .recent-activity-card .home-stars-holder {
@@ -585,6 +593,7 @@
   justify-content: center;
   align-content: center;
   align-items: center;
+  font-family: "Noto Sans", sans-serif;
   width: 90vw;
   height: 175px;
 }
@@ -620,6 +629,7 @@
   color: black;
   font-size: 15px;
   margin-left: 15px;
+  font-family: "Noto Sans", sans-serif;
 }
 
 .main-home .random-channel-holder .random-channel-card img {
@@ -680,6 +690,7 @@
     font-size: 13px;
     margin-left: 15px;
     text-decoration: none;
+    font-family: "Noto Sans", sans-serif;
   }
   .main-home .random-channel-holder .random-channel-card img {
     width: 50px;
@@ -755,10 +766,10 @@
 }
 
 .login-input input {
-  background-color: #d0d0d0;
+  background-color: #e6e6e6;
   margin-bottom: 10px;
   border-width: 0px;
-  border-radius: 3px;
+  border-radius: 6px;
   width: 300px;
   text-align: center;
   height: 30px;
@@ -777,15 +788,18 @@
   width: 300px;
   height: 30px;
   border-width: 0;
-  background-color: #b70202;
   font-weight: bolder;
-  border-radius: 3px;
-  box-shadow: 0px 2px 2px #d0d0d0;
+  color: white;
+  border-radius: 6px;
+  background-color: #b70202;
+  border-radius: 10px;
   outline: none;
 }
 
 .login-btn button:hover {
-  color: #d0d0d0;
+  color: slategray;
+  border: lightgray solid 1px;
+  background-color: #f3f3f3;
 }
 
 .nav-main {
@@ -869,8 +883,20 @@
   z-index: 1000;
 }
 
+@media (max-width: 500px) {
+  .nav-main .nav-nav .dropdown #flyoutMenu {
+    width: 50vw;
+  }
+}
+
 .nav-main .nav-nav .dropdown #flyoutMenu.hide {
-  transform: translate3d(100vw, 0, 0);
+  transform: translate3d(25vw, 0, 0);
+}
+
+@media (max-width: 500px) {
+  .nav-main .nav-nav .dropdown #flyoutMenu.hide {
+    transform: translate3d(55vw, 0, 0);
+  }
 }
 
 .nav-main .nav-nav .dropdown #flyoutMenu.show {
@@ -888,8 +914,8 @@
 
 @media (max-width: 500px) {
   .nav-main .nav-nav .dropdown .dropdown-box {
-    right: -19px;
-    width: 75px;
+    right: 40px;
+    width: 120px;
   }
 }
 
@@ -920,7 +946,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: solid 1px #969696;
+  border-bottom: solid 2px #b70202;
 }
 
 .nav-main .nav-nav .search-bar {
@@ -1052,15 +1078,19 @@
   width: 300px;
   height: 30px;
   border-width: 0;
-  background-color: #b70202;
   font-weight: bolder;
-  border-radius: 3px;
-  box-shadow: 0px 2px 2px #d0d0d0;
+  color: white;
+  border-radius: 6px;
+  background-color: #b70202;
+  margin-bottom: 30px;
+  border-radius: 10px;
   outline: none;
 }
 
 .addReview-main .AR-submit-btn-holder button:hover {
-  color: #d0d0d0;
+  color: slategray;
+  border: lightgray solid 1px;
+  background-color: #f3f3f3;
 }
 
 .addReview-main .AR-reviews-holder {
@@ -1167,15 +1197,19 @@
   height: 30px;
   border-width: 0;
   font-family: "Noto Sans", sans-serif;
-  background-color: #b70202;
   font-weight: bolder;
-  border-radius: 3px;
-  box-shadow: 0px 2px 2px #d0d0d0;
+  color: white;
+  border-radius: 6px;
+  background-color: #b70202;
+  margin-bottom: 30px;
+  border-radius: 10px;
   outline: none;
 }
 
 .profile-info button:hover {
-  color: #d0d0d0;
+  color: slategray;
+  border: lightgray solid 1px;
+  background-color: #f3f3f3;
 }
 
 .profile-info h5 {
@@ -1267,15 +1301,9 @@
 }
 
 .mappedReviews .pro-review-holder .profile-stars {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (min-width: 1000px) {
