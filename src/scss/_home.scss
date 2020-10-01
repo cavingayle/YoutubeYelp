@@ -12,7 +12,7 @@
     justify-content: space-between;
     width: 100vw;
     height: 550px;
-    background: url(comppic.jpg) center;
+    background: url(comppic.jpg) center top;
 
     @media (max-width: 500px) {
       background: url(simplec.jpg) center center;
@@ -63,6 +63,7 @@
     .home-logo{
       position: absolute;
       top: 10px;
+      left: 10px;
       margin: 0 auto;
       height: 100px;
       width: 100px;
@@ -74,7 +75,7 @@
 
     .home-searchbar {
       position: relative;
-      height: 325px;
+      height: 425px;
       width: 100%;
       display: flex;
       justify-content: center;
@@ -90,7 +91,7 @@
         height: 60px;
         font-size: 30px;
         border-radius: 10px 0px 0px 10px;
-        border: lightgray solid 1px;
+        border: rgb(185, 185, 185) solid 1px;
         // background-color: transparent;
 
         @media (max-width: 500px) {
@@ -127,6 +128,7 @@
     h1 {
       margin: 20px 0;
       font-size: 40px;
+      font-family: $main-font;
 
       @media (max-width: 500px) {
         font-size: 30px;
@@ -148,15 +150,18 @@
         color: black;
         border-bottom: 1px solid $gray-main;
         padding-bottom: 5px;
+        font-family: $main-font;
       }
       h2 {
         color: black;
         font-size: 25px;
+        font-family: $main-font;
       }
       h3 {
         color: black;
         font-weight: bold;
         font-size: 30px;
+        font-family: $main-font;
       }
       .home-stars-holder{
         display: flex;
@@ -174,6 +179,7 @@
     justify-content: center;
     align-content: center;
     align-items: center;
+    font-family: $main-font;
     width: 90vw;
     height: 175px;
     a {
@@ -204,6 +210,7 @@
         color: black;
         font-size: 15px;
         margin-left: 15px;
+        font-family: $main-font;
       }
       img {
         width: 100px;
@@ -262,6 +269,7 @@
           font-size: 13px;
           margin-left: 15px;
           text-decoration: none;
+          font-family: $main-font;
         }
         img {
           width: 50px;
