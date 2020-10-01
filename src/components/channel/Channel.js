@@ -33,7 +33,7 @@ function Channel(props) {
           setYoutube(res.data.items[0]);
           axios
             .get(
-              `https://www.googleapis.com/youtube/v3/search?key=${api_key}&channelId=${id}&part=snippet,id&order=date&maxResults=3`
+              `https://www.googleapis.com/youtube/v3/search?key=${api_key}&channelId=${id}&part=snippet,id&order=date&maxResults=5`
             )
             .then((res) => {
               setChannelVids(res.data.items);
@@ -49,7 +49,7 @@ function Channel(props) {
               setYoutube(res.data.items[0]);
               axios
                 .get(
-                  `https://www.googleapis.com/youtube/v3/search?key=${api_key2}&channelId=${id}&part=snippet,id&order=date&maxResults=3`
+                  `https://www.googleapis.com/youtube/v3/search?key=${api_key2}&channelId=${id}&part=snippet,id&order=date&maxResults=5`
                 )
                 .then((res) => {
                   setChannelVids(res.data.items);
