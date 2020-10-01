@@ -29,17 +29,17 @@ function AboutUs() {
         Created by: Cavin Gayle, Keaton Braithwaite & Ryan Milne || Sept. 2020
       </p>
       <div className="about-img-holder">
-        <img
+        <div
           alt="Cavin Gayle"
-          src="https://us.themoneytizer.com/modules/mod_home/img/kgayle.jpg"
+          className="imgcav"
         />
-        <img
+        <div
           alt="Keaton Braithwaite"
-          src="https://youtube-yelp.s3-us-west-1.amazonaws.com/b8e4a190-6286-43f3-85c3-5b2174335311--8kV9OpUjo5AZn7MmlYK24icZ5Ni5PGN7yw_TRcF9DqdyBsFiWT8bvbhtcZsc9S0WO4TQfPRHeGidLRFioX1wqVRIcj7zsBw7Y-W.png"
+          className="imgkeat"
         />
-        <img
+        <div
           alt="Ryan Milne"
-          src="https://youtube-yelp.s3-us-west-1.amazonaws.com/22e98493-632e-45df-a475-ffc3958fd294-IMG_0562.JPEG"
+          className="imgryan"
         />
       </div>
     </div>
