@@ -1,5 +1,6 @@
 @import "./variables";
 .footer-body {
+  position: relative;
   width: 100vw;
   height: 125px;
   background-color: $red-main;
@@ -30,4 +31,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.footer-link{
+position: absolute;
+bottom: 7px;
+right: 10px;
 }

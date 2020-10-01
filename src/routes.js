@@ -6,6 +6,7 @@ import Channel from './components/channel/Channel'
 import AddReview from './components/addReview/AddReview'
 import Profile from './components/profile/Profile'
 import Search from './components/search/Search'
+import AboutUs from './components/footer/AboutUs'
 
 
 export default (
@@ -16,5 +17,6 @@ export default (
     <Route path="/search" component={Search} />
     <Route path="/review/:id" component={AddReview} />
     <Route path="/channel/:id" component={Channel} />
+    <Route path="/about" component={AboutUs} />
   </Switch>
 );

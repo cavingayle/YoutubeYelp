@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Footer(props) {
   return (
@@ -9,6 +10,9 @@ function Footer(props) {
           {" "}
           <i className="fab fa-github fa-2x"></i>
         </a>
+      </div>
+      <div className='footer-link'>
+        <Link to='/about'>About</Link>
       </div>
       <div>
         <h6>This website was built with:</h6>
