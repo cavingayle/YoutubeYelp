@@ -331,34 +331,35 @@
         box-shadow: inset 1px 1px 1px 1px $gray-main;
         border-radius: 6px;
         contain: content;
+        
+        h2 {
+          color: white;
+          font-size: 20px;
+          text-decoration: none;
+          font-family: "Kanit", sans-serif;
+          position: absolute;
+          font-weight: lighter;
+          z-index: 50;
+          background: linear-gradient(rgba(31, 31, 31, 0.6), rgba(31, 31, 31, 0.6));
+          // box-shadow: 0px 0px 80px 200px rgba(31, 31, 31, 0.5);
+          border: transparent;
+          outline: none;
+          height: 110%;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow: inherit;
+        }
+  
+        img {
+          width: 100%;
+          height: 100%;
+          overflow: inherit;
+          position: relative;
+        }
       }
 
-      h2 {
-        color: white;
-        font-size: 20px;
-        text-decoration: none;
-        font-family: "Kanit", sans-serif;
-        position: absolute;
-        font-weight: lighter;
-        z-index: 50;
-        background: linear-gradient(rgba(31, 31, 31, 0.6), rgba(31, 31, 31, 0.6));
-        // box-shadow: 0px 0px 80px 200px rgba(31, 31, 31, 0.5);
-        border: transparent;
-        outline: none;
-        height: 110%;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-      }
-
-      img {
-        width: 100%;
-        height: 100%;
-        // border-radius: 50%;
-        position: relative;
-      }
     }
 
     header {

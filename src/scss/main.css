@@ -741,7 +741,7 @@
     border-radius: 6px;
     contain: content;
   }
-  .main-home .random-channel-holder h2 {
+  .main-home .random-channel-holder .phone-card h2 {
     color: white;
     font-size: 20px;
     text-decoration: none;
@@ -757,11 +757,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    overflow: inherit;
   }
-  .main-home .random-channel-holder img {
+  .main-home .random-channel-holder .phone-card img {
     width: 100%;
     height: 100%;
+    overflow: inherit;
     position: relative;
   }
   .main-home header .home-logo {
