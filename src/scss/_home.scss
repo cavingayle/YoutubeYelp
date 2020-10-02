@@ -19,12 +19,12 @@
       background-size: 450px 300px;
       height: 250px;
     }
-    .home-links{
+    .home-links {
       position: absolute;
       top: 1px;
       right: 60px;
       text-decoration: black;
-      height:100px ;
+      height: 100px;
       width: 100px;
       display: flex;
       flex-direction: row;
@@ -37,11 +37,11 @@
         width: 90vw;
       }
 
-      li{
+      li {
         margin-bottom: 15px;
         margin-right: 30px;
       }
-      .home-link{
+      .home-link {
         color: black;
         font-size: 20px;
         font-weight: bolder;
@@ -52,7 +52,7 @@
       font-size: 50px;
       margin-top: 25px;
       text-decoration: none;
-      font-family: 'Kanit', sans-serif;
+      font-family: "Kanit", sans-serif;
       color: $red-main;
 
       @media (max-width: 500px) {
@@ -60,7 +60,7 @@
       }
     }
 
-    .home-logo{
+    .home-logo {
       position: absolute;
       top: 10px;
       left: 10px;
@@ -122,7 +122,7 @@
     align-items: center;
     align-content: stretch;
     margin-bottom: 25px;
-    a{
+    a {
       color: transparent;
     }
     h1 {
@@ -163,7 +163,7 @@
         font-size: 30px;
         font-family: $main-font;
       }
-      .home-stars-holder{
+      .home-stars-holder {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -175,53 +175,112 @@
     border-bottom: 1px solid $gray-main;
     display: flex;
     flex-direction: row-reverse;
+    position: relative;
     flex-wrap: nowrap;
     justify-content: center;
     align-content: center;
     align-items: center;
-    font-family: $main-font;
+    font-family: "Kanit", sans-serif;
     width: 90vw;
-    height: 175px;
+    height: 200px;
+
     a {
       display: flex;
       flex-direction: row-reverse;
+      position: relative;
       flex-wrap: wrap;
       justify-content: center;
       align-content: center;
       align-items: center;
-      height: 150px;
+      height: 175px;
       width: 257px;
       margin: 0 5px 0 5px;
       color: transparent;
     }
+
     .random-channel-card {
-      background-color: $gray-main;
-      display: flex;
-      flex-direction: row-reverse;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-content: center;
-      align-items: center;
+      background-color: transparent;
+      margin-top: 175px;
       width: 100%;
-      height: 150px;
-      box-shadow: inset 1px 1px 1px 1px $gray-main;
-      border-radius: 5px;
-      h2 {
-        color: black;
-        font-size: 15px;
-        margin-left: 15px;
-        font-family: $main-font;
+      height: 175px;
+      transform: translate(-50%, -50%);
+      transform-style: preserve-3d;
+      perspective: 600px;
+      transition: 0.5s;
+
+      &:hover .card-front {
+        transform: rotateX(-180deg);
       }
+
+      &:hover .card-back {
+        transform: rotateX(0deg);
+      }
+
+      .card-front {
+        display: flex;
+        flex-direction: row-reverse;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        border-radius: 6px;
+        border: 1px solid rgb(159, 166, 173);
+        background-color: $gray-main;
+        backface-visibility: hidden;
+        transform: rotateX(0deg);
+        transition: 0.5s;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        left: 130px;
+        contain: content;
+        overflow: hidden;
+      }
+
+      .card-back {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        background-color: $red-main;
+        border: 1px solid rgb(151, 159, 167);
+        border-radius: 6px;
+        backface-visibility: hidden;
+        transform: rotateX(180deg);
+        transition: 0.5s;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        left: 130px;
+      }
+
+      h1 {
+        color: white;
+        font-size: 35px;
+        font-weight: bolder;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Kanit", sans-serif;
+      }
+
       img {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
+        height: 100%;
+        width: 100%;
+        overflow: inherit;
         box-shadow: inset 2px 2px 2px 2px $gray-main;
       }
     }
+
+    .phone-card {
+      display: none;
+    }
   }
-  @media (max-width:1000px){
-    .recentActivity{
+
+  @media (max-width: 1000px) {
+    .recentActivity {
       width: 400px;
       display: flex;
       flex-direction: column-reverse;
@@ -230,6 +289,7 @@
       align-content: stretch;
       margin-bottom: 25px;
     }
+
     .random-channel-holder {
       border-top: 1px solid $gray-main;
       border-bottom: 1px solid $gray-main;
@@ -240,57 +300,83 @@
       align-content: center;
       align-items: center;
       width: 90vw;
-      height: 225px;
+      height: 250px;
+
       a {
         display: flex;
-        flex-direction: row-reverse;
-        flex-wrap: wrap;
+        flex-direction: column-reverse;
+        // flex-wrap: wrap;
         justify-content: center;
         align-content: center;
         align-items: center;
-        height: 100px;
+        height: 120px;
         width: 150px;
         margin: 5px 5px;
       }
+
       .random-channel-card {
+        display: none;
+      }
+
+      .phone-card {
         background-color: $gray-main;
         display: flex;
-        flex-direction: row-reverse;
-        flex-wrap: wrap;
+        flex-direction: column-reverse;
+        // flex-wrap: wrap;
         justify-content: center;
         align-content: center;
         align-items: center;
         width: 100%;
         height: 100px;
         box-shadow: inset 1px 1px 1px 1px $gray-main;
-        border-radius: 5px;
-        h2 {
-          color: black;
-          font-size: 13px;
-          margin-left: 15px;
-          text-decoration: none;
-          font-family: $main-font;
-        }
-        img {
-          width: 50px;
-          height: 50px;
-          border-radius: 50%;
-          box-shadow: inset 2px 2px 2px 2px $gray-main;
-        }
+        border-radius: 6px;
+        contain: content;
       }
-    } 
-    header{
-      .home-logo{
+
+      h2 {
+        color: white;
+        font-size: 20px;
+        text-decoration: none;
+        font-family: "Kanit", sans-serif;
+        position: absolute;
+        font-weight: lighter;
+        z-index: 50;
+        background: linear-gradient(rgba(31, 31, 31, 0.6), rgba(31, 31, 31, 0.6));
+        // box-shadow: 0px 0px 80px 200px rgba(31, 31, 31, 0.5);
+        border: transparent;
+        outline: none;
+        height: 110%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        // border-radius: 50%;
+        position: relative;
+        // top: 15px;
+        // left: 30px;
+        // box-shadow: inset 2px 2px 2px 2px $gray-main;
+      }
+    }
+
+    header {
+      .home-logo {
         height: 70px;
         width: 70px;
       }
-      h1{
+
+      h1 {
         font-size: 25px;
       }
-      .home-links{
+
+      .home-links {
         right: 0;
-        .home-link{
-          font-size: 15px;          
+        .home-link {
+          font-size: 15px;
         }
       }
     }
@@ -311,4 +397,3 @@
 .spinner {
   min-height: calc(100vh - 110px);
 }
-
