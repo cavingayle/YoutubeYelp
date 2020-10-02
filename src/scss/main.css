@@ -757,6 +757,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
   }
   .main-home .random-channel-holder img {
     width: 100%;
