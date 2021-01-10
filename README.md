@@ -1,6 +1,7 @@
 ### Youtube-Yelp
 
 Welcome to Youtube-Yelp! This site was built using React, Redux, SASS/CSS, Node, PostgreSQL, AWS S3, and Google API.
+![](YoutubeYelp1.gif)
 
 - To begin you can click on some of the recently viewed channels, some randomized channels or search for a channel of your choice.
 - From the search page you can select a channel that you would like to leave a review for yourself or view past reviews for that channel.
